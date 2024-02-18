@@ -2261,7 +2261,7 @@ input[type="radio"] + label:before {
 }
 
 .image.avatar img {
-  border-radius: 100%;
+  /* border-radius: 100%; */
   width: 100%;
 }
 
@@ -2767,7 +2767,7 @@ input[type="button"]:disabled,
 
 #header .image.avatar {
   margin: 0 0 1em 0;
-  width: 13.5em;
+  width: 12.5em;
 }
 
 /* Footer */

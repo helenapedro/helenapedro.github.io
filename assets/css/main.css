@@ -277,7 +277,7 @@ h6 a {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 0.9em;
   line-height: 1.5em;
 }
 
@@ -297,7 +297,7 @@ h4 {
 }
 
 h5 {
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 1.5em;
 }
 
@@ -1887,7 +1887,8 @@ header p {
   margin: 0 0 1.5em 0;
 }
 
-header h1 {
+header h1,
+h5 {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
@@ -3137,7 +3138,8 @@ body.is-touch .poptrox-popup .closer {
     font-size: 1.25em;
   }
 
-  #header h1 br {
+  #header h1,
+  h5 br {
     display: none;
   }
 

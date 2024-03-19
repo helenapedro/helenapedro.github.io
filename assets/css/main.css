@@ -2258,8 +2258,8 @@ input[type="radio"] + label:before {
 }
 
 .image.avatar {
-  margin: 0 0 1em 0;
-  width: 13ems;
+  margin: 0 0 0 0;
+  width: 10ems;
 }
 
 .image.avatar:before {
@@ -2772,8 +2772,8 @@ input[type="button"]:disabled,
 }
 
 #header .image.avatar {
-  margin: 0 0 1em 0;
-  width: 11em;
+  margin: 0 0 0em 0;
+  width: 10em;
 }
 
 /* Footer */

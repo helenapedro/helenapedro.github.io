@@ -5,9 +5,9 @@ class MinkandaProject extends HTMLElement {
         <div class="col-12 work-item featured">
           <h2 class="title">Minkanda: Note Taking</h2>
           <h4 class="skills">
-            Spring Boot | Spring Security | Spring Data JPA | Hibernate | jasypt |
+            Spring Boot | Spring Security | Spring Data JPA | Hibernate | Jenkins | jasypt |
             EhCache | Nginx | IP-based Rate Limiting | Load Balancing | HikariCP | Logback |
-            React | Redux | AWS EC2
+            CI/CD | Git | React | Redux | Bootstrap | SCSS 
           </h4>
           <a href="images/fulls/hero.webp" class="image fit thumb">
             <img src="images/thumbs/hero.webp" class="img-fluid" alt="" />

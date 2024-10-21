@@ -5,7 +5,7 @@ class MinkandaProject extends HTMLElement {
       <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs">
           <li class="nav-item">
-            <a class="nav-link active btn btn-primary" href="https://minkanda.mtcambrosio.com">View Project</a>
+            <a class="nav-link active" href="https://minkanda.mtcambrosio.com">View Project</a>
           </li>
         </ul>
       </div>

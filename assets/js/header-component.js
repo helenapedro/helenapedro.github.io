@@ -13,7 +13,8 @@ class Header extends HTMLElement {
               </h1>
               <p class="lead">
                 I am a Software Engineer with experience in full-stack development, microservices 
-                architecture, web services, database design, and cloud solutions.
+                architecture, web services, database design, and cloud solutions. I am adept at building 
+                high-performance and scalable systems.
               </p>
               <ul class="list-inline mt-4">
                 <li class="list-inline-item">

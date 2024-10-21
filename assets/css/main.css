@@ -130,6 +130,10 @@ p.paragraph {
   font-family: "Garamond", serif;
 }
 
+.featured {
+  align-content: center;
+}
+
 article,
 aside,
 details,

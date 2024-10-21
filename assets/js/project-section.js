@@ -10,14 +10,14 @@ class ProjectSection extends HTMLElement {
           <div class="card">
             <div class="card-body">
               <h2 class="title">Resume Feedback</h2>
-              <h4 class="skills mb-2 text-muted">Node.js | Express | MongoDB | AWS S3 | JWT | Winston | Rate Limit | Caching | Helmet </h4>
+              <h4 class="skills mb-2 text-muted">TypeScript | Node.js | Express | MongoDB | AWS S3 | JWT | Winston | Rate Limit | Caching | Helmet </h4>
               <a href="https://github.com/helenapedro/resume-feedback-backend.git" target="_blank" class="image fit thumb">
                 <img src="images/thumbs/resume-istockphoto.webp" class="card-img-top" alt="Resume feedback project thumbnail">
               </a>
               <p class="paragraph">This app facilitates a collaborative feedback process on resumes, allowing users to submit, comment on, and manage resumes efficiently.</p>
               <div class="d-flex">
                 <a href="https://github.com/helenapedro/resume-feedback-backend.git" target="_blank" class="btn btn-primary">View Project</a>
-                <a href="https://github.com/helenapedro/resume-feedback-backend.git" target="_blank" class="btn btn-secondary ml-2">View Backend</a>
+                <a href="https://github.com/helenapedro/resume-feedback-backend.git" target="_blank" class="btn btn-secondary ml-2">View Backend Code</a>
               </div>
             </div>
           </div>
@@ -38,7 +38,6 @@ class ProjectSection extends HTMLElement {
         </div>
       </div>
     </section>
-
     <getintouch-section></getintouch-section>
           `;
   }

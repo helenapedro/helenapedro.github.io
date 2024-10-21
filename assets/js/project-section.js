@@ -24,7 +24,6 @@ class ProjectSection extends HTMLElement {
             </div>
           </div>
         </div>
-
         <div class="col-md-6 mb-4">
           <div class="card">
             <div class="card-body">
@@ -43,18 +42,17 @@ class ProjectSection extends HTMLElement {
     </section>
 
     <section id="three" class="container my-4">
-      <h2>Get In Touch</h2>
+      <h2 class="contact">Get In Touch</h2>
       <div class="row">
         <div class="col-md-4">
           <ul class="list-unstyled">
-            <li><i class="fas fa-home"></i> 1234 Somewhere Rd.<br> Nashville, TN 00000<br> United States</li>
-            <li><i class="fas fa-mobile-alt"></i> 000-000-0000</li>
+            <li><i class="fas fa-mobile-alt"></i> (+244) 936-457-069</li>
             <li><i class="fas fa-envelope"></i> <a href="mailto:mbeua94@gmail.com">mbeua94@gmail.com</a></li>
           </ul>
         </div>
       </div>
-     </section>
-    `;
+    </section>
+          `;
   }
 }
 customElements.define('project-section', ProjectSection);

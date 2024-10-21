@@ -10,7 +10,7 @@ class MinkandaProject extends HTMLElement {
               <a href="https://minkanda.mtcambrosio.com" target="_blank" class="image fit thumb">
                 <img src="images/thumbs/hero.webp" class="img-fluid card-img-top" alt="Minkanda Project Thumbnail">
               </a>
-              <p class="paragraph">Web app that securely creates, manages, and accesses private and public notes. (Hosted on AWS EC2) <br> Login credentials for testing: (email: test@test.com, password: Test4321)</p>
+              <p class="paragraph">Web app that securely creates, manages, and accesses private and public notes. (Hosted on AWS EC2) <br> Login credentials for testing: (email: test@test.com, password: Test4321)</p><br>
               <div class="d-flex">
                 <a href="https://minkanda.mtcambrosio.com" target="_blank" class="btn btn-primary">View Project</a>
                 <a href="https://github.com/helenapedro/notesbackend.git" target="_blank" class="btn btn-secondary ml-2">View Backend</a>

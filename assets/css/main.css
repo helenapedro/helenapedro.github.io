@@ -101,12 +101,14 @@ video {
 
 p.paragraph,
 .title,
-.skills {
+.skills,
+.contact {
   color: #1f1815;
 }
 
 .title,
-.skills {
+.skills,
+.contact {
   font-family: "EBGaramondC12-Regular", serif;
 }
 

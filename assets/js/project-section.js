@@ -9,8 +9,8 @@ class ProjectSection extends HTMLElement {
         <div class="col-md-6 mb-4">
           <div class="card">
             <div class="card-body">
-              <h2 class="title">Resume Feedback</h2>
-              <h4 class="skills mb-2 text-muted">TypeScript | Node.js | Express | MongoDB | AWS S3 | JWT | Winston | Rate Limit | Caching | Helmet </h4>
+              <h4 class="title">Resume Feedback</h4>
+              <h6 class="skills mb-2 text-muted">TypeScript | Node.js | Express | MongoDB | AWS S3 | JWT | Winston | Rate Limit | Caching | Helmet </h6>
               <a href="https://github.com/helenapedro/resume-feedback-backend.git" target="_blank" class="image fit thumb">
                 <img src="images/thumbs/resume-istockphoto.webp" class="card-img-top" alt="Resume feedback project thumbnail">
               </a>
@@ -25,8 +25,8 @@ class ProjectSection extends HTMLElement {
         <div class="col-md-6 mb-4">
           <div class="card">
             <div class="card-body">
-              <h2 class="title">SpaceX Falcon 9</h2>
-              <h4 class="skills mb-2 text-muted">Python | Webscraping | Rest API | EDA | SQL | Flask | Folium | Plotly Dash | Machine Learning</h4>
+              <h4 class="title">SpaceX Falcon 9</h4>
+              <h6 class="skills mb-2 text-muted">Python | Webscraping | Rest API | EDA | SQL | Flask | Folium | Plotly Dash | Machine Learning</h6>
               <img src="images/thumbs/capa.PNG" class="card-img-top" alt="SpaceX Falcon 9 analysis project thumbnail">
               <p class="paragraph">The project delves into the feasibility of establishing a new player in the rocket industry, SpaceY, to rival SpaceX, the brainchild of billionaire industrialist Elon Musk.</p>
               <div class="d-flex">

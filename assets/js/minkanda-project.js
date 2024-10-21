@@ -10,7 +10,7 @@ class MinkandaProject extends HTMLElement {
         </ul>
       </div>
       <div class="card-body">
-        <h5 class="title">Minkanda: Note Taking</h5>
+        <h4 class="title">Minkanda: Note Taking</h4>
         <h6 class="skills mb-2 text-muted">Spring Boot | Spring Security | Spring Data JPA | Hibernate | Jenkins | jasypt | EhCache | Nginx | IP-based Rate Limiting | Load Balancing | HikariCP | Logback | CI/CD | Git | React | Redux | Bootstrap | SCSS</h6>
         <a href="https://minkanda.mtcambrosio.com" target="_blank" class="image fit thumb">
           <img src="images/thumbs/hero.webp" class="img-fluid card-img-top" alt="Minkanda Project Thumbnail">

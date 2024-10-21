@@ -1,11 +1,9 @@
 class ProjectSection extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      
     <section id="one" class="container my-4">
       <minkanda-project></minkanda-project>
     </section>
-
     <section id="two" class="container my-4">
       <div class="row">
         <div class="col-md-6 mb-4">
@@ -41,17 +39,7 @@ class ProjectSection extends HTMLElement {
       </div>
     </section>
 
-    <section id="three" class="container my-4">
-      <h2 class="contact">Get In Touch</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <ul class="list-unstyled">
-            <li><i class="fas fa-mobile-alt"></i> (+244) 936-457-069</li>
-            <li><i class="fas fa-envelope"></i> <a href="mailto:mbeua94@gmail.com">mbeua94@gmail.com</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <getintouch-section></getintouch-section>
           `;
   }
 }

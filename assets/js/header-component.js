@@ -3,7 +3,10 @@ class Header extends HTMLElement {
     this.innerHTML = `
       <header id="header">
         <div class="inner">
-          <a href="#" class="image avatar"><img src="images/me1.jpg" alt="" /></a>
+          <div class="col-md-4">
+		        <img class="image avatar" src="images/me1.jpg" alt="Avatar">
+	        </div>
+          
           <h4>
             Hi, my name is <strong>Helena Pedro</strong> and I'm a <u>software engineer</u><br />
             with experience in full-stack development, microservices, database

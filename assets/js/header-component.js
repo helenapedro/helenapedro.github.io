@@ -6,9 +6,8 @@ class Header extends HTMLElement {
           <div class="col-md-4">
 		        <img class="image avatar" src="images/me1.jpg" alt="Avatar">
 	        </div>
-          
           <h4>
-            Hi, my name is <strong>Helena Pedro</strong> and I'm a <u>software engineer</u><br />
+            Hi, my name is <b>Helena Pedro</b> and I'm a <u>software engineer</u><br />
             with experience in full-stack development, microservices, database
             design, and cloud solutions. I am adept at bulding high-performance
             and scalable systems.

@@ -2478,6 +2478,7 @@ ul.actions.fit.stacked {
   ul.actions:not(.fixed) li input[type="button"],
   ul.actions:not(.fixed) li button,
   ul.actions:not(.fixed) li .button {
+    margin-top: 0.5rem;
     width: 100%;
   }
 

@@ -6,12 +6,13 @@ class Header extends HTMLElement {
           <div class="col-md-4">
 		        <img class="image avatar" src="images/me1.jpg" alt="Avatar">
 	        </div>
-          <h4>
-            Hi, my name is <b>Helena Pedro</b> and I'm a <u>software engineer</u><br />
-            with experience in full-stack development, microservices, database
-            design, and cloud solutions. I am adept at bulding high-performance
-            and scalable systems.
-          </h4>
+          <h1 class="display-4">
+		        Hi, my name is <b>Helena Pedro</b>.
+		      </h1>
+          <p class="lead">
+            I'm a <u>software engineer</u> with experience in full-stack development, microservices, database
+            design, and cloud solutions. I am adept at bulding high-performance and scalable systems.
+          </p>
           <ul class="list-inline mt-4">
             <li class="list-inline-item">
               <a href="https://github.com/helenapedro" target="_blank" class="btn btn-dark btn-lg">
@@ -26,11 +27,6 @@ class Header extends HTMLElement {
             <li class="list-inline-item">
               <a href="https://hmpedropublicfiles.s3.us-east-2.amazonaws.com/Resume_HMPedro.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">
                 <i class="fas fa-file"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="mailto:mbeua94@gmail.com" class="btn btn-danger btn-lg">
-                <i class="fas fa-envelope"></i>
               </a>
             </li>
 		      </ul>

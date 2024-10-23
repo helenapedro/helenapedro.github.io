@@ -277,6 +277,7 @@ h4,
 h5,
 h6 {
   color: #787878;
+  font-family: EBGaramond08-Regular, sans-serif;
   font-weight: 400;
   line-height: 1em;
   margin: 0 0 1em 0;
@@ -2763,10 +2764,13 @@ input[type="button"]:disabled,
 
 #header h2,
 #header h3,
-#header h4,
 #header h5,
 #header h6 {
   color: #ffffff;
+}
+
+#header h4 {
+  color: #b9b5b4;
 }
 
 #header h1 {

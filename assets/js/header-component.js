@@ -1,22 +1,15 @@
 class Header extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      
-  <header id="header" class="text-center py-5 bg-light">
-    <div class="container">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-md-4">
-          <img class="rounded-circle img-fluid mb-3" src="images/me1.jpg" alt="Avatar">
-        </div>
-        <div class="col-md-8">
-          <h1 class="display-4">
-            Hi, my name is Helena.
-          </h1>
-          <p class="lead">
-            I am a Software Engineer with experience in full-stack development, 
-            microservices architecture, web services, database design, and cloud solutions. 
-            I am adept at building high-performance and scalable systems.
-          </p>
+      <header id="header">
+        <div class="inner">
+          <a href="#" class="image avatar"><img src="images/me1.jpg" alt="" /></a>
+          <h4>
+            Hi, my name is <strong>Helena Pedro</strong> and I'm a <u>software engineer</u><br />
+            with experience in full-stack development, microservices, database
+            design, and cloud solutions. I am adept at bulding high-performance
+            and scalable systems.
+          </h4>
           <ul class="list-inline mt-4">
             <li class="list-inline-item">
               <a href="https://github.com/helenapedro" target="_blank" class="btn btn-dark btn-lg">
@@ -33,11 +26,14 @@ class Header extends HTMLElement {
                 <i class="fas fa-file"></i>
               </a>
             </li>
-          </ul>
+            <li class="list-inline-item">
+              <a href="mailto:mbeua94@gmail.com" class="btn btn-danger btn-lg">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </li>
+		      </ul>
         </div>
-      </div>
-    </div>
-  </header>
+      </header>
     `;
   }
 }

@@ -3,7 +3,8 @@ class Project extends HTMLElement {
        this.innerHTML = `
           <div id="main">
                <project-section></project-section>
-	     </div>
+               <getintouch-section></getintouch-section>
+          </div>
        `;
      }
 }

@@ -8,8 +8,10 @@ class MinkandaProject extends HTMLElement {
         <a href="https://minkanda.mtcambrosio.com" target="_blank" class="image fit thumb">
           <img src="images/thumbs/hero.webp" class="img-fluid card-img-top" alt="Minkanda Project Thumbnail">
         </a>
-        <p class="paragraph">Web app that securely creates, manages, and accesses private and public notes. 
-        </br> Login credentials for testing: (email: test@test.com, password: Test4321)</p>
+        <p class="paragraph">
+          Web app that securely creates, manages, and accesses private and public notes.<br /> 
+          Login credentials for testing: (email: test@test.com, password: Test4321)
+        </p>
         <ul class="actions justify-content-center align-items-center">
           <li>
             <a href="https://minkanda.mtcambrosio.com" target="_blank" class="button small">View Project</a>

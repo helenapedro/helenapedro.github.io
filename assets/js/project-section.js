@@ -42,8 +42,7 @@ class ProjectSection extends HTMLElement {
         </div>
       </div>
     </section>
-    <getintouch-section></getintouch-section>
-          `;
+    `;
   }
 }
 customElements.define('project-section', ProjectSection);

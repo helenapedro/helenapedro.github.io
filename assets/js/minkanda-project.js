@@ -4,7 +4,7 @@ class MinkandaProject extends HTMLElement {
     <div class="featured card text-center">
       <div class="card-body">
         <h4 class="title">Minkanda: Note Taking</h4>
-        <h6 class="skills mb-2 text-muted">Spring Boot | Jasypt | EhCache | Hibernate| HikariCP | Logback | Nginx | React | Redux | AWS EC2</h6>
+        <h6 class="skills mb-2 text-muted">Spring Boot | Jasypt | EhCache | JPA | Hibernate| HikariCP | Logback | Nginx | React | Redux | AWS EC2</h6>
         <a href="https://minkanda.mtcambrosio.com" target="_blank" class="image fit thumb">
           <img src="images/thumbs/hero.webp" class="img-fluid card-img-top" alt="Minkanda Project Thumbnail">
         </a>

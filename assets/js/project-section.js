@@ -24,9 +24,9 @@ class ProjectSection extends HTMLElement {
               </p>
               <ul class="actions justify-content-center align-items-center">
                 <li>
-                  <a href="https://resumefeedback.mtcambrosio.com" target="_blank" class="button small">View Project</a>
-                  <a href="https://github.com/helenapedro/feedback-frontend.git" target="_blank" class="button small">View Frontend Code</a>
-                  <a href="https://github.com/helenapedro/feedback-backend.git" target="_blank" class="button small">View Backend Code</a>
+                  <a href="https://resumefeedback.mtcambrosio.com" target="_blank" class="button small fit">View Project</a>
+                  <a href="https://github.com/helenapedro/feedback-frontend.git" target="_blank" class="button small fit">View Frontend Code</a>
+                  <a href="https://github.com/helenapedro/feedback-backend.git" target="_blank" class="button small fit">View Backend Code</a>
                 </li>
               </ul>
             </div>
@@ -42,8 +42,8 @@ class ProjectSection extends HTMLElement {
               <p class="paragraph">The project delves into the feasibility of establishing a new player in the rocket industry, SpaceY, to rival SpaceX, the brainchild of billionaire industrialist Elon Musk.</p>
               <ul class="actions justify-content-center align-items-center">
                 <li>
-                  <a href="https://pedropublicfiles.s3.us-east-2.amazonaws.com/Spacex_falcon_9_data_analysis/index.html" target="_blank" class="button small">View Project</a>
-                  <a href="https://dashboard-spacexlaunch-app-1872ac792790.herokuapp.com/" target="_blank" class="button small">View Dashboard</a> 
+                  <a href="https://pedropublicfiles.s3.us-east-2.amazonaws.com/Spacex_falcon_9_data_analysis/index.html" target="_blank" class="button small fit">View Project</a>
+                  <a href="https://dashboard-spacexlaunch-app-1872ac792790.herokuapp.com/" target="_blank" class="button small fit">View Dashboard</a> 
                 </li>
               </ul>
             </div>

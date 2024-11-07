@@ -37,7 +37,7 @@ class ProjectSection extends HTMLElement {
           <div class="card">
             <div class="card-body">
               <h4 class="title">SpaceX Falcon 9</h4>
-              <h6 class="skills mb-2 text-muted">Python | Webscraping | Rest API | EDA | SQL | Flask | Folium | Plotly Dash | Machine Learning</h6>
+              <h6 class="skills mb-2 text-muted">Python | Webscraping | Rest API | EDA | SQL | DB2 | Flask | Folium | Plotly Dash | Machine Learning</h6>
               <img src="images/thumbs/capa.PNG" class="card-img-top" alt="SpaceX Falcon 9 analysis project thumbnail">
               <p class="paragraph">The project delves into the feasibility of establishing a new player in the rocket industry, SpaceY, to rival SpaceX, the brainchild of billionaire industrialist Elon Musk.</p>
               <ul class="actions justify-content-center align-items-center">

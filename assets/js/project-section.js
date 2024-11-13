@@ -44,7 +44,8 @@ class ProjectSection extends HTMLElement {
               <p class="paragraph">Web application that showcases a construction engineer's skills, and professionally completed projects.</p>
               <ul class="actions justify-content-center align-items-center">
                 <li>
-                  <a href="https://zepedro7.mtcambrosio.com" target="_blank" class="button small fit">View Project</a>
+                  <a href="https://zepedro7.mtcambrosio.com/projects" target="_blank" class="button small fit">View Project</a>
+                  <a href="https://github.com/helenapedro/portfolio-backend.git" target="_blank" class="button small fit">View Backend Code</a>
                 </li>
               </ul>
             </div>

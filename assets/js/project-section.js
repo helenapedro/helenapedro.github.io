@@ -45,7 +45,6 @@ class ProjectSection extends HTMLElement {
               <ul class="actions justify-content-center align-items-center">
                 <li>
                   <a href="https://zepedro7.mtcambrosio.com/projects" target="_blank" class="button small fit">View Project</a>
-                  <a href="https://github.com/helenapedro/portfolio-backend.git" target="_blank" class="button small fit">View Backend Code</a>
                 </li>
               </ul>
             </div>

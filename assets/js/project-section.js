@@ -46,9 +46,7 @@ class ProjectSection extends HTMLElement {
               </p>
               <ul class="actions justify-content-center align-items-center">
               <li>
-              <a href="https://rocket-launch-analysis-5c3ea0d2902d.herokuapp.com/" target="_blank" class="button small fit">View Project</a>
-              <li>
-              <li>
+                <a href="https://rocket-launch-analysis-5c3ea0d2902d.herokuapp.com/" target="_blank" class="button small fit">View Project</a>
                 <a href="https://pedropublicfiles.s3.us-east-2.amazonaws.com/Spacex_falcon_9_data_analysis/index.html" target="_blank" class="button small fit">View Notebook</a>
               </li>
               </ul>

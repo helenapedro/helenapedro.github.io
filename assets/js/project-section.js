@@ -36,12 +36,14 @@ class ProjectSection extends HTMLElement {
         <div class="col-md-6 mb-4">
           <div class="card">
             <div class="card-body">
-              <h4 class="title">SpaceX Falcon 9</h4>
-              <h6 class="skills mb-2 text-muted">Python | Webscraping | Rest API | EDA | SQL | DB2 | Flask | Folium | Plotly Dash | Machine Learning</h6>
+              <h4 class="title">Rocket Launch Prediction Analysis </h4>
+              <h6 class="skills mb-2 text-muted">Python | Webscraping | Rest API | EDA | SQL | Flask | Folium | Plotly Dash | Machine Learning</h6>
               <a https://pedropublicfiles.s3.us-east-2.amazonaws.com/Spacex_falcon_9_data_analysis/index.html" target="_blank" class="image fit thumb">
                 <img src="images/thumbs/capa.PNG" class="card-img-top" alt="SpaceX Falcon 9 analysis project thumbnail">
               </a>
-              <p class="paragraph">The project delves into the feasibility of establishing a new player in the rocket industry, SpaceY, to rival SpaceX, the brainchild of billionaire industrialist Elon Musk.</p>
+              <p class="paragraph">
+                Assessed the feasibility of SpaceY entering the rocket launch market to rival SpaceX, focusing on reducing launch costs via reusable rocket stages. 
+              </p>
               <ul class="actions justify-content-center align-items-center">
                 <li>
                   <a href="https://pedropublicfiles.s3.us-east-2.amazonaws.com/Spacex_falcon_9_data_analysis/index.html" target="_blank" class="button small fit">View Project</a>

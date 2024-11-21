@@ -45,9 +45,12 @@ class ProjectSection extends HTMLElement {
                 Assessed the feasibility of SpaceY entering the rocket launch market to rival SpaceX, focusing on reducing launch costs via reusable rocket stages. 
               </p>
               <ul class="actions justify-content-center align-items-center">
-                <li>
-                  <a href="https://pedropublicfiles.s3.us-east-2.amazonaws.com/Spacex_falcon_9_data_analysis/index.html" target="_blank" class="button small fit">View Project</a>
-                </li>
+              <li>
+              <a href="https://rocket-launch-analysis-5c3ea0d2902d.herokuapp.com/" target="_blank" class="button small fit">View Project</a>
+              <li>
+              <li>
+                <a href="https://pedropublicfiles.s3.us-east-2.amazonaws.com/Spacex_falcon_9_data_analysis/index.html" target="_blank" class="button small fit">View Notebook</a>
+              </li>
               </ul>
             </div>
           </div>
@@ -78,5 +81,3 @@ class ProjectSection extends HTMLElement {
   }
 }
 customElements.define('project-section', ProjectSection);
-
-{/* <a href="https://dashboard-spacexlaunch-app-1872ac792790.herokuapp.com/" target="_blank" class="button small fit">View Dashboard</a>  */}

@@ -47,7 +47,6 @@ class ProjectSection extends HTMLElement {
               <ul class="actions justify-content-center align-items-center">
                 <li>
                   <a href="https://pedropublicfiles.s3.us-east-2.amazonaws.com/Spacex_falcon_9_data_analysis/index.html" target="_blank" class="button small fit">View Project</a>
-                  <a href="https://dashboard-spacexlaunch-app-1872ac792790.herokuapp.com/" target="_blank" class="button small fit">View Dashboard</a> 
                 </li>
               </ul>
             </div>
@@ -79,3 +78,5 @@ class ProjectSection extends HTMLElement {
   }
 }
 customElements.define('project-section', ProjectSection);
+
+{/* <a href="https://dashboard-spacexlaunch-app-1872ac792790.herokuapp.com/" target="_blank" class="button small fit">View Dashboard</a>  */}

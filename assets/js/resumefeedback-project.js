@@ -1,43 +1,32 @@
 class ResumeFeedbackProject extends HTMLElement {
      connectedCallback() {
        this.innerHTML = `
-          <article class="col-6 col-12-xsmall work-item">
-               <h2 class="title">Resume Feedback</h2>
-               <h4 class="skills text-muted">
-                    Node.js | Express | MongoDB | Mongoose | AWS S3 | JWT | Winston
-                    | express-rate-limit | Caching | Helmet | CORS
-               </h4>
-               <a href="images/fulls/resume-istockphoto.webp" class="image fit thumb" target="_blank">
-               <img src="images/thumbs/resume-istockphoto.webp" alt="" />
-               </a>
-               <p class="paragraph">
-                    This app is designed to facilitate a collaborative feedback process on resumes,
-                    allowing users to submit, comment on, and manage resumes efficiently.
-               </p>
-               <footer>
-                    <ul class="actions list-unstyled">
-                         <li>
-                              <a 
-                                   href="https://pedropublicfiles.s3.us-east-2.amazonaws.com/Spacex_falcon_9_data_analysis/index.html" 
-                                   target="_blank" 
-                                   class="btn btn-primary btn-sm"
-                                   >
-                                   View Project
-                              </a>
-                         </li>
-
-                         <li>
-                              <a 
-                                   href="https://dashboard-spacexlaunch-app-1872ac792790.herokuapp.com/" 
-                                   target="_blank" 
-                                   class="btn btn-primary btn-sm"
-                                   >
-                                   View Backend
-                              </a>
-                         </li>
-                    </ul>
-               </footer>
-         </article>
+          <div class="col-md-6 mb-4">
+               <div class="card">
+                    <div class="card-body">
+                         <h4 class="title">Resume Feedback</h4>
+                         <h6 class="skills mb-2 text-muted">
+                              TypeScript | Node.js | Express | MongoDB | AWS S3 |
+                              React | Redux | Bootstrap 
+                         </h6>
+                         <a href="https://resumefeedback.mtcambrosio.com/" target="_blank" class="image fit thumb">
+                              <img src="images/thumbs/resume-istockphoto.webp" class="card-img-top" alt="Resume feedback project thumbnail">
+                         </a>
+                         <p class="paragraph">
+                              Collaborative web app where job seekers can give and receive valuable feedback
+                              on their resumes, designed for those who want honest, constructive insights from 
+                              peers.
+                         </p>
+                         <ul class="actions justify-content-center align-items-center">
+                              <li>
+                              <a href="https://resumefeedback.mtcambrosio.com" target="_blank" class="button small fit">View Project</a>
+                              <a href="https://github.com/helenapedro/feedback-frontend.git" target="_blank" class="button small fit">View Frontend Code</a>
+                              <a href="https://github.com/helenapedro/feedback-backend.git" target="_blank" class="button small fit">View Backend Code</a>
+                              </li>
+                         </ul>
+                    </div>
+               </div>
+        </div>
        `;
      }
    }

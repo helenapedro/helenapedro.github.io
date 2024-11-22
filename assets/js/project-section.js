@@ -57,12 +57,12 @@ class ProjectSection extends HTMLElement {
         <div class="col-md-6 mb-4">
           <div class="card">
             <div class="card-body">
-              <h4 class="title">Portfolio Web App</h4>
+              <h4 class="title">Project Management Web App</h4>
               <h6 class="skills mb-2 text-muted">React | Bootstrap | Firebase | AWS (S3, CloudFront) </h6>
               <a href="https://zepedro7.mtcambrosio.com" target="_blank" class="image fit thumb">
                 <img src="images/thumbs/thisisengineering.jpg" class="card-img-top" alt="Resume feedback project thumbnail">
               </a>
-              <p class="paragraph">Web application that showcases a construction engineer's skills, and professionally completed projects.</p>
+              <p class="paragraph">Portfolio Web application that showcases a construction engineer's skills, and professionally completed projects.</p>
               <ul class="actions justify-content-center align-items-center">
                 <li>
                   <a href="https://zepedro7.mtcambrosio.com/projects" target="_blank" class="button small fit">View Project</a>
@@ -71,8 +71,30 @@ class ProjectSection extends HTMLElement {
             </div>
           </div>
         </div>
-      </div>
 
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="title">GasPump Dashboard</h2>
+              <h6 class="skills mb-2 text-muted">
+                Python | Flask | SQL | MongoDB | Dash | HTML | CSS | Heroku
+              </h6>
+              <a href="https://dashapp-gas-map-data-929aacd93b89.herokuapp.com/" target="_blank" class="image fit thumb">
+                <img src="images/thumbs/fuelimage.jpg" class="card-img-top" alt="Resume feedback project thumbnail">
+              </a>
+              <p class="paragraph">
+                Dynamic data visualization tool featuring interactive maps, statistical analysis, and tabular data presentation, 
+                for users to explore gas station insights effortlessly.
+              </p>
+              <ul class="actions justify-content-center align-items-center">
+                <li>
+                  <a
+                    href="https://dashapp-gas-map-data-929aacd93b89.herokuapp.com/" target="_blank" class="button small fit">View Project</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </div>
       </div>
     </section>
     `;

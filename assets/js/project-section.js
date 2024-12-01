@@ -43,7 +43,7 @@ class ProjectSection extends HTMLElement {
                 Machine Learning | Python | Flask | Rest API | SQL | Dash | Webscraping | EDA  | Folium
               </h6>
               <a https://pedropublicfiles.s3.us-east-2.amazonaws.com/Spacex_falcon_9_data_analysis/index.html" target="_blank" class="image fit thumb">
-                <img src="images/thumbs/capa.PNG" class="card-img-top" alt="SpaceX Falcon 9 analysis project thumbnail">
+                <img src="images/thumbs/rocket_launch_img.jpg" class="card-img-top" alt="SpaceX Falcon 9 analysis project thumbnail">
               </a>
               <p class="paragraph">
                 Assessed the feasibility of SpaceY entering the rocket launch market to rival SpaceX, focusing on reducing 

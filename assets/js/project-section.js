@@ -6,6 +6,7 @@ class ProjectSection extends HTMLElement {
     </section>
     <section id="two" class="container my-4">
       <div class="row">
+        <!-- Resume Feedback -->
         <div class="col-md-6 mb-4">
           <div class="card">
             <div class="card-body">
@@ -33,10 +34,11 @@ class ProjectSection extends HTMLElement {
           </div>
         </div>
 
+        <!-- Rocket Launch Prediction Analysis -->
         <div class="col-md-6 mb-4">
           <div class="card">
             <div class="card-body">
-              <h4 class="title">Rocket Launch Prediction Analysis </h4>
+              <h4 class="title">Rocket Launch Prediction Analysis</h4>
               <h6 class="skills mb-2 text-muted">
                 Machine Learning | Python | Flask | Rest API | SQL | Dash | Webscraping | EDA  | Folium
               </h6>
@@ -58,6 +60,7 @@ class ProjectSection extends HTMLElement {
           </div>
         </div>
 
+        <!-- Project Management Web App -->
         <div class="col-md-6 mb-4">
           <div class="card">
             <div class="card-body">
@@ -76,6 +79,7 @@ class ProjectSection extends HTMLElement {
           </div>
         </div>
 
+        <!-- GasPump Dashboard -->
         <div class="col-md-6 mb-4">
           <div class="card">
             <div class="card-body">

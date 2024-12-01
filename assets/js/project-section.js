@@ -37,7 +37,9 @@ class ProjectSection extends HTMLElement {
           <div class="card">
             <div class="card-body">
               <h4 class="title">Rocket Launch Prediction Analysis </h4>
-              <h6 class="skills mb-2 text-muted">Python | Webscraping | Rest API | EDA | SQL | Flask | Folium | Plotly Dash | Machine Learning</h6>
+              <h6 class="skills mb-2 text-muted">
+                Machine Learning | Python | Flask | Rest API | SQL | Dash | Webscraping | EDA  | Folium
+              </h6>
               <a https://pedropublicfiles.s3.us-east-2.amazonaws.com/Spacex_falcon_9_data_analysis/index.html" target="_blank" class="image fit thumb">
                 <img src="images/thumbs/capa.PNG" class="card-img-top" alt="SpaceX Falcon 9 analysis project thumbnail">
               </a>

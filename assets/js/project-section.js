@@ -44,12 +44,15 @@ class ProjectSection extends HTMLElement {
                 <img src="images/thumbs/capa.PNG" class="card-img-top" alt="SpaceX Falcon 9 analysis project thumbnail">
               </a>
               <p class="paragraph">
-                Assessed the feasibility of SpaceY entering the rocket launch market to rival SpaceX, focusing on reducing launch costs via reusable rocket stages. 
+                Assessed the feasibility of SpaceY entering the rocket launch market to rival SpaceX, focusing on reducing 
+                launch costs via reusable rocket stages. </br> Used Webscraping and SpaceX Rest API to collect and process data;
+                conducted EDA to identify patterns in launch success factors; Built and
+                evaluated classification models to predict first-stage rocket recovery success.
               </p>
               <ul class="actions justify-content-center align-items-center">
-              <li>
-                <a href="https://rocket-launch-analysis-5c3ea0d2902d.herokuapp.com/" target="_blank" class="button small fit">View Project</a>
-              </li>
+                <li>
+                  <a href="https://rocket-launch-analysis-5c3ea0d2902d.herokuapp.com/" target="_blank" class="button small fit">View Project</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -59,7 +62,7 @@ class ProjectSection extends HTMLElement {
           <div class="card">
             <div class="card-body">
               <h4 class="title">Project Management Web App</h4>
-              <h6 class="skills mb-2 text-muted">React | Bootstrap | Firebase | AWS (S3, CloudFront) </h6>
+              <h6 class="skills mb-2 text-muted">Firebase | AWS S3 & CloudFront | React | Bootstrap </h6>
               <a href="https://zepedro7.mtcambrosio.com" target="_blank" class="image fit thumb">
                 <img src="images/thumbs/thisisengineering.jpg" class="card-img-top" alt="Resume feedback project thumbnail">
               </a>

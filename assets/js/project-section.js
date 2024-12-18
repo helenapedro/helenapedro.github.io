@@ -16,7 +16,7 @@ class ProjectSection extends HTMLElement {
                 React | Redux | Bootstrap 
               </h6>
               <a href="https://resumefeedback.mtcambrosio.com/" target="_blank" class="image fit thumb">
-                <img src="images/thumbs/resume-istockphoto.webp" class="card-img-top" alt="Resume feedback project thumbnail">
+                <img src="images/thumbs/feedback.webp" class="card-img-top" alt="Resume feedback project thumbnail">
               </a>
               <p class="paragraph">
                 Collaborative web app where job seekers can give and receive valuable feedback

@@ -34,6 +34,31 @@ class ProjectSection extends HTMLElement {
           </div>
         </div>
 
+        <!-- GasPump Dashboard -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="title">GasPump Dashboard</h2>
+              <h6 class="skills mb-2 text-muted">
+                Python | Flask | SQL | MongoDB | WebScraping | Dash | HTML | CSS
+              </h6>
+              <a href="https://dashapp-gas-map-data-929aacd93b89.herokuapp.com/" target="_blank" class="image fit thumb">
+                <img src="images/thumbs/fuelimage.jpg" class="card-img-top" alt="Resume feedback project thumbnail">
+              </a>
+              <p class="paragraph">
+                Dynamic data visualization tool featuring interactive maps, statistical analysis, and tabular data presentation, 
+                for users to explore gas station insights effortlessly.
+              </p>
+              <ul class="actions justify-content-center align-items-center">
+                <li>
+                  <a
+                    href="https://dashapp-gas-map-data-929aacd93b89.herokuapp.com/" target="_blank" class="button small fit">View Project</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <!-- Rocket Launch Prediction Analysis -->
         <div class="col-md-6 mb-4">
           <div class="card">
@@ -78,31 +103,6 @@ class ProjectSection extends HTMLElement {
             </div>
           </div>
         </div>
-
-        <!-- GasPump Dashboard -->
-        <div class="col-md-6 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="title">GasPump Dashboard</h2>
-              <h6 class="skills mb-2 text-muted">
-                Python | Flask | SQL | MongoDB | Dash | HTML | CSS | Heroku
-              </h6>
-              <a href="https://dashapp-gas-map-data-929aacd93b89.herokuapp.com/" target="_blank" class="image fit thumb">
-                <img src="images/thumbs/fuelimage.jpg" class="card-img-top" alt="Resume feedback project thumbnail">
-              </a>
-              <p class="paragraph">
-                Dynamic data visualization tool featuring interactive maps, statistical analysis, and tabular data presentation, 
-                for users to explore gas station insights effortlessly.
-              </p>
-              <ul class="actions justify-content-center align-items-center">
-                <li>
-                  <a
-                    href="https://dashapp-gas-map-data-929aacd93b89.herokuapp.com/" target="_blank" class="button small fit">View Project</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-      </div>
       </div>
     </section>
     `;

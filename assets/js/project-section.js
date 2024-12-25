@@ -71,10 +71,7 @@ class ProjectSection extends HTMLElement {
                 <img src="images/thumbs/rocket_launch_img.jpg" class="card-img-top" alt="SpaceX Falcon 9 analysis project thumbnail">
               </a>
               <p class="paragraph">
-                Assessed the feasibility of SpaceY entering the rocket launch market to rival SpaceX, focusing on reducing 
-                launch costs via reusable rocket stages. </br> Used Webscraping and SpaceX Rest API to collect and process data;
-                conducted EDA to identify patterns in launch success factors; Built and
-                evaluated classification models to predict first-stage rocket recovery success.
+                Evaluated SpaceY's entry into the rocket launch market to compete with SpaceX by focusing on cost reduction through reusable rocket stages. 
               </p>
               <ul class="actions justify-content-center align-items-center">
                 <li>

@@ -31,6 +31,11 @@ class GetInTouchSection extends HTMLElement {
                          </ul>
                     </div>
                </div>
+               <style>
+                    .bg-custom {
+                         background-color: #f8f9fa;
+                    }
+               </style>
           </section>
        `;
      }

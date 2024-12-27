@@ -88,13 +88,13 @@ class ProjectSection extends HTMLElement {
             <div class="card-body">
               <h4 class="title">Project Management Web App</h4>
               <h6 class="skills mb-2 text-muted">Firebase | AWS S3 & CloudFront | React | Bootstrap </h6>
-              <a href="https://zepedro7.mtcambrosio.com" target="_blank" class="image fit thumb">
+              <a href="https://zepedro-portfolio-6acbe0f9989c.herokuapp.com" target="_blank" class="image fit thumb">
                 <img src="images/thumbs/thisisengineering.jpg" class="card-img-top" alt="Resume feedback project thumbnail">
               </a>
               <p class="paragraph">Portfolio Web application that showcases a construction engineer's skills, and professionally completed projects.</p>
               <ul class="actions justify-content-center align-items-center">
                 <li>
-                  <a href="https://zepedro7.mtcambrosio.com/projects" target="_blank" class="button small fit">View Project</a>
+                  <a href="https://zepedro-portfolio-6acbe0f9989c.herokuapp.com" target="_blank" class="button small fit">View Project</a>
                 </li>
               </ul>
             </div>

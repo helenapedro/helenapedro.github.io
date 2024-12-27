@@ -8,6 +8,7 @@ class ProjectCard extends HTMLElement {
        const description = this.getAttribute('description') || 'Project description';
        const frontendCodeLink = this.getAttribute('frontend-code-link');
        const backendCodeLink = this.getAttribute('backend-code-link');
+       const buttonClass = this.getAttribute('button-class') || 'button small fit';
    
        this.innerHTML = `
          <div class="card">
@@ -20,9 +21,9 @@ class ProjectCard extends HTMLElement {
              <p class="paragraph">${description}</p>
              <ul class="actions justify-content-center align-items-center">
                <li>
-                 <a href="${projectLink}" target="_blank" class="button small fit">View Project</a>
-                 ${frontendCodeLink ? `<a href="${frontendCodeLink}" target="_blank" class="button small fit">View Frontend Code</a>` : ''}
-                 ${backendCodeLink ? `<a href="${backendCodeLink}" target="_blank" class="button small fit">View Backend Code</a>` : ''}
+                 <a href="${projectLink}" target="_blank" class="${buttonClass}">View Project</a>
+                 ${frontendCodeLink ? `<a href="${frontendCodeLink}" target="_blank" class="${buttonClass}">View Frontend Code</a>` : ''}
+                 ${backendCodeLink ? `<a href="${backendCodeLink}" target="_blank" class="${buttonClass}">View Backend Code</a>` : ''}
                </li>
              </ul>
            </div>

@@ -8,27 +8,20 @@ class MinkandaProject extends HTMLElement {
     const description = this.getAttribute('description') || 'Web app that securely creates, manages, and accesses private and public notes.<br /> Login credentials for testing: (email: test@test.com, password: Test4321)';
     const frontendCodeLink = this.getAttribute('frontend-code-link') || 'https://github.com/helenapedro/minkanda-frontend.git';
     const backendCodeLink = this.getAttribute('backend-code-link') || 'https://github.com/helenapedro/notesbackend.git';
+    const buttonClass = 'button small';
 
     this.innerHTML = `
-    <div class="featured card text-center">
-      <div class="card-body">
-        <h4 class="title">${title}</h4>
-        <h6 class="skills mb-2 text-muted">${skills}</h6>
-        <a href="${projectLink}" target="_blank" class="image fit thumb">
-          <img src="${imageSrc}" class="img-fluid card-img-top" alt="${imageAlt}">
-        </a>
-        <p class="paragraph">
-          ${description}
-        </p>
-        <ul class="actions justify-content-center align-items-center">
-          <li>
-            <a href="${projectLink}" target="_blank" class="button small">View Project</a>
-            <a href="${frontendCodeLink}" target="_blank" class="button small">View Frontend Code</a>
-            <a href="${backendCodeLink}" target="_blank" class="button small">View Backend Code</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+      <project-card
+        title="${title}"
+        skills="${skills}"
+        project-link="${projectLink}"
+        image-src="${imageSrc}"
+        image-alt="${imageAlt}"
+        description="${description}"
+        frontend-code-link="${frontendCodeLink}"
+        backend-code-link="${backendCodeLink}"
+        button-class="${buttonClass}">
+      </project-card>
     `;
   }
 }

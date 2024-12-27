@@ -1,55 +1,34 @@
 class GetInTouchSection extends HTMLElement {
      connectedCallback() {
+       const whatsapp = this.getAttribute('whatsapp') || 'https://wa.me/+244936457069';
+       const email = this.getAttribute('email') || 'mbeua94@gmail.com';
+       const linkedinLink = this.getAttribute('linkedin-link') || 'https://www.linkedin.com/in/helena-mbeua-pedro/';
+       const credlyLink = this.getAttribute('credly-link') || 'https://www.credly.com/users/helena-pedro';
+
        this.innerHTML = `
-          <section id="three" class="container my-4">
+          <section id="three" class="container my-4 bg-custom">
+               <div class="row">
+                    <div class="col-md-4 text-center">
+                         <div class="vertical-line">
+                              <h2 class="contact">Get In Touch</h2>
+                         </div>
+                    </div>
+               </div>
                <div class="row">
                     <div class="col-md-4">
                          <ul class="list-unstyled">
                               <li>
-                                   <style>
-                                        .libutton, .credlybutton {
-                                             color: #ffffff !important;
-                                             display: flex;
-                                             flex-direction: column;
-                                             justify-content: center;
-                                             padding: 7px;
-                                             text-align: center;
-                                             outline: none;
-                                             text-decoration: none !important;
-                                             width: 200px;
-                                             height: 32px;
-                                             border-radius: 16px;
-                                             font-family: "SF Pro Text", Helvetica, sans-serif;
-
-                                        }
-                                        .libutton {
-                                             background-color: #0A66C2;
-                                             margin-bottom: 4px;
-                                        }
-                                        .credlybutton {
-                                             background-color: #FF6F00;
-                                        }
-                                   </style>
-                                   <a 
-                                        class="libutton" 
-                                        href="https://www.linkedin.com/in/helena-mbeua-pedro/" 
-                                        target="_blank"
-                                   >
-                                        Follow on LinkedIn
+                                   <a href="mailto:${email}" class="btn btn-info btn-lg" aria-label="Email">
+                                        <i class="fas fa-envelope"></i>
                                    </a>
-                              </li>
-
-                              <li>
-                                   <a 
-                                        class="credlybutton" 
-                                        href="https://www.credly.com/users/helena-pedro" 
-                                        target="_blank"
-                                   >
-                                        View Credly Profile
+                                   <a href="${whatsapp}" class="btn btn-success btn-lg" aria-label="WhatsApp">
+                                        <i class="fab fa-whatsapp"></i>
+                                   </a>
+                                   <a href="${credlyLink}" target="_blank" class="btn btn-warning btn-lg" aria-label="Credly">
+                                        <i class="fas fa-award"></i>
                                    </a>
                               </li>
                          </ul>
-
                     </div>
                </div>
           </section>

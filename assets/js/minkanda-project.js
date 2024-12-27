@@ -1,22 +1,30 @@
 class MinkandaProject extends HTMLElement {
   connectedCallback() {
+    const title = this.getAttribute('title') || 'Minkanda: Note Taking';
+    const skills = this.getAttribute('skills') || 'Spring Boot | Spring Security | Jasypt | EhCache | JPA | Hibernate | HikariCP | Logback | Nginx | React | Redux | AWS EC2';
+    const projectLink = this.getAttribute('project-link') || 'https://minkanda.mtcambrosio.com';
+    const imageSrc = this.getAttribute('image-src') || 'images/thumbs/hero.webp';
+    const imageAlt = this.getAttribute('image-alt') || 'Minkanda Project Thumbnail';
+    const description = this.getAttribute('description') || 'Web app that securely creates, manages, and accesses private and public notes.<br /> Login credentials for testing: (email: test@test.com, password: Test4321)';
+    const frontendCodeLink = this.getAttribute('frontend-code-link') || 'https://github.com/helenapedro/minkanda-frontend.git';
+    const backendCodeLink = this.getAttribute('backend-code-link') || 'https://github.com/helenapedro/notesbackend.git';
+
     this.innerHTML = `
     <div class="featured card text-center">
       <div class="card-body">
-        <h4 class="title">Minkanda: Note Taking</h4>
-        <h6 class="skills mb-2 text-muted">Spring Boot |Spring Security | Jasypt | EhCache | JPA | Hibernate| HikariCP | Logback | Nginx | React | Redux | AWS EC2</h6>
-        <a href="https://minkanda.mtcambrosio.com" target="_blank" class="image fit thumb">
-          <img src="images/thumbs/hero.webp" class="img-fluid card-img-top" alt="Minkanda Project Thumbnail">
+        <h4 class="title">${title}</h4>
+        <h6 class="skills mb-2 text-muted">${skills}</h6>
+        <a href="${projectLink}" target="_blank" class="image fit thumb">
+          <img src="${imageSrc}" class="img-fluid card-img-top" alt="${imageAlt}">
         </a>
         <p class="paragraph">
-          Web app that securely creates, manages, and accesses private and public notes.<br /> 
-          Login credentials for testing: (email: test@test.com, password: Test4321)
+          ${description}
         </p>
         <ul class="actions justify-content-center align-items-center">
           <li>
-            <a href="https://minkanda.mtcambrosio.com" target="_blank" class="button small">View Project</a>
-            <a href="https://github.com/helenapedro/minkanda-frontend.git" target="_blank" class="button small">View Frontend Code</a>
-            <a href="https://github.com/helenapedro/notesbackend.git" target="_blank" class="button small">View Backend Code</a>
+            <a href="${projectLink}" target="_blank" class="button small">View Project</a>
+            <a href="${frontendCodeLink}" target="_blank" class="button small">View Frontend Code</a>
+            <a href="${backendCodeLink}" target="_blank" class="button small">View Backend Code</a>
           </li>
         </ul>
       </div>
@@ -24,5 +32,5 @@ class MinkandaProject extends HTMLElement {
     `;
   }
 }
+
 customElements.define('minkanda-project', MinkandaProject);
-   

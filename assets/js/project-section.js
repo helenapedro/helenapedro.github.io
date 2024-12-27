@@ -8,96 +8,52 @@ class ProjectSection extends HTMLElement {
       <div class="row">
         <!-- Resume Feedback -->
         <div class="col-md-6 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="title">Resume Feedback</h4>
-              <h6 class="skills mb-2 text-muted">
-                TypeScript | Node.js | Express | MongoDB | AWS S3 |
-                React | Redux | Bootstrap 
-              </h6>
-              <a href="https://resumefeedback.mtcambrosio.com/" target="_blank" class="image fit thumb">
-                <img src="images/thumbs/feedback.webp" class="card-img-top" alt="Resume feedback project thumbnail">
-              </a>
-              <p class="paragraph">
-                Collaborative web app where job seekers can give and receive valuable feedback
-                on their resumes, designed for those who want honest, constructive insights from 
-                peers.
-              </p>
-              <ul class="actions justify-content-center align-items-center">
-                <li>
-                  <a href="https://resumefeedback.mtcambrosio.com" target="_blank" class="button small fit">View Project</a>
-                  <a href="https://github.com/helenapedro/feedback-frontend.git" target="_blank" class="button small fit">View Frontend Code</a>
-                  <a href="https://github.com/helenapedro/feedback-backend.git" target="_blank" class="button small fit">View Backend Code</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <project-card
+            title="Resume Feedback"
+            skills="TypeScript | Node.js | Express | MongoDB | AWS S3 | React | Redux | Bootstrap"
+            project-link="https://resumefeedback.mtcambrosio.com/"
+            image-src="images/thumbs/feedback.webp"
+            image-alt="Resume feedback project thumbnail"
+            description="Collaborative web app where job seekers can give and receive valuable feedback on their resumes, designed for those who want honest, constructive insights from peers."
+            frontend-code-link="https://github.com/helenapedro/feedback-frontend.git"
+            backend-code-link="https://github.com/helenapedro/feedback-backend.git">
+          </project-card>
         </div>
 
         <!-- GasPump Dashboard -->
         <div class="col-md-6 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="title">GasPump Dashboard</h2>
-              <h6 class="skills mb-2 text-muted">
-                Python | Flask | SQL | MongoDB | WebScraping | Dash | HTML | CSS
-              </h6>
-              <a href="https://dashapp-gas-map-data-929aacd93b89.herokuapp.com/" target="_blank" class="image fit thumb">
-                <img src="images/thumbs/fuelimage.jpg" class="card-img-top" alt="Resume feedback project thumbnail">
-              </a>
-              <p class="paragraph">
-                Dynamic data visualization tool featuring interactive maps, statistical analysis, and tabular data presentation, 
-                for users to explore gas station insights effortlessly.
-              </p>
-              <ul class="actions justify-content-center align-items-center">
-                <li>
-                  <a
-                    href="https://dashapp-gas-map-data-929aacd93b89.herokuapp.com/" target="_blank" class="button small fit">View Project</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <project-card
+            title="GasPump Dashboard"
+            skills="Python | Flask | SQL | MongoDB | WebScraping | Dash | HTML | CSS"
+            project-link="https://dashapp-gas-map-data-929aacd93b89.herokuapp.com/"
+            image-src="images/thumbs/fuelimage.jpg"
+            image-alt="GasPump Dashboard project thumbnail"
+            description="Dynamic data visualization tool featuring interactive maps, statistical analysis, and tabular data presentation, for users to explore gas station insights effortlessly."
+          </project-card>
         </div>
 
         <!-- Rocket Launch Prediction Analysis -->
         <div class="col-md-6 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="title">Rocket Launch Prediction Analysis</h4>
-              <h6 class="skills mb-2 text-muted">
-                Machine Learning | Python | Flask | Rest API | SQL | Dash | Webscraping | EDA  | Folium
-              </h6>
-              <a https://pedropublicfiles.s3.us-east-2.amazonaws.com/Spacex_falcon_9_data_analysis/index.html" target="_blank" class="image fit thumb">
-                <img src="images/thumbs/rocket_launch_img.jpg" class="card-img-top" alt="SpaceX Falcon 9 analysis project thumbnail">
-              </a>
-              <p class="paragraph">
-                Evaluated SpaceY's entry into the rocket launch market to compete with SpaceX by focusing on cost reduction through reusable rocket stages. 
-              </p>
-              <ul class="actions justify-content-center align-items-center">
-                <li>
-                  <a href="https://rocket-launch-analysis-5c3ea0d2902d.herokuapp.com/" target="_blank" class="button small fit">View Project</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <project-card
+            title="Rocket Launch Prediction Analysis"
+            skills="Machine Learning | Python | Flask | Rest API | SQL | Dash | Webscraping | EDA | Folium"
+            project-link="https://rocket-launch-analysis-5c3ea0d2902d.herokuapp.com/"
+            image-src="images/thumbs/rocket_launch_img.jpg"
+            image-alt="Rocket Launch Prediction Analysis project thumbnail"
+            description="Evaluated SpaceY's entry into the rocket launch market to compete with SpaceX by focusing on cost reduction through reusable rocket stages."
+          </project-card>
         </div>
 
         <!-- Project Management Web App -->
         <div class="col-md-6 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="title">Project Management Web App</h4>
-              <h6 class="skills mb-2 text-muted">Firebase | AWS S3 & CloudFront | React | Bootstrap </h6>
-              <a href="https://zepedro-portfolio-6acbe0f9989c.herokuapp.com" target="_blank" class="image fit thumb">
-                <img src="images/thumbs/thisisengineering.jpg" class="card-img-top" alt="Resume feedback project thumbnail">
-              </a>
-              <p class="paragraph">Portfolio Web application that showcases a construction engineer's skills, and professionally completed projects.</p>
-              <ul class="actions justify-content-center align-items-center">
-                <li>
-                  <a href="https://zepedro-portfolio-6acbe0f9989c.herokuapp.com" target="_blank" class="button small fit">View Project</a>
-                </li>
-              </ul>
-            </div>
+            <project-card
+              title="Project Management Web App"
+              skills="Firebase | AWS S3 & CloudFront | React | Bootstrap"
+              project-link="https://zepedro-portfolio-6acbe0f9989c.herokuapp.com"
+              image-src="images/thumbs/thisisengineering.jpg"
+              image-alt="Project Management Web App project thumbnail"
+              description="Portfolio Web application that showcases a construction engineer's skills, and professionally completed projects."
+            </project-card>
           </div>
         </div>
       </div>

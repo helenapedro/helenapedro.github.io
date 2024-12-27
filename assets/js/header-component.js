@@ -33,15 +33,6 @@ class Header extends HTMLElement {
                   <a href="${resumeLink}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg" aria-label="Resume">
                     <i class="fas fa-file-pdf"></i>
                   </a>
-                  <a href="${credlyLink}" target="_blank" class="btn btn-warning btn-lg" aria-label="Credly">
-                    <i class="fas fa-award"></i>
-                  </a>
-                  <a href="mailto:mbeua94@gmail.com " class="btn btn-info btn-lg" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                  </a>
-                  <a href="tel:+244 923 000 000" class="btn btn-success btn-lg" aria-label="Phone">
-                    <i class="fas fa-phone"></i>
-                  </a>
                 </li>
               </ul>
             </div>

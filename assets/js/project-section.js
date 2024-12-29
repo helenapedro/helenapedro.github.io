@@ -23,7 +23,7 @@ class ProjectSection extends HTMLElement {
         <!-- GasPump Dashboard -->
         <div class="col-md-6 mb-4">
           <project-card
-            title="GasPump Dashboard"
+            title="GasPump"
             skills="Python | Flask | SQL | MongoDB | WebScraping | Dash | HTML | CSS"
             project-link="https://dashapp-gas-map-data-929aacd93b89.herokuapp.com/"
             image-src="images/thumbs/fuelimage.jpg"

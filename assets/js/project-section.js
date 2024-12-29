@@ -35,12 +35,12 @@ class ProjectSection extends HTMLElement {
         <!-- Rocket Launch Prediction Analysis -->
         <div class="col-md-6 mb-4">
           <project-card
-            title="Rocket Launch Prediction Analysis"
+            title="Predictive Analytics for Rocket Launch Costs and Reusability"
             skills="Machine Learning | Python | Flask | Rest API | SQL | Dash | Webscraping | EDA | Folium"
             project-link="https://rocket-launch-analysis-5c3ea0d2902d.herokuapp.com/"
             image-src="images/thumbs/rocket_launch_img.jpg"
             image-alt="Rocket Launch Prediction Analysis project thumbnail"
-            description="Evaluated SpaceY's entry into the rocket launch market to compete with SpaceX by focusing on cost reduction through reusable rocket stages."
+            description="Analyzed SpaceX data to help SpaceY estimate launch costs and predict first-stage reusability. Created dashboards for key metrics and developed a machine learning model to assess reusability based on launch conditions."
           </project-card>
         </div>
 

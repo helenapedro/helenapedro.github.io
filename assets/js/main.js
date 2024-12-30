@@ -31,25 +31,24 @@
 			}, 100);
 		});
 
-	// Touch?
-		if (browser.mobile) {
+	// Check if the device is mobile
+	if (browser.mobile) {
 
-			// Turn on touch mode.
-				$body.addClass('is-touch');
-
-			// Height fix (mostly for iOS).
-				window.setTimeout(function() {
-					$window.scrollTop($window.scrollTop() + 1);
-				}, 0);
-
-		}
+		// Turn on touch mode
+		$body.addClass('is-touch');
+	
+		// Height fix (mostly for iOS)
+		window.setTimeout(() => {
+		$window.scrollTop($window.scrollTop() + 1);
+		}, 0);
+	}
 
 	// Footer.
-		breakpoints.on('<=medium', function() {
+		breakpoints.on('<=medium', () => {
 			$footer.insertAfter($main);
 		});
-
-		breakpoints.on('>medium', function() {
+		
+		breakpoints.on('>medium', () => {
 			$footer.appendTo($header);
 		});
 
@@ -58,8 +57,7 @@
 		// Parallax background.
 
 			// Disable parallax on IE (smooth scrolling is jerky), and on mobile platforms (= better performance).
-				if (browser.name == 'ie'
-				||	browser.mobile)
+				if (browser.name == 'ie'||	browser.mobile)
 					settings.parallax = false;
 
 			if (settings.parallax) {

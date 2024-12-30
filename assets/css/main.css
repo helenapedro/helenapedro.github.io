@@ -1,96 +1,19 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
 @import url("https://fonts.googleapis.com/css2?family=Garamond:wght@400;700&display=swap");
+
 @font-face {
   font-family: "EBGaramondC12-Regular";
   src: url("../webfonts/EBGaramondSC12-Regular.otf") format("opentype");
 }
+
 @font-face {
   font-family: "EBGaramond08-Regular";
   src: url("../webfonts/EBGaramond08-Regular.otf") format("opentype");
 }
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+/* Reset styles */
+* {
   margin: 0;
   padding: 0;
   border: 0;
@@ -99,21 +22,34 @@ video {
   vertical-align: baseline;
 }
 
+/* Color variables */
+:root {
+  --primary-color: #1f1815;
+  --border-color: #efefef;
+}
+
+/* Font variables */
+:root {
+  --font-title: "EBGaramondC12-Regular", serif;
+  --font-paragraph: "EBGaramond08-Regular", sans-serif;
+  --font-skills: "Garamond", serif;
+}
+
 p.paragraph,
 .title,
 .skills,
 .contact {
-  color: #1f1815;
+  color: var(--primary-color);
 }
 
 .title,
 .skills,
 .contact {
-  font-family: "EBGaramondC12-Regular", serif;
+  font-family: var(--font-title);
 }
 
 p.paragraph {
-  font-family: "EBGaramond08-Regular", sans-serif;
+  font-family: var(--font-paragraph);
   text-align: justify;
 }
 
@@ -127,7 +63,7 @@ p.paragraph {
 }
 
 .skills {
-  font-family: "Garamond", serif;
+  font-family: var(--font-skills);
 }
 
 .featured {
@@ -150,7 +86,7 @@ section {
 
 body {
   line-height: 1;
-  font-family: "Garamond", serif;
+  font-family: var(--font-skills);
 }
 
 ol,
@@ -220,7 +156,7 @@ input,
 select,
 textarea {
   color: #a2a2a2;
-  font-family: "Garamond", serif;
+  font-family: var(--font-skills);
   font-size: 16pt;
   font-weight: 400;
   line-height: 1.75em;
@@ -2442,76 +2378,7 @@ ul.actions.fit.stacked {
   }
 }
 
-/* Table */
-
-.table-wrapper {
-  -webkit-overflow-scrolling: touch;
-  overflow-x: auto;
-}
-
-table {
-  margin: 0 0 2em 0;
-  width: 100%;
-}
-
-table tbody tr {
-  border: solid 1px #efefef;
-  border-left: 0;
-  border-right: 0;
-}
-
-table tbody tr:nth-child(2n + 1) {
-  background-color: #f7f7f7;
-}
-
-table td {
-  padding: 0.75em 0.75em;
-}
-
-table th {
-  color: #787878;
-  font-size: 0.9em;
-  font-weight: 400;
-  padding: 0 0.75em 0.75em 0.75em;
-  text-align: left;
-}
-
-table thead {
-  border-bottom: solid 2px #efefef;
-}
-
-table tfoot {
-  border-top: solid 2px #efefef;
-}
-
-table.alt {
-  border-collapse: separate;
-}
-
-table.alt tbody tr td {
-  border: solid 2px #efefef;
-  border-left-width: 0;
-  border-top-width: 0;
-}
-
-table.alt tbody tr td:first-child {
-  border-left-width: 2px;
-}
-
-table.alt tbody tr:first-child td {
-  border-top-width: 2px;
-}
-
-table.alt thead {
-  border-bottom: 0;
-}
-
-table.alt tfoot {
-  border-top: 0;
-}
-
 /* Button */
-
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
@@ -2753,13 +2620,12 @@ input[type="button"]:disabled,
 
 #main {
   margin-left: 35%;
-  max-width: 54em;
-  padding: 8em 4em 4em 4em;
+  max-width: 60em;
   width: calc(100% - 35%);
 }
 
 #main > section {
-  border-top: solid 2px #efefef;
+  border-top: solid 2px var(--border-color);
   margin: 4em 0 0 0;
   padding: 4em 0 0 0;
 }

@@ -2626,7 +2626,7 @@ input[type="button"]:disabled,
 
 #main > section {
   border-top: solid 2px var(--border-color);
-  margin: 4em 0 0 0;
+  margin: 2em 0 0 0;
   padding: 4em 0 0 0;
 }
 
@@ -3001,7 +3001,7 @@ body.is-touch .poptrox-popup .closer {
 
   #main {
     margin: 0;
-    padding: 6em 4em;
+    padding: 4em 2em;
     width: 100%;
   }
 }

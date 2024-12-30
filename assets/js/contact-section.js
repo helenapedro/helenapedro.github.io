@@ -1,5 +1,6 @@
 class ContactSection extends HTMLElement {
      connectedCallback() {
+          const linkedinProfileLink = this.getAttribute('linkedin-profile') || 'https://www.linkedin.com/in/helena-mbeua-pedro/';
        this.innerHTML = `
           <section id="three">
                <div class="row">
@@ -9,7 +10,7 @@ class ContactSection extends HTMLElement {
                                    <h3 class="icon brands fa-linkedin" target="_blank">
                                         <span class="label">LinkedIn</span>
                                    </h3>
-                                   <a href="https://www.linkedin.com/in/helena-mbeua-pedro/" target="_blank">LinkedIn Profile</a>
+                                   <a href="${linkedinProfileLink}" target="_blank">LinkedIn Profile</a>
                               </li>
                               <li>
                                    <h3 class="icon solid fa-envelope">

@@ -11,7 +11,7 @@ class Header extends HTMLElement {
       <header id="header" class="bg-light py-5">
         <div class="container text-center text-md-left">
           <div class="row justify-content-center align-items-center">
-            <div class="col-md-4 mb-3 mb-md-0">
+            <div class="col-md-12 mb-3 mb-md-0">
               <img class="img-fluid rounded-circle" src="images/me.jpg" alt="Avatar of ${name}" style="max-width: 200px;">
             </div>
             <div class="col-md-12">

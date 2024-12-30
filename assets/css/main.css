@@ -2533,7 +2533,7 @@ input[type="button"]:disabled,
   color: rgba(255, 255, 255, 0.5);
   height: 100%;
   left: 0;
-  padding: 8em 4em;
+  padding: 4em 2em;
   position: fixed;
   text-align: right;
   top: 0;
@@ -2568,7 +2568,7 @@ input[type="button"]:disabled,
 
 #header h1 {
   color: rgba(255, 255, 255, 0.5);
-  font-family: "Garamond", serif;
+  font-family: var(--font-skills);
   font-size: 1.35em;
   line-height: 1.75em;
   margin: 0;

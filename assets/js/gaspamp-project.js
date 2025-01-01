@@ -15,7 +15,7 @@ class GasPumpProject extends HTMLElement {
              </p>
              <ul class="actions list-unstyled">
                <li>
-                 <a href="https://dashapp-gas-map-data-929aacd93b89.herokuapp.com/" target="_blank" class="btn btn-primary btn-sm">View Project</a>
+                 <a href="https://gaspumpmap-93cc318f9fc5.herokuapp.com/" target="_blank" class="btn btn-primary btn-sm">View Project</a>
                </li>
              </ul>
            </div>

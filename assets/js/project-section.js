@@ -18,7 +18,7 @@ class ProjectSection extends HTMLElement {
     
     const rocketLaunchTitle = 'Predictive Analytics for Rocket Launch Costs and Reusability';
     const rocketLaunchSkills = 'Machine Learning | Python | Flask | Rest API | SQL | Dash | Webscraping | EDA | Folium';
-    const rocketLaunchProjectLink = 'https://rocket-launch-analysis-5c3ea0d2902d.herokuapp.com/';
+    const rocketLaunchProjectLink = this.getAttribute ('https://rocket-launch-analysis-5c3ea0d2902d.herokuapp.com/') || 'https://predictive-analytics-for-rocket-launches.mtcambrosio.com/';
     const rocketLaunchImageSrc = 'images/thumbs/rocket_launch_img.jpg';
     const rocketLaunchImageAlt = 'Rocket Launch Prediction Analysis project thumbnail';
     const rocketLaunchDescription = 'Analyzed SpaceX data to help SpaceY estimate launch costs and predict first-stage reusability. Created dashboards for key metrics and developed a machine learning model to assess reusability based on launch conditions.';

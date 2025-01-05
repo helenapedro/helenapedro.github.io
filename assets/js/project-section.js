@@ -21,7 +21,7 @@ class ProjectSection extends HTMLElement {
     const rocketLaunchProjectLink = 'https://predictive-analytics-for-rocket-launches.mtcambrosio.com/';
     const rocketLaunchImageSrc = 'images/thumbs/rocket_launch_img.jpg';
     const rocketLaunchImageAlt = 'Rocket Launch Prediction Analysis project thumbnail';
-    const rocketLaunchDescription = 'Analyzed SpaceX data to help SpaceY estimate launch costs and predict first-stage reusability. Created dashboards for key metrics and developed a machine learning model to assess reusability based on launch conditions.';
+    const rocketLaunchDescription = 'Analyzed SpaceX data to help SpaceY estimate launch costs and predict first-stage reusability.';
     
     const projectManagementTitle = 'Project Management Web App';
     const projectManagementSkills = 'Firebase | AWS S3 & CloudFront | React | Bootstrap';

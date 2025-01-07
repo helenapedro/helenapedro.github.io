@@ -24,8 +24,8 @@ class ProjectSection extends HTMLElement {
     const rocketLaunchDescription = 'Analyzed SpaceX data to help SpaceY estimate launch costs and predict first-stage reusability.';
     
     const projectManagementTitle = 'Project Management Web App';
-    const projectManagementSkills = 'Firebase | AWS S3 & CloudFront | React | Bootstrap';
-    const projectManagementProjectLink = 'https://zepedro-portfolio-6acbe0f9989c.herokuapp.com';
+    const projectManagementSkills = 'Firebase | React | Bootstrap | AWS (S3, CloudFront & Amplify)';
+    const projectManagementProjectLink = 'https://master.d2p23rnvlomq8x.amplifyapp.com/';
     const projectManagementImageSrc = 'images/thumbs/thisisengineering.jpg';
     const projectManagementImageAlt = 'Project Management Web App project thumbnail';
     const projectManagementDescription = 'Portfolio Web application that showcases a construction engineer\'s skills, and professionally completed projects.';  

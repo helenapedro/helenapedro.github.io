@@ -3,7 +3,7 @@ class ProjectSection extends HTMLElement {
     const feedbackTitle = 'Resume Feedback';
     const feedbackSkills = 'TypeScript | Node.js | Express | MongoDB | AWS S3 | React | Redux | Bootstrap';
     const feedbackProjectLink = 'https://resumefeedback.mtcambrosio.com/';
-    const feedbackImageSrc = this.getAttribute('image-src') || 'images/thumbs/feedback.webp';
+    const feedbackImageSrc = this.getAttribute('image-src') || 'images/thumbs/rfeedback.webp';
     const feedbackImageAlt = this.getAttribute('image-alt') || 'Resume feedback project thumbnail';
     const feedbackDescription = this.getAttribute('description') || 'Collaborative web app where job seekers can give and receive valuable feedback on their resumes, designed for those who want honest, constructive insights from peers.';
     const feedbackFrontendCodeLink = this.getAttribute('frontend-code-link') || 'https://github.com/helenapedro/feedback-frontend.git';
@@ -12,11 +12,11 @@ class ProjectSection extends HTMLElement {
     const gasPumpTitle = this.getAttribute('title') || 'GasPump';
     const gasPumpSkills = this.getAttribute('skills') || 'Python | Flask | SQL | MongoDB | WebScraping | Dash | HTML | CSS';
     const gasPumpProjectLink = 'https://gaspump.mtcambrosio.com/';
-    const gasPumpImageSrc = 'images/thumbs/fuelimage.jpg';
+    const gasPumpImageSrc = 'images/thumbs/gaspump.jpeg';
     const gasPumpImageAlt = 'GasPump Dashboard project thumbnail';
     const gasPumpDescription = 'Dynamic data visualization tool featuring interactive maps, statistical analysis, and tabular data presentation, for users to explore gas station insights effortlessly.';
     
-    const rocketLaunchTitle = 'Predictive Analytics for Rocket Launch Costs and Reusability';
+    const rocketLaunchTitle = 'Rocket Launch Analytics App';
     const rocketLaunchSkills = 'Machine Learning | Python | Flask | Rest API | SQL | Dash | Webscraping | EDA | Folium';
     const rocketLaunchProjectLink = 'https://predictive-analytics-for-rocket-launches.mtcambrosio.com/';
     const rocketLaunchImageSrc = 'images/thumbs/rocket_launch_img.jpg';

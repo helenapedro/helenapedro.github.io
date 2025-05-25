@@ -63,6 +63,16 @@ export const projects = [
   },
 
   {
+    title: 'Engineering Portfolio & Project Showcase',
+    technologies: ['React', 'Firebase', 'CloudFront', 'AWS S3', 'Amplify'],
+    url: 'https://zepedro-portfolio.hmpedro.com/',
+    image: `${BASE_URL}/thisisengineering.jpg`,
+    description: 'A dynamic web application to showcase diverse construction engineering projects, each featuring extensive image galleries. Leverages Firebase for a robust, scalable, and serverless backend.',
+    frontendUrl: '',
+    backendUrl: '',
+  },
+  
+  {
     title: 'Rocket Stage Reusability and Launch Analysis',
     url: 'https://predictive-analytics-for-rocket-launches.hmpedro.com/',
     image: `${BASE_URL}/rocket_launch_img.jpg`,
@@ -85,15 +95,6 @@ export const projects = [
     backendUrl: '',
   },
 
-  {
-    title: 'Engineering Portfolio & Project Showcase',
-    technologies: ['React', 'Firebase', 'CloudFront', 'AWS S3', 'Amplify'],
-    url: 'https://zepedro-portfolio.hmpedro.com/',
-    image: `${BASE_URL}/thisisengineering.jpg`,
-    description: 'A dynamic web application to showcase diverse construction engineering projects, each featuring extensive image galleries. Leverages Firebase for a robust, scalable, and serverless backend.',
-    frontendUrl: '',
-    backendUrl: '',
-  },
 
   {
     title: 'Coding Fun Land',

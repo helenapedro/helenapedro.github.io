@@ -46,7 +46,7 @@ export const projects = [
 
   {
     title: 'GasPump',
-    url: 'https://gaspump.mtcambrosio.com/',
+    url: 'https://gaspump.hmpedro.com/',
     image: `${BASE_URL}/gaspump.jpeg`,
     description: `
       An Interactive web app designed to empowers users to effortlessly explore and analyze gas station insights. 
@@ -62,21 +62,9 @@ export const projects = [
     backendUrl: '',
   },
 
-  // {
-  //   title: 'Vuata: A Modern E-Commerce Solution',
-  //   url: 'https://vuata.mtcambrosio.com/',
-  //   image: `${BASE_URL}/Vuata.webp`,
-  //   description: `
-  //     Vuata is a cutting-edge e-commerce web app for buying and selling clothes across various conditions.
-  //   `,
-  //   technologies: ['NodeJS','Express','Supabase','Firebase','TypeScript', 'Vite', 'React', 'Tailwind'],
-  //   frontendUrl: '',
-  //   backendUrl: '',
-  // },
-
   {
     title: 'Rocket Stage Reusability and Launch Analysis',
-    url: 'https://predictive-analytics-for-rocket-launches.mtcambrosio.com/',
+    url: 'https://predictive-analytics-for-rocket-launches.hmpedro.com/',
     image: `${BASE_URL}/rocket_launch_img.jpg`,
     description: `
       This web application predicts rocket stage reusability and analyzes launch 
@@ -98,18 +86,18 @@ export const projects = [
   },
 
   {
-    title: 'Portfolio Web App',
-    technologies: ['React', 'Bootstrap', 'Firebase', 'S3', 'CloudFront', 'Amplify'],
+    title: 'Engineering Portfolio & Project Showcase',
+    technologies: ['React', 'Firebase', 'CloudFront', 'AWS S3', 'Amplify'],
     url: 'https://zepedro-portfolio.hmpedro.com/',
     image: `${BASE_URL}/thisisengineering.jpg`,
-    description: 'Portfolio web app that showcases a construction engineer\'s skills, and professionally completed projects.',
+    description: 'A dynamic web application to showcase diverse construction engineering projects, each featuring extensive image galleries. Leverages Firebase for a robust, scalable, and serverless backend.',
     frontendUrl: '',
     backendUrl: '',
   },
 
   {
     title: 'Coding Fun Land',
-    url: 'https://codingfunland.mtcambrosio.com/',
+    url: 'https://codingfunland.hmpedro.com/',
     images: [
       `https://mbeuaportfolio-media.s3.us-east-2.amazonaws.com/codingfunland_1.webp`,
       `https://mbeuaportfolio-media.s3.us-east-2.amazonaws.com/codingfunland_1.webp`

@@ -27,14 +27,14 @@ export const projects = [
 
   {
     title: 'Resume Feedback',
+    technologies: ['TypeScript', 'Node/Express', 'MongoDB', 'AWS S3', 'React/Redux'],
     url: 'https://master.d1cehne8ow0dq0.amplifyapp.com/',
     images: [
-      `${BASE_URL}/rfeedback.webp`,
       `${BASE_URL}/feedback_io.webp`
     ],
-    technologies: ['TypeScript', 'React/Redux', 'Node/Express', 'MongoDB', 'AWS S3'],
     description: `
-      This is a full-stack TypeScript implementation platform dedicated to helping professionals improve their resumes through community feedback.. 
+      This is a full-stack TypeScript implementation platform dedicated to helping professionals improve their resumes through community feedback.
+      Users can upload their resumes, receive constructive feedback, and provide insights on others' resumes. 
       
 
 
@@ -69,9 +69,9 @@ export const projects = [
     image: `${BASE_URL}/thisisengineering.jpg`,
     description: 'A dynamic web application to showcase diverse construction engineering projects, each featuring extensive image galleries. Leverages Firebase for a robust, scalable, and serverless backend.',
     frontendUrl: '',
-    backendUrl: '',
+    backendUrl: `${GITHUB_LINK}/zepedro-engineering-portfolio.git`,
   },
-  
+
   {
     title: 'Rocket Stage Reusability and Launch Analysis',
     url: 'https://predictive-analytics-for-rocket-launches.hmpedro.com/',

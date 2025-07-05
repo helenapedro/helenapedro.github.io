@@ -7,7 +7,7 @@ import { SocialLinks } from './SocialLinks';
 //const BASE_URL = "https://pedropublicfiles.s3.us-east-2.amazonaws.com/portfolio";
 const ADDRESS = "Fairfield, IA";
 const TIMEZONE = "Central Daylight Time (GMT-5)";
-const JOB_TITLE = "Software Engineer";
+const JOB_TITLE = "Software Development Engineer";
 
 export function Hero() {
   return (

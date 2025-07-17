@@ -10,7 +10,7 @@ interface SocialLink {
 const socialLinks: SocialLink[] = [
   { icon: icon.SiGithub, href: 'https://github.com/helenapedro', label: 'GitHub' },
   { icon: icon.SiLinkedin, href: 'https://www.linkedin.com/in/helena-mbeua-pedro/', label: 'LinkedIn' },
-  { icon: icon.SiWhatsapp, href: 'https://wa.me/+244936457069', label: 'Whatsapp' },
+  { icon: icon.SiWhatsapp, href: 'https://wa.me/+14254660344', label: 'Whatsapp' },
   { icon: icon.SiCredly, href: 'https://www.credly.com/users/helena-pedro', label: 'Credly' },
 ];
 

@@ -49,13 +49,9 @@ export const projects = [
     url: 'https://gaspump.hmpedro.com/',
     image: `${BASE_URL}/gaspump.jpeg`,
     description: `
-      An Interactive web app designed to empowers users to effortlessly explore and analyze gas station insights. 
-      
-
-
-      The tool employs Python-based web scraping techniques to extract real-time data from gas pump operator websites 
-      and other relevant sources. This data is processed and stored in a hybrid database system, combining SQL for structured 
-      data and MongoDB for unstructured data.
+      A Dash application that visualizes Angolan gas stations on an interactive map, 
+      a filterable table, and stats view with totals plus operator and municipality distributions.
+      It consumes a public stations API, and supports CSV export.
     `,
     technologies: ['Python', 'Flask', 'SQL', 'MongoDB', 'Dash', 'Plotly'],
     frontendUrl: '',
@@ -95,7 +91,6 @@ export const projects = [
     backendUrl: `${GITHUB_LINK}/rocket_launchs_predictive_analysis`,
   },
 
-
   {
     title: 'Coding Fun Land',
     url: 'https://codingfunland.hmpedro.com/',
@@ -111,6 +106,22 @@ export const projects = [
       Click the button below to see some of the fun and innovative projects our budding coders have built.
     `,
     technologies: ['Volunteer Work', 'Python', 'Dash'],
+    frontendUrl: '',
+    backendUrl: '',
+  },
+
+  {
+    title: 'Helena Explora',
+    url: 'https://helenaexplora.hmpedro.com/',
+    image: `https://helenaexplora.hmpedro.com/assets/he-logo-BYYh-2WT.jpg`,
+    description: `
+      O Helena Explora é um espaço dedicado a quem deseja compreender melhor como funcionam os estudos, 
+      a vida académica e o dia a dia nos Estados Unidos.
+
+      A missão do projeto é inspirar, informar e aproximar a comunidade de conteúdos educativos que ajudem 
+      cada pessoa a tomar decisões mais seguras sobre o seu futuro.
+    `,
+    technologies: ['Community'],
     frontendUrl: '',
     backendUrl: '',
   },

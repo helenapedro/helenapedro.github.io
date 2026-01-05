@@ -45,7 +45,7 @@ export const projects = [
   },
 
   {
-    title: 'GasPump',
+    title: 'Angola Fuel Station Explorer ',
     url: 'https://gaspump.hmpedro.com/',
     image: `${BASE_URL}/gaspump.jpeg`,
     description: `
@@ -59,7 +59,7 @@ export const projects = [
     `,
     technologies: ['Python', 'Flask', 'SQL', 'MongoDB', 'Dash', 'Plotly'],
     frontendUrl: '',
-    backendUrl: '',
+    backendUrl: `${GITHUB_LINK}/Angola-Fuel-Station-Explorer`,
   },
 
   {
@@ -73,7 +73,7 @@ export const projects = [
   },
 
   {
-    title: 'Rocket Stage Reusability and Launch Analysis',
+    title: 'Rocket Launchs Predictive Analysis',
     url: 'https://predictive-analytics-for-rocket-launches.hmpedro.com/',
     image: `${BASE_URL}/rocket_launch_img.jpg`,
     description: `
@@ -92,7 +92,7 @@ export const projects = [
     `,
     technologies: ['Python', 'Flask', 'Dash', 'SQL', 'EDA', 'Webscraping', 'REST API', 'Folium'],
     frontendCodeLink: '',
-    backendUrl: '',
+    backendUrl: `${GITHUB_LINK}/rocket_launchs_predictive_analysis`,
   },
 
 

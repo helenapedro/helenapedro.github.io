@@ -7,8 +7,8 @@ import { SocialLinks } from './SocialLinks';
 const BASE_URL = "https://hmpedropublicfiles.s3.us-east-2.amazonaws.com";
 const ADDRESS = "Bellevue, WA";
 const AVAILABILITY = "Available for full-time W2 Employment";
-const JOB_TITLE = "Software Development Engineer";
-const SCHOOL = "Master of Science in Computer Science";
+const JOB_TITLE = "and I'm a Software Engineer";
+const SCHOOL = "with a masters' degree in Computer Science";
 
 export function Hero() {
   return (
@@ -18,6 +18,7 @@ export function Hero() {
         <div className="flex flex-col items-center text-center">
           <ProfileImage />
           <div className="mt-6">
+            Hi, my name is
             <h1 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
               Helena Pedro
             </h1>
@@ -29,11 +30,9 @@ export function Hero() {
             <StatusBadge Icon={Backpack} text={`${AVAILABILITY}`} />
             <StatusBadge Icon={SiFiles} text="Resume" href={`${BASE_URL}/Resume-Pedro-HelenaMbeua.pdf`} target="_blank" />
           </div>
-          {/* <p className="text-base leading-relaxed mb-2 text-gray-300 max-w-2xl mx-auto">
-            I'm a passionate Software Engineer with a strong background in full-stack development, microservices, 
-            database design, cloud solutions, and data science. I am adept at building high-performance and scalable systems. 
-            <br/> This is a showcase of my projects and skills.
-          </p> */}
+          <p className="text-base leading-relaxed mb-2 text-gray-300 max-w-2xl mx-auto">
+            This is a showcase of my projects and abilities
+          </p>
           <SocialLinks />
         </div>
       </div>

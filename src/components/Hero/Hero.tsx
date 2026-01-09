@@ -8,7 +8,7 @@ const BASE_URL = "https://hmpedropublicfiles.s3.us-east-2.amazonaws.com";
 const ADDRESS = "Bellevue, WA";
 const AVAILABILITY = "Available for full-time W2 Employment";
 const JOB_TITLE = "and I'm a Software Engineer";
-const SCHOOL = "with a masters' degree in Computer Science";
+const SCHOOL = "with a master's degree in Computer Science";
 
 export function Hero() {
   return (

@@ -4,7 +4,7 @@ const GITHUB_LINK = "https://github.com/helenapedro";
 export const projects = [
   {
     title: 'Resume Feedback Platform',
-    technologies: ['Java', 'Spring Boot', 'Apache Kafka', 'JPA/Hibernate', 'MySQL', 'MongoDB', 'Redis', 'Docker'],
+    technologies: ['Java', 'Spring Boot', 'JPA/Hibernate', 'Apache Kafka', 'JPA/Hibernate', 'MySQL', 'MongoDB', 'Redis', 'Docker'],
     url: '',
     images: [
       `https://resume-feedback-platform.s3.us-east-1.amazonaws.com/archtectureanddataflow.png`

@@ -18,11 +18,11 @@ export const projects = [
 
 
   {
-    title: 'Engineering Portfolio & Project Showcase',
-    technologies: ['React', 'Firebase', 'CloudFront', 'AWS S3', 'Amplify'],
+    title: 'Engineering Portfolio',
+    technologies: ['React', 'React Router', 'Firebase/Firestore', 'JavaScript','React Bootstrap', 'CloudFront', 'AWS S3'],
     url: 'https://zepedro-portfolio.hmpedro.com/',
     image: `${BASE_URL}/thisisengineering.jpg`,
-    description: 'A dynamic web application to showcase diverse construction engineering projects, each featuring extensive image galleries. Leverages Firebase for a robust, scalable, and serverless backend.',
+    description: 'A React single-page portfolio with routed project pages, filters, pagination, and Firestore-backed content, delivering a clean UX for showcasing projects, skills, and background.',
     frontendUrl: '',
     backendUrl: `${GITHUB_LINK}/zepedro-engineering-portfolio.git`,
   },

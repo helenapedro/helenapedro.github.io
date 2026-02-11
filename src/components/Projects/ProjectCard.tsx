@@ -34,6 +34,11 @@ export function Projects() {
   );
 }
 
+type DescriptionBlock =
+  | { type: 'paragraph'; text: string }
+  | { type: 'heading'; text: string }
+  | { type: 'list'; items: string[] };
+
 interface ProjectProps {
   project: {
     title: string;
@@ -51,6 +56,28 @@ interface ProjectProps {
   onImageClick: (image: string) => void;
 }
 
+const parseDescription = (description: string): DescriptionBlock[] => {
+  return description
+    .split('\n\n')
+    .map((block) => block.trim())
+    .filter(Boolean)
+    .map((block) => {
+      const lines = block.split('\n').map((line) => line.trim()).filter(Boolean);
+      const isList = lines.length > 0 && lines.every((line) => line.startsWith('- '));
+
+      if (isList) {
+        return { type: 'list', items: lines.map((line) => line.slice(2).trim()) };
+      }
+
+      const isHeading = lines.length === 1 && /^(Scope|Outcome)$/i.test(lines[0]);
+      if (isHeading) {
+        return { type: 'heading', text: lines[0] };
+      }
+
+      return { type: 'paragraph', text: lines.join(' ') };
+    });
+};
+
 const ProjectCard: React.FC<ProjectProps> = ({
   project,
   isHovered,
@@ -58,6 +85,8 @@ const ProjectCard: React.FC<ProjectProps> = ({
   onMouseLeave,
   onImageClick,
 }) => {
+  const descriptionBlocks = parseDescription(project.description);
+
   return (
     <div
       className={`group bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden transform transition-all duration-300 ${
@@ -89,13 +118,33 @@ const ProjectCard: React.FC<ProjectProps> = ({
           onImageClick={onImageClick}
         />
 
-        <p className="text-gray-700 text-justify mb-4">
-          {project.description.split('\n\n').map((paragraph, index) => (
-            <span key={index} className="block mb-2">
-              {paragraph}
-            </span>
-          ))}
-        </p>
+        <div className="text-gray-700 text-justify mb-4 space-y-3">
+          {descriptionBlocks.map((block, index) => {
+            if (block.type === 'heading') {
+              return (
+                <p key={index} className="text-gray-900 font-semibold tracking-wide">
+                  {block.text}
+                </p>
+              );
+            }
+
+            if (block.type === 'list') {
+              return (
+                <ul key={index} className="list-disc pl-6 space-y-1 text-gray-700">
+                  {block.items.map((item, itemIndex) => (
+                    <li key={itemIndex}>{item}</li>
+                  ))}
+                </ul>
+              );
+            }
+
+            return (
+              <p key={index} className="text-gray-700">
+                {block.text}
+              </p>
+            );
+          })}
+        </div>
 
         <ProjectLinks
           url={project.url}

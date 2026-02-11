@@ -16,6 +16,7 @@ export const projects = [
     backendUrl: `${GITHUB_LINK}/resume-feedback-platform.git`,
   },
 
+
   {
     title: 'Engineering Portfolio & Project Showcase',
     technologies: ['React', 'Firebase', 'CloudFront', 'AWS S3', 'Amplify'],
@@ -24,5 +25,25 @@ export const projects = [
     description: 'A dynamic web application to showcase diverse construction engineering projects, each featuring extensive image galleries. Leverages Firebase for a robust, scalable, and serverless backend.',
     frontendUrl: '',
     backendUrl: `${GITHUB_LINK}/zepedro-engineering-portfolio.git`,
+  },
+
+  {
+    title: 'Data Reliability & Predictive Analytics Platform',
+    url: 'https://predictive-analytics-for-rocket-launches.hmpedro.com/',
+    image: `${BASE_URL}/rocket_launch_img.jpg`,
+    description: `
+      An end-to-end data and machine learning project to analyze factors influencing launch success and cost reduction through booster reusability.\n
+      
+      Scope
+
+      - Data ingestion from multiple sources (SpaceX API + static dataset).
+      - Data transformation pipeline for exploration and model-ready datasets.
+      - Interactive dashboard (Dash/Plotly) to analyze payload ranges, launch-site success rates, and operational patterns.
+      - Predictive modeling with algorithm comparison (Logistic Regression, SVM, Decision Tree, KNN) and performance-based selection.
+      - Web deployment packaging using Gunicorn.
+    `,
+    technologies: ['Python', 'Pandas / NumPy', 'Scikit-learn', 'Plotly Dash', 'Flask Gunicorn', 'Requests'],
+    frontendCodeLink: '',
+    backendUrl: `${GITHUB_LINK}/rocket_launchs_predictive_analysis`,
   },
 ];

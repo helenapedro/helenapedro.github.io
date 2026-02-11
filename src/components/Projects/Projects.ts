@@ -36,9 +36,9 @@ export const projects = [
       
       Scope
 
-      - Data ingestion from multiple sources (SpaceX API + static dataset).
+      - Data ingestion from multiple sources including SpaceX API.
       - Data transformation pipeline for exploration and model-ready datasets.
-      - Interactive dashboard (Dash/Plotly) to analyze payload ranges, launch-site success rates, and operational patterns.
+      - Interactive dashboard to analyze payload ranges, launch-site success rates, and operational patterns.
       - Predictive modeling with algorithm comparison (Logistic Regression, SVM, Decision Tree, KNN) and performance-based selection.
       - Web deployment packaging using Gunicorn.
     `,

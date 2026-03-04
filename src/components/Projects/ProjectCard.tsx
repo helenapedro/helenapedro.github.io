@@ -5,6 +5,7 @@ import { ProjectModal } from './ProjectModal';
 import { ProjectTechnologies } from './ProjectTechnologies';
 import { ProjectImage } from './ProjectImage';
 import { ProjectLinks } from './ProjectLinks';
+import { ProjectDescription } from './ProjectDescription';
 
 const cardContainerClasses =
   'group bg-white border border-slate-200 rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl';
@@ -66,33 +67,7 @@ const ProjectCard = ({ project, onImageClick }: ProjectProps) => {
           onImageClick={onImageClick}
         />
 
-        <div className="text-slate-700 text-justify mb-4 space-y-3">
-          {project.descriptionBlocks.map((block, index) => {
-            if (block.type === 'heading') {
-              return (
-                <p key={`heading-${project.id}-${block.text}`} className="text-slate-900 font-semibold tracking-wide">
-                  {block.text}
-                </p>
-              );
-            }
-
-            if (block.type === 'list') {
-              return (
-                <ul key={`list-${project.id}-${index}`} className="list-disc pl-6 space-y-1 text-slate-700">
-                  {block.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              );
-            }
-
-            return (
-              <p key={`paragraph-${project.id}-${index}`} className="text-slate-700">
-                {block.text}
-              </p>
-            );
-          })}
-        </div>
+        <ProjectDescription projectId={project.id} blocks={project.descriptionBlocks} />
 
         <ProjectLinks
           url={project.url}

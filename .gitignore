@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 .bolt
 ProjectDemo.ts
+portfolio-sshkey
+portfolio-sshkey.pub

@@ -1,4 +1,4 @@
-import { MapPin, Backpack} from 'lucide-react';
+import { MapPin, Backpack, Clock3 } from 'lucide-react';
 import { SiFiles } from 'react-icons/si'; 
 import { ProfileImage } from './ProfileImage';
 import { StatusBadge } from './StatusBadge';
@@ -6,6 +6,7 @@ import { SocialLinks } from './SocialLinks';
 
 const BASE_URL = "https://hmpedropublicfiles.s3.us-east-2.amazonaws.com";
 const ADDRESS = "Bellevue, WA";
+const TIME_ZONE = "Pacific Standard Time (PST)";
 const AVAILABILITY = "Available for full-time W2 Employment";
 const JOB_TITLE = "and I'm a Software Engineer";
 const SCHOOL = "with a master's degree in Computer Science";
@@ -27,6 +28,7 @@ export function Hero() {
           </div>
           <div className="flex flex-col gap-4 text-sm mb-2 w-full">
             <StatusBadge Icon={MapPin} text={`${ADDRESS}`} />
+            <StatusBadge Icon={Clock3} text={TIME_ZONE} />
             <StatusBadge Icon={Backpack} text={`${AVAILABILITY}`} />
             <StatusBadge Icon={SiFiles} text="Resume" href={`${BASE_URL}/Resume-Pedro-HelenaMbeua.pdf`} target="_blank" />
           </div>

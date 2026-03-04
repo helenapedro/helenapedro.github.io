@@ -13,6 +13,7 @@ export interface Project {
   url: string;
   images: string[];
   descriptionBlocks: DescriptionBlock[];
+  featured?: boolean;
   frontendUrl?: string;
   backendUrl?: string;
 }
@@ -20,6 +21,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 'resume-feedback-platform',
+    featured: true,
     title: 'Resume Feedback Platform',
     technologies: ['Java', 'Spring Boot', 'JPA/Hibernate', 'Apache Kafka', 'MySQL', 'MongoDB', 'Redis', 'Docker'],
     url: 'https://resumefeedback.hmpedro.com/',

@@ -4,13 +4,14 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 interface ProjectImageProps {
   images: string[];
   title: string;
+  featured?: boolean;
   onImageClick: (image: string) => void;
 }
 
 const carouselButtonClasses =
   'absolute top-1/2 -translate-y-1/2 bg-slate-800/90 text-white p-2 rounded-full shadow-md hover:bg-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500';
 
-export const ProjectImage = ({ images, title, onImageClick }: ProjectImageProps) => {
+export const ProjectImage = ({ images, title, featured = false, onImageClick }: ProjectImageProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleNextImage = () => {
@@ -39,7 +40,9 @@ export const ProjectImage = ({ images, title, onImageClick }: ProjectImageProps)
         <img
           src={currentImage}
           alt={`${title} screenshot ${currentImageIndex + 1}`}
-          className="w-full h-60 object-cover transition-transform duration-700 cursor-pointer group-hover:scale-105"
+          className={`w-full object-cover transition-transform duration-700 cursor-pointer group-hover:scale-105 ${
+            featured ? 'h-80' : 'h-60'
+          }`}
           onClick={() => onImageClick(currentImage)}
         />
         {images.length > 1 && (

@@ -1,4 +1,4 @@
-import { FaEye, FaGithub, FaCode } from 'react-icons/fa';
+import { Code2, Eye, Github } from 'lucide-react';
 
 interface ProjectLinksProps {
   url?: string;
@@ -6,7 +6,10 @@ interface ProjectLinksProps {
   backendUrl?: string;
 }
 
-export const ProjectLinks: React.FC<ProjectLinksProps> = ({ url, frontendUrl, backendUrl }) => {
+const linkButtonClasses =
+  'mb-3 p-3 text-white rounded-full transition-colors text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500';
+
+export const ProjectLinks = ({ url, frontendUrl, backendUrl }: ProjectLinksProps) => {
   return (
     <div className="flex justify-center gap-4 mt-4">
       {url && (
@@ -14,9 +17,10 @@ export const ProjectLinks: React.FC<ProjectLinksProps> = ({ url, frontendUrl, ba
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="mb-3 p-3 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors text-lg"
+          className={`${linkButtonClasses} bg-emerald-600 hover:bg-emerald-700`}
+          aria-label="Open live project"
         >
-          <FaEye />
+          <Eye size={18} />
         </a>
       )}
       {frontendUrl && (
@@ -24,9 +28,10 @@ export const ProjectLinks: React.FC<ProjectLinksProps> = ({ url, frontendUrl, ba
           href={frontendUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mb-3 p-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors text-lg"
+          className={`${linkButtonClasses} bg-sky-600 hover:bg-sky-700`}
+          aria-label="Open frontend source code"
         >
-          <FaCode />
+          <Code2 size={18} />
         </a>
       )}
       {backendUrl && (
@@ -34,9 +39,10 @@ export const ProjectLinks: React.FC<ProjectLinksProps> = ({ url, frontendUrl, ba
           href={backendUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mb-3 p-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors text-lg"
+          className={`${linkButtonClasses} bg-slate-700 hover:bg-slate-800`}
+          aria-label="Open backend source code"
         >
-          <FaGithub />
+          <Github size={18} />
         </a>
       )}
     </div>

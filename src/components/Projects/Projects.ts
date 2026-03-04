@@ -60,17 +60,6 @@ export const projects: Project[] = [
         type: 'paragraph',
         text: 'An end-to-end data and machine learning project to analyze factors influencing launch success and cost reduction through booster reusability.',
       },
-      { type: 'heading', text: 'Scope' },
-      {
-        type: 'list',
-        items: [
-          'Data ingestion from multiple sources including SpaceX API.',
-          'Data transformation pipeline for exploration and model-ready datasets.',
-          'Interactive dashboard to analyze payload ranges, launch-site success rates, and operational patterns.',
-          'Predictive modeling with algorithm comparison (Logistic Regression, SVM, Decision Tree, KNN) and performance-based selection.',
-          'Web deployment packaging using Gunicorn.',
-        ],
-      },
     ],
     technologies: ['Python', 'Pandas / NumPy', 'Scikit-learn', 'Plotly Dash', 'Flask Gunicorn', 'Requests'],
     backendUrl: `${GITHUB_LINK}/rocket_launchs_predictive_analysis`,

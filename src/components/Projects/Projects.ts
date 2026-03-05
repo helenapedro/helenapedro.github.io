@@ -24,7 +24,7 @@ export const projects: Project[] = [
     featured: true,
     title: 'Resume Feedback Platform',
     technologies: ['Java', 'Spring Boot', 'JPA/Hibernate', 'Apache Kafka', 'MySQL', 'MongoDB', 'Redis', 'Docker'],
-    url: 'https://resumefeedback.hmpedro.com/',
+    url: 'https://feedback.hmpedro.com/',
     images: [
       `https://resume-feedback-platform.s3.us-east-1.amazonaws.com/archtectureanddataflow.png`
     ],

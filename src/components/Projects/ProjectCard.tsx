@@ -72,7 +72,7 @@ const ProjectCard = ({ project, featured = false, onImageClick }: ProjectProps) 
           </a>
         </div>
 
-        <ProjectTechnologies technologies={project.technologies} />
+        <ProjectTechnologies technologies={project.technologies} featured={featured} />
 
         <ProjectImage
           images={project.images}
@@ -81,7 +81,11 @@ const ProjectCard = ({ project, featured = false, onImageClick }: ProjectProps) 
           onImageClick={onImageClick}
         />
 
-        <ProjectDescription projectId={project.id} blocks={project.descriptionBlocks} />
+        <ProjectDescription
+          projectId={project.id}
+          blocks={project.descriptionBlocks}
+          featured={featured}
+        />
 
         <ProjectLinks
           url={project.url}

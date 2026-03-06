@@ -31,7 +31,7 @@ export const projects: Project[] = [
     descriptionBlocks: [
       {
         type: 'paragraph',
-        text: 'A backend-focused platform designed to process resume feedback at scale using asynchronous, event-driven architecture.',
+        text: 'Web app that allow users to upload, version, share, and collaboratively review resumes, featuring AI-generated feedback',
       },
     ],
     backendUrl: `${GITHUB_LINK}/resume-feedback-platform.git`,

@@ -96,7 +96,7 @@ export const projects: Project[] = [
     descriptionBlocks: [
       {
         type: "paragraph",
-        text: " A Dash app for exploring Angola fuel stations on an interactive map, a filterable table, and stats view with totals plus operator and municipality distributions. It consumes a public stations API, and supports CSV export.",
+        text: "A Dash app for exploring Angola fuel stations through a single interactive dashboard. It consumes a public stations API, lets users filter stations by search, brand, province, municipality, and station name.",
       },
     ],
     technologies: ["Python", "Flask", "SQL", "MongoDB", "Dash", "Plotly"],

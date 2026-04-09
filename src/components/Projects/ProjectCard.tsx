@@ -13,6 +13,13 @@ const cardContainerClasses =
 const externalLinkClasses =
   'text-sky-600 hover:text-sky-700 transition-transform hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded';
 
+const professionalHighlights = [
+  'Built backend systems for banking workflows serving high-scale operations.',
+  'Experience with Java, Spring Boot, Kafka, SQL, NoSQL, Node.js, Express, React/Redux, TypeScript, Redis, and Docker.',
+  'Strong in Full-Stack Development, Microservices Archtecture, System Design, Distributed Systems and Enterprise Applications.',
+  'Open to full-time Software Engineer opportunities.',
+];
+
 export function Projects() {
   const [modalImage, setModalImage] = useState<string | null>(null);
   const featuredProject = projects.find((project) => project.featured);
@@ -22,6 +29,46 @@ export function Projects() {
 
   return (
     <section className="mb-16">
+      <div className="mb-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">
+          Experience Snapshot
+        </p>
+        <div className="mt-4 space-y-3 text-slate-700">
+          <div>
+            <h2 className="text-2xl font-bold text-slate-900">
+              Millennium Atlantico Bank
+            </h2>
+            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+              Software Development Engineer
+            </p>
+          </div>
+          <p className="leading-7">
+            Built resilient backend services, analytics automation, and high-value
+            transaction reliability improvements.
+          </p>
+          <p className="leading-7">
+            Worked with Java, Spring Boot, Apache Kafka, IBM Db2, microservices,
+            and production systems.
+          </p>
+        </div>
+      </div>
+
+      <div className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">
+          Professional Highlights
+        </p>
+        <div className="mt-4 grid grid-cols-1 gap-3 md:grid-cols-2">
+          {professionalHighlights.map((highlight) => (
+            <div
+              key={highlight}
+              className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm leading-6 text-slate-700"
+            >
+              {highlight}
+            </div>
+          ))}
+        </div>
+      </div>
+
       <h2 className="text-3xl font-bold mb-8">Featured Projects</h2>
 
       {featuredProject && (

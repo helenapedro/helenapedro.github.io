@@ -40,7 +40,15 @@ export const projects: Project[] = [
     descriptionBlocks: [
       {
         type: "paragraph",
-        text: "Web app that allow users to upload, version, share, and collaboratively review resumes, featuring AI-generated feedback",
+        text: "Resume review platform designed around reliability, asynchronous processing, and collaborative workflows.",
+      },
+      {
+        type: "list",
+        items: [
+          "Built resilient backend services for resume ingestion, versioning, sharing, and AI-assisted feedback workflows.",
+          "Used Spring Boot, Kafka, Redis, MySQL, MongoDB, Docker, and React/Redux with TypeScript to support decoupled processing, state management, and operational scalability.",
+          "Focused on system design decisions that improve responsiveness, fault tolerance, and maintainability in real-world usage.",
+        ],
       },
     ],
     backendUrl: `${GITHUB_LINK}/resume-feedback-platform.git`,
@@ -62,10 +70,40 @@ export const projects: Project[] = [
     descriptionBlocks: [
       {
         type: "paragraph",
-        text: "A React single-page portfolio with routed project pages, filters, pagination, and Firestore-backed content, delivering a clean UX for showcasing projects, skills, and background.",
+        text: "Portfolio platform with structured project data, routing, and scalable presentation layers.",
+      },
+      {
+        type: "list",
+        items: [
+          "Implemented routed project pages, filtering, and pagination to improve discoverability and reduce friction for recruiters reviewing technical work.",
+          "Used React with Firestore-backed content management to support scalable updates.",
+          "Designed the experience to communicate engineering identity, project depth, and technical credibility in a clear hiring-focused flow.",
+        ],
       },
     ],
     backendUrl: `${GITHUB_LINK}/zepedro-engineering-portfolio.git`,
+  },
+  {
+    id: "fuel-station-explorer",
+    title: "Angola Fuel Stations Explorer",
+    url: "https://gaspump.hmpedro.com/",
+    images: [`${BASE_URL}/gaspump.jpeg`],
+    descriptionBlocks: [
+      {
+        type: "paragraph",
+        text: "Operational search and analytics dashboard for Angola fuel station data.",
+      },
+      {
+        type: "list",
+        items: [
+          "Integrated public station data into a single dashboard with filtering by brand, province, municipality, and station name.",
+          "Used Python, Flask, Dash, SQL, and MongoDB to support interactive exploration and scalable handling of location-driven data.",
+          "Improved discoverability for end users by converting a fragmented dataset into a searchable operational interface.",
+        ],
+      },
+    ],
+    technologies: ["Python", "Flask", "SQL", "MongoDB", "Dash", "Plotly"],
+    backendUrl: `${GITHUB_LINK}/Angola-Fuel-Station-Explorer`,
   },
   {
     id: "predictive-analytics-platform",
@@ -75,7 +113,14 @@ export const projects: Project[] = [
     descriptionBlocks: [
       {
         type: "paragraph",
-        text: "An end-to-end data and machine learning project to analyze factors influencing launch success and cost reduction through booster reusability.",
+        text: "End-to-end data reliability and predictive analytics system for launch outcomes.",
+      },
+      {
+        type: "list",
+        items: [
+          "Built a pipeline for collecting, cleaning, and analyzing launch data to support prediction experiments around mission success and booster reusability.",
+          "Integrated machine learning workflows with interactive dashboards so users can explore trends, evaluate predictions, and inspect operational factors.",
+        ],
       },
     ],
     technologies: [
@@ -87,19 +132,5 @@ export const projects: Project[] = [
       "Requests",
     ],
     backendUrl: `${GITHUB_LINK}/rocket_launchs_predictive_analysis`,
-  },
-  {
-    id: "fuel-station-explorer",
-    title: "Angola Fuel Stations Explorer",
-    url: "https://gaspump.hmpedro.com/",
-    images: [`${BASE_URL}/gaspump.jpeg`],
-    descriptionBlocks: [
-      {
-        type: "paragraph",
-        text: "A Dash app for exploring Angola fuel stations through a single interactive dashboard. It consumes a public stations API, lets users filter stations by search, brand, province, municipality, and station name.",
-      },
-    ],
-    technologies: ["Python", "Flask", "SQL", "MongoDB", "Dash", "Plotly"],
-    backendUrl: `${GITHUB_LINK}/Angola-Fuel-Station-Explorer`,
   },
 ];

@@ -1,41 +1,67 @@
-import { MapPin, Backpack, Clock3 } from 'lucide-react';
-import { SiFiles } from 'react-icons/si'; 
+import { MapPin, Backpack } from 'lucide-react';
 import { ProfileImage } from './ProfileImage';
 import { StatusBadge } from './StatusBadge';
-import { SocialLinks } from './SocialLinks';
 
-const BASE_URL = "https://hmpedropublicfiles.s3.us-east-2.amazonaws.com";
+const CONTACT_EMAIL = 'mailto:mbeuapedro@gmail.com';
+const LINKEDIN_URL = 'https://www.linkedin.com/in/helena-software-engineer';
+const GITHUB_URL = 'https://github.com/helenapedro';
 const ADDRESS = "Bellevue, WA";
-const TIME_ZONE = "Pacific Standard Time (PST)";
-const AVAILABILITY = "Available for full-time W2 Employment";
-const JOB_TITLE = "and I'm a Software Engineer";
-const SCHOOL = "with a master's degree in Computer Science";
+const AVAILABILITY = "Available for Full-Time W-2 Employment";
+
+const quickActions = [
+  {
+    label: 'Contact Me',
+    href: CONTACT_EMAIL,
+    className: 'bg-sky-400 text-slate-950 shadow-lg shadow-sky-900/30 hover:bg-sky-300',
+  },
+  {
+    label: 'LinkedIn',
+    href: LINKEDIN_URL,
+    className: 'border border-white/25 bg-white/10 text-white hover:bg-white/20',
+  },
+  {
+    label: 'GitHub',
+    href: GITHUB_URL,
+    className: 'border border-white/25 bg-white/10 text-white hover:bg-white/20',
+  },
+];
 
 export function Hero() {
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-gray-800 text-white h-full lg:min-h-screen">
+    <div className="bg-gradient-to-b from-gray-900 to-gray-800 text-white h-full">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyek0zNiAzMHYySDI0di0yaDF6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-10"></div>
-      <div className="px-6 py-12 relative">
-        <div className="flex flex-col items-center text-center">
+      <div className="relative px-5 py-8 sm:px-6 sm:py-10 lg:px-6 lg:py-8 xl:px-7">
+        <div className="mx-auto flex max-w-md flex-col items-center text-center">
           <ProfileImage />
-          <div className="mt-6">
-            Hi, my name is
-            <h1 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+          <div className="mt-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300 sm:text-sm">
+              Production-minded software engineer
+            </p>
+            <h1 className="mt-2 text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 sm:text-5xl lg:text-4xl xl:text-5xl">
               Helena Pedro
             </h1>
-            <p className="text-xl text-gray-200 mb-2">{`${JOB_TITLE}`}</p>
-            <p className="text-xl text-gray-200 mb-2">{`${SCHOOL}`}</p>
+            <p className="mt-3 text-lg leading-8 text-gray-100 sm:text-xl lg:text-lg xl:text-xl">
+              I build reliable backend systems and scalable applications with a focus on
+              resilience, observability, and business impact.
+            </p>
           </div>
-          <div className="flex flex-col gap-4 text-sm mb-2 w-full">
+          <div className="mt-5 flex w-full max-w-sm flex-col gap-2.5 text-sm">
             <StatusBadge Icon={MapPin} text={`${ADDRESS}`} />
-            <StatusBadge Icon={Clock3} text={TIME_ZONE} />
             <StatusBadge Icon={Backpack} text={`${AVAILABILITY}`} />
-            <StatusBadge Icon={SiFiles} text="Resume" href={`${BASE_URL}/Resume-Pedro-HelenaMbeua.pdf`} target="_blank" />
           </div>
-          <p className="text-base leading-relaxed mb-2 text-gray-300 max-w-2xl mx-auto">
-            This is a showcase of my projects and abilities
-          </p>
-          <SocialLinks />
+          <div className="mt-5 grid w-full max-w-sm grid-cols-1 gap-2.5 sm:max-w-xl sm:grid-cols-2 lg:max-w-sm xl:max-w-xl">
+            {quickActions.map(({ label, href, className }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith('mailto:') ? undefined : '_blank'}
+                rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+                className={`rounded-xl px-4 py-3 text-sm font-semibold transition-colors ${className}`}
+              >
+                {label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </div>

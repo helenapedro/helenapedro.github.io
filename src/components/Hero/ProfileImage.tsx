@@ -7,7 +7,7 @@ export function ProfileImage() {
       <img 
         src={`${BASE_URL}/me.jpeg`}
         alt="Helena's profile"
-        className="relative w-32 h-32 rounded-full object-cover border-2 border-white/50"
+        className="relative h-24 w-24 rounded-full border-2 border-white/50 object-cover sm:h-28 sm:w-28 lg:h-24 lg:w-24 xl:h-28 xl:w-28"
       />
     </div>
   );

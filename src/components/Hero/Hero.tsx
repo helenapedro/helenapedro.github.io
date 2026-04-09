@@ -40,10 +40,10 @@ export function Hero() {
             <h1 className="mt-2 text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 sm:text-5xl lg:text-4xl xl:text-5xl">
               Helena Pedro
             </h1>
-            <p className="mt-3 text-lg leading-8 text-gray-100 sm:text-xl lg:text-lg xl:text-xl">
+            {/* <p className="mt-3 text-lg leading-8 text-gray-100 sm:text-xl lg:text-lg xl:text-xl">
               I build reliable backend systems and scalable applications with a focus on
               resilience, observability, and business impact.
-            </p>
+            </p> */}
           </div>
           <div className="mt-5 flex w-full max-w-sm flex-col gap-2.5 text-sm">
             <StatusBadge Icon={MapPin} text={`${ADDRESS}`} />

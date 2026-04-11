@@ -26,12 +26,13 @@ export const projects: Project[] = [
     technologies: [
       "Java",
       "Spring Boot",
-      "JPA/Hibernate",
       "Apache Kafka",
+      "AWS S3",
+      "System Design",
+      "AI-Native Architecture",
       "MySQL",
       "MongoDB",
-      "Redis",
-      "Docker",
+      "Analytical Judgment",
     ],
     url: "https://feedback.hmpedro.com/",
     images: [
@@ -40,14 +41,14 @@ export const projects: Project[] = [
     descriptionBlocks: [
       {
         type: "paragraph",
-        text: "Resume review platform designed around reliability, asynchronous processing, and collaborative workflows.",
+        text: "Enterprise-grade Spring Boot platform that automates resume reviews through a decoupled asynchronous pipeline designed for consistency, responsiveness, and system reliability.",
       },
       {
         type: "list",
         items: [
-          "Built resilient backend services for resume ingestion, versioning, sharing, and AI-assisted feedback workflows.",
-          "Used Spring Boot, Kafka, Redis, MySQL, MongoDB, Docker, and React/Redux with TypeScript to support decoupled processing, state management, and operational scalability.",
-          "Focused on system design decisions that improve responsiveness, fault tolerance, and maintainability in real-world usage.",
+          "Architected a multi-module monorepo with Spring Boot and Apache Kafka to separate concerns and scale workers independently.",
+          "Chose an asynchronous Kafka-based pipeline over synchronous REST orchestration to decouple user-facing latency from slower AI processing and support version-aware AI memory for auditability.",
+          "Implemented dual persistence with MySQL for core state and MongoDB for feedback documents, while managing environment-specific risks such as Kafka SSL configuration and post-commit event publishing.",
         ],
       },
     ],
@@ -57,27 +58,27 @@ export const projects: Project[] = [
     id: "engineering-portfolio",
     title: "Engineering Portfolio",
     technologies: [
-      "React",
-      "React Router",
-      "Firebase/Firestore",
-      "JavaScript",
-      "React Bootstrap",
-      "CloudFront",
+      "React 18",
+      "TypeScript",
       "AWS S3",
+      "CloudFront",
+      "Firebase",
+      "Firestore",
+      "Performance Optimization",
     ],
     url: "https://zepedro-portfolio.hmpedro.com/",
     images: [`${BASE_URL}/thisisengineering.jpg`],
     descriptionBlocks: [
       {
         type: "paragraph",
-        text: "Portfolio platform with structured project data, routing, and scalable presentation layers.",
+        text: "High-performance React single-page application built to showcase technical credibility through scalable frontend architecture and optimized content delivery.",
       },
       {
         type: "list",
         items: [
-          "Implemented routed project pages, filtering, and pagination to improve discoverability and reduce friction for recruiters reviewing technical work.",
-          "Used React with Firestore-backed content management to support scalable updates.",
-          "Designed the experience to communicate engineering identity, project depth, and technical credibility in a clear hiring-focused flow.",
+          "Architected the frontend around fast page loads using a multi-tier caching strategy with in-memory caching, localStorage fallback, and TTL-based expiration to reduce redundant Firestore reads.",
+          "Implemented server-side querying and cursor-based pagination in Firestore to avoid loading entire collections into the browser as project data grows.",
+          "Leveraged AWS S3 and CloudFront for global asset delivery and built reusable hooks for data fetching and state management to keep the codebase maintainable.",
         ],
       },
     ],
@@ -91,18 +92,18 @@ export const projects: Project[] = [
     descriptionBlocks: [
       {
         type: "paragraph",
-        text: "Operational search and analytics dashboard for Angola fuel station data.",
+        text: "Real-time Python dashboard that unifies fragmented public fuel station data into a searchable operational interface for logistics workflows and end users.",
       },
       {
         type: "list",
         items: [
-          "Integrated public station data into a single dashboard with filtering by brand, province, municipality, and station name.",
-          "Used Python, Flask, Dash, SQL, and MongoDB to support interactive exploration and scalable handling of location-driven data.",
-          "Improved discoverability for end users by converting a fragmented dataset into a searchable operational interface.",
+          "Prioritized system availability with short upstream request timeouts and in-memory caching so the UI could remain functional during public API outages.",
+          "Developed a Regex-based scraper to extract station data and migrated unstructured records into a structured MySQL-backed dataset.",
+          "Built a map-first dashboard with clickable markers and detailed filtering by brand, province, and municipality, optimized for sub-second data retrieval.",
         ],
       },
     ],
-    technologies: ["Python", "Flask", "SQL", "MongoDB", "Dash", "Plotly"],
+    technologies: ["Python", "Cloud Infrastructure", "Resilience", "MySQL", "Data Management", "Dashboard Development"],
     backendUrl: `${GITHUB_LINK}/Angola-Fuel-Station-Explorer`,
   },
   {
@@ -113,23 +114,25 @@ export const projects: Project[] = [
     descriptionBlocks: [
       {
         type: "paragraph",
-        text: "End-to-end data reliability and predictive analytics system for launch outcomes.",
+        text: "End-to-end Python data pipeline and interactive dashboard that predicts mission success and booster reusability using validated machine learning models.",
       },
       {
         type: "list",
         items: [
-          "Built a pipeline for collecting, cleaning, and analyzing launch data to support prediction experiments around mission success and booster reusability.",
-          "Integrated machine learning workflows with interactive dashboards so users can explore trends, evaluate predictions, and inspect operational factors.",
+          "Built a robust ingestion and transformation pipeline with Pandas and NumPy to clean fragmented launch datasets and improve data integrity before modeling.",
+          "Implemented a comparative modeling framework across Logistic Regression, SVM, KNN, and related Scikit-learn workflows to select models using precision-based evaluation instead of relying on a black-box approach.",
+          "Deployed an interactive Plotly Dash experience on AWS so users can inspect payload ranges, launch-site outcomes, and prediction behavior in real time.",
         ],
       },
     ],
     technologies: [
-      "Python",
-      "Pandas / NumPy",
+      "Python (Pandas/NumPy)",
+      "Machine Learning",
+      "AWS",
       "Scikit-learn",
       "Plotly Dash",
-      "Flask Gunicorn",
-      "Requests",
+      "Data Engineering",
+      "MLOps",
     ],
     backendUrl: `${GITHUB_LINK}/rocket_launchs_predictive_analysis`,
   },

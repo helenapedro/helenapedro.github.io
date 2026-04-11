@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { projects, type Project } from './Projects';
 import { ProjectModal } from './ProjectModal';
@@ -13,11 +13,116 @@ const cardContainerClasses =
 const externalLinkClasses =
   'text-sky-600 hover:text-sky-700 transition-transform hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded';
 
-const professionalHighlights = [
-  'Built backend systems for banking workflows serving high-scale operations.',
-  'Experience with Java, Spring Boot, Kafka, SQL, NoSQL, Node.js, Express, React/Redux, TypeScript, Redis, and Docker.',
-  'Strong in Full-Stack Development, Microservices Archtecture, System Design, Distributed Systems and Enterprise Applications.',
-  'Open to full-time Software Engineer opportunities.',
+interface SectionItem {
+  title: ReactNode;
+  content: ReactNode;
+}
+
+const analyticalJudgmentItems: SectionItem[] = [
+  {
+    title: <>ATM Network Reliability Case</>,
+    content: (
+      <>
+        Diagnosed month-long intermittent failures affecting 107 ATMs (~1M clients) by
+        uncovering hidden <strong>SQL lock contention</strong> issues and enhancing
+        database-level observability when standard logs were insufficient.
+      </>
+    ),
+  },
+  {
+    title: <>Financial Pipeline Optimization</>,
+    content: (
+      <>
+        Redesigned liquidity analytics by strategically <strong>decoupling data
+        ingestion from processing</strong>, achieving a <strong>12x acceleration</strong>{' '}
+        in financial availability calculations while ensuring data integrity.
+      </>
+    ),
+  },
+  {
+    title: <>Security Hardening</>,
+    content: (
+      <>
+        Audited and reconfigured NGINX reverse proxies to disable weak ciphers
+        (TLS 1.0/1.1) and implement <strong>OWASP security headers</strong>, meeting
+        critical compliance gates for high-value strategic partnerships.
+      </>
+    ),
+  },
+];
+
+const technicalDnaItems: SectionItem[] = [
+  {
+    title: <>Cloud &amp; Infrastructure</>,
+    content: (
+      <>
+        AWS Specialist (S3, EC2, CloudFront, EKS), Docker, Kubernetes, CI/CD, Nginx.
+      </>
+    ),
+  },
+  {
+    title: <>Core Languages &amp; Frameworks</>,
+    content: (
+      <>
+        Java (Spring Boot), Python (Pandas/NumPy, Scikit-learn), TypeScript, React,
+        Node.js.
+      </>
+    ),
+  },
+  {
+    title: <>Modern Data Platforms</>,
+    content: (
+      <>
+        Expert in SQL (IBM Db2, MySQL) and NoSQL (MongoDB, Redis); proficient in
+        high-growth platforms like <strong>Azure Databricks</strong> and{' '}
+        <strong>Google BigQuery</strong>.
+      </>
+    ),
+  },
+];
+
+const leadershipItems: SectionItem[] = [
+  {
+    title: <>Operational Efficiency</>,
+    content: (
+      <>
+        Delivered a secure KPI reporting platform for 100+ branches, automating manual
+        workflows and <strong>eliminating 40+ hours per week</strong> of reporting
+        effort.
+      </>
+    ),
+  },
+  {
+    title: <>Team Leadership</>,
+    content: (
+      <>
+        Led cross-functional teams of 4+ engineers (Security, Data, and SWE) during
+        large-scale enterprise deployments.
+      </>
+    ),
+  },
+  {
+    title: <>Resource Optimization</>,
+    content: (
+      <>
+        Reduced peak-time database CPU usage by <strong>~30%</strong> by eliminating
+        N+1 query patterns and optimizing transaction boundaries in production.
+      </>
+    ),
+  },
+];
+
+const educationItems: SectionItem[] = [
+  {
+    title: <>M.S. in Computer Science (MIU, Bellevue/Remote)</>,
+    content: (
+      <>
+        Specializing in <strong>Enterprise Architecture</strong> and{' '}
+        <strong>Distributed Systems Design</strong>, focusing on building scalable,
+        AI-ready infrastructures that prioritize consistency and fault tolerance.
+      </>
+    ),
+  },
 ];
 
 export function Projects() {
@@ -29,45 +134,15 @@ export function Projects() {
 
   return (
     <section className="mb-16">
-      <div className="mb-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">
-          Experience Snapshot
-        </p>
-        <div className="mt-4 space-y-3 text-slate-700">
-          <div>
-            <h2 className="text-2xl font-bold text-slate-900">
-              Millennium Atlantico Bank
-            </h2>
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-              Software Development Engineer
-            </p>
-          </div>
-          <p className="leading-7">
-            Built resilient backend services, analytics automation, and high-value
-            transaction reliability improvements.
-          </p>
-          <p className="leading-7">
-            Worked with Java, Spring Boot, Apache Kafka, IBM Db2, microservices,
-            and production systems.
-          </p>
-        </div>
-      </div>
+      <ContentSection
+        title="Analytical Judgment & Systemic Troubleshooting"
+        items={analyticalJudgmentItems}
+      />
 
-      <div className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">
-          Professional Highlights
-        </p>
-        <div className="mt-4 grid grid-cols-1 gap-3 md:grid-cols-2">
-          {professionalHighlights.map((highlight) => (
-            <div
-              key={highlight}
-              className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm leading-6 text-slate-700"
-            >
-              {highlight}
-            </div>
-          ))}
-        </div>
-      </div>
+      <ContentSection
+        title="Technical DNA"
+        items={technicalDnaItems}
+      />
 
       <h2 className="text-3xl font-bold mb-8">Featured Projects</h2>
 
@@ -89,10 +164,47 @@ export function Projects() {
         </div>
       )}
 
+      <ContentSection
+        title="Leadership & Business Impact"
+        items={leadershipItems}
+      />
+
+      <ContentSection
+        title="Education & Research"
+        items={educationItems}
+      />
+
       {modalImage && <ProjectModal modalImage={modalImage} closeModal={closeModal} />}
     </section>
   );
 }
+
+interface ContentSectionProps {
+  title: string;
+  items: SectionItem[];
+}
+
+const ContentSection = ({ title, items }: ContentSectionProps) => {
+  return (
+    <div className="mb-8 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+      <h2 className="text-3xl font-bold text-slate-900">{title}</h2>
+      <ul className="mt-5 space-y-3">
+        {items.map((item, index) => (
+          <li
+            key={`${title}-${index}`}
+            className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-700 shadow-sm"
+          >
+            <span className="text-base font-semibold leading-7 text-slate-900">
+              {item.title}
+            </span>
+            {': '}
+            <span className="text-base leading-7">{item.content}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 interface ProjectProps {
   project: Project;

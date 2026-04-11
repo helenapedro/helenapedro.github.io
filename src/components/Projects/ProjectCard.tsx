@@ -234,6 +234,9 @@ interface ProjectProps {
 const snapshotButtonClasses =
   'inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500';
 
+const websiteButtonClasses =
+  'inline-flex items-center justify-center rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500';
+
 const ProjectSnapshotCard = ({ project }: { project: Project }) => {
   const [modalImage, setModalImage] = useState<string | null>(null);
 
@@ -268,7 +271,15 @@ const ProjectSnapshotCard = ({ project }: { project: Project }) => {
             {project.summary}
           </p>
 
-          <div className="mt-5 flex justify-center">
+          <div className="mt-5 flex flex-col items-center gap-3">
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={websiteButtonClasses}
+            >
+              View Website
+            </a>
             <Link to={`/projects/${project.id}`} className={snapshotButtonClasses}>
               View Architectural Deep-Dive
             </Link>

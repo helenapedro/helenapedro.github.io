@@ -35,7 +35,7 @@ export function Hero() {
           <ProfileImage />
           <div className="mt-4">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300 sm:text-sm">
-              Senior Software Engineer | Expert in Scalable AI-Ready Systems & Cloud Architecture
+              Software Engineer | Expert in Scalable AI-Ready Systems & Cloud Architecture
             </p>
             <h1 className="mt-2 text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 sm:text-5xl lg:text-4xl xl:text-5xl">
               Helena Pedro

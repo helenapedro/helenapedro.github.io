@@ -39,16 +39,16 @@ const analyticalJudgmentItems: SectionItem[] = [
       </>
     ),
   },
-  {
-    title: <>Security Hardening</>,
-    content: (
-      <>
-        Audited and reconfigured NGINX reverse proxies to disable weak ciphers
-        (TLS 1.0/1.1) and implement <strong>OWASP security headers</strong>, meeting
-        critical compliance gates for high-value strategic partnerships.
-      </>
-    ),
-  },
+  // {
+  //   title: <>Security Hardening</>,
+  //   content: (
+  //     <>
+  //       Audited and reconfigured NGINX reverse proxies to disable weak ciphers
+  //       (TLS 1.0/1.1) and implement <strong>OWASP security headers</strong>, meeting
+  //       critical compliance gates for high-value strategic partnerships.
+  //     </>
+  //   ),
+  // },
 ];
 
 const technicalDnaItems: SectionItem[] = [

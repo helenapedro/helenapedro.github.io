@@ -1,4 +1,4 @@
-import { MapPin, Backpack } from 'lucide-react';
+import { Clock3, MapPin } from 'lucide-react';
 import { ProfileImage } from './ProfileImage';
 import { StatusBadge } from './StatusBadge';
 
@@ -6,7 +6,7 @@ const CONTACT_EMAIL = 'mailto:mbeuapedro@gmail.com';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/helena-software-engineer';
 const GITHUB_URL = 'https://github.com/helenapedro';
 const ADDRESS = "Bellevue, WA";
-const AVAILABILITY = "Available for Full-Time W-2 Employment";
+const TIME_ZONE = 'Pacific Time (PT)';
 
 const quickActions = [
   {
@@ -47,7 +47,7 @@ export function Hero() {
           </div>
           <div className="mt-5 flex w-full max-w-sm flex-col gap-2.5 text-sm">
             <StatusBadge Icon={MapPin} text={`${ADDRESS}`} />
-            <StatusBadge Icon={Backpack} text={`${AVAILABILITY}`} />
+            <StatusBadge Icon={Clock3} text={TIME_ZONE} />
           </div>
           <div className="mt-5 grid w-full max-w-sm grid-cols-1 gap-2.5 sm:max-w-xl sm:grid-cols-2 lg:max-w-sm xl:max-w-xl">
             {quickActions.map(({ label, href, className }) => (

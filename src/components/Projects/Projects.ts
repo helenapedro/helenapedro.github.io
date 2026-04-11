@@ -136,4 +136,38 @@ export const projects: Project[] = [
     ],
     backendUrl: `${GITHUB_LINK}/rocket_launchs_predictive_analysis`,
   },
+  {
+    id: "helena-explora",
+    title: "Helena Explora: Responsible AI Platform",
+    technologies: [
+      "TypeScript",
+      "React",
+      "Express",
+      "Supabase",
+      "Cloud-Native",
+      "Application Security",
+      "Prompt Engineering",
+      "Responsible AI",
+    ],
+    url: "https://helenaexplora.hmpedro.com/",
+    images: [
+      "https://raw.githubusercontent.com/helenaexplora/he-connect/main/src/assets/he-logo.jpg",
+    ],
+    descriptionBlocks: [
+      {
+        type: "paragraph",
+        text: "AI-assisted educational platform designed to provide safe, bounded guidance for international students by translating complex product constraints into a resilient software architecture.",
+      },
+      {
+        type: "list",
+        items: [
+          "Designed a scoped AI chatbot as a narrow assistant focused strictly on U.S. education topics, proactively reducing hallucination risk in sensitive areas such as immigration and legal guidance.",
+          "Chose an API-oriented Express architecture instead of embedding AI logic in the frontend, creating a clear boundary for independent prompt and model evolution while centralizing backend safety and observability controls.",
+          "Implemented explicit persistent sessions with UUIDs in localStorage and a stored conversationId, enabling full conversation restoration across sessions and page reloads.",
+          "Integrated Supabase Edge Functions and Cloudflare Turnstile for secure lead-capture workflows, and refactored the chatbot into reusable TypeScript services and hooks to improve maintainability.",
+        ],
+      },
+    ],
+    backendUrl: "https://github.com/helenapedro/ai-chatbot-app/tree/main/packages/server",
+  },
 ];

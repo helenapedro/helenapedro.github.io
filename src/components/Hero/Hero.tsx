@@ -6,7 +6,7 @@ const CONTACT_EMAIL = 'mailto:mbeuapedro@gmail.com';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/helena-software-engineer';
 const GITHUB_URL = 'https://github.com/helenapedro';
 const ADDRESS = "Bellevue, WA";
-const TIME_ZONE = 'Pacific Time (PT)';
+const TIME_ZONE = 'Pacific Time (PST)';
 
 const quickActions = [
   {

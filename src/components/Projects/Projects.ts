@@ -9,6 +9,7 @@ export type DescriptionBlock =
 export interface Project {
   id: string;
   title: string;
+  summary: string;
   technologies: string[];
   url: string;
   images: string[];
@@ -23,6 +24,8 @@ export const projects: Project[] = [
     id: "resume-feedback-platform",
     featured: true,
     title: "Resume Feedback Platform",
+    summary:
+      "Enterprise-grade Spring Boot platform that automates resume reviews through a decoupled asynchronous pipeline designed for consistency, responsiveness, and system reliability.",
     technologies: [
       "Java",
       "Spring Boot",
@@ -40,10 +43,6 @@ export const projects: Project[] = [
     ],
     descriptionBlocks: [
       {
-        type: "paragraph",
-        text: "Enterprise-grade Spring Boot platform that automates resume reviews through a decoupled asynchronous pipeline designed for consistency, responsiveness, and system reliability.",
-      },
-      {
         type: "list",
         items: [
           "Architected a multi-module monorepo with Spring Boot and Apache Kafka to separate concerns and scale workers independently.",
@@ -57,6 +56,8 @@ export const projects: Project[] = [
   {
     id: "engineering-portfolio",
     title: "Engineering Portfolio",
+    summary:
+      "High-performance React single-page application built to showcase technical credibility through scalable frontend architecture and optimized content delivery.",
     technologies: [
       "React 18",
       "TypeScript",
@@ -69,10 +70,6 @@ export const projects: Project[] = [
     url: "https://zepedro-portfolio.hmpedro.com/",
     images: [`${BASE_URL}/thisisengineering.jpg`],
     descriptionBlocks: [
-      {
-        type: "paragraph",
-        text: "High-performance React single-page application built to showcase technical credibility through scalable frontend architecture and optimized content delivery.",
-      },
       {
         type: "list",
         items: [
@@ -87,13 +84,11 @@ export const projects: Project[] = [
   {
     id: "fuel-station-explorer",
     title: "Angola Fuel Stations Explorer",
+    summary:
+      "Real-time Python dashboard that unifies fragmented public fuel station data into a searchable operational interface for logistics workflows and end users.",
     url: "https://gaspump.hmpedro.com/",
     images: [`${BASE_URL}/gaspump.jpeg`],
     descriptionBlocks: [
-      {
-        type: "paragraph",
-        text: "Real-time Python dashboard that unifies fragmented public fuel station data into a searchable operational interface for logistics workflows and end users.",
-      },
       {
         type: "list",
         items: [
@@ -103,19 +98,24 @@ export const projects: Project[] = [
         ],
       },
     ],
-    technologies: ["Python", "Cloud Infrastructure", "Resilience", "MySQL", "Data Management", "Dashboard Development"],
+    technologies: [
+      "Python",
+      "Cloud Infrastructure",
+      "Resilience",
+      "MySQL",
+      "Data Management",
+      "Dashboard Development",
+    ],
     backendUrl: `${GITHUB_LINK}/Angola-Fuel-Station-Explorer`,
   },
   {
     id: "predictive-analytics-platform",
     title: "Data Reliability & Predictive Analytics Platform",
+    summary:
+      "End-to-end Python data pipeline and interactive dashboard that predicts mission success and booster reusability using validated machine learning models.",
     url: "https://predictive-analytics-for-rocket-launches.hmpedro.com/",
     images: [`${BASE_URL}/rocket_launch_img.jpg`],
     descriptionBlocks: [
-      {
-        type: "paragraph",
-        text: "End-to-end Python data pipeline and interactive dashboard that predicts mission success and booster reusability using validated machine learning models.",
-      },
       {
         type: "list",
         items: [
@@ -139,6 +139,8 @@ export const projects: Project[] = [
   {
     id: "helena-explora",
     title: "Helena Explora: Responsible AI Platform",
+    summary:
+      "AI-assisted educational platform designed to provide safe, bounded guidance for international students by translating complex product constraints into a resilient software architecture.",
     technologies: [
       "TypeScript",
       "React",
@@ -155,10 +157,6 @@ export const projects: Project[] = [
     ],
     descriptionBlocks: [
       {
-        type: "paragraph",
-        text: "AI-assisted educational platform designed to provide safe, bounded guidance for international students by translating complex product constraints into a resilient software architecture.",
-      },
-      {
         type: "list",
         items: [
           "Designed a scoped AI chatbot as a narrow assistant focused strictly on U.S. education topics, proactively reducing hallucination risk in sensitive areas such as immigration and legal guidance.",
@@ -168,6 +166,7 @@ export const projects: Project[] = [
         ],
       },
     ],
-    backendUrl: "https://github.com/helenapedro/ai-chatbot-app/tree/main/packages/server",
+    backendUrl:
+      "https://github.com/helenapedro/ai-chatbot-app/tree/main/packages/server",
   },
 ];

@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import { ExternalLink } from 'lucide-react';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import { projects, type Project } from './Projects';
 import { ProjectModal } from './ProjectModal';
 import { ProjectTechnologies } from './ProjectTechnologies';
@@ -126,55 +127,73 @@ const educationItems: SectionItem[] = [
 ];
 
 export function Projects() {
-  const [modalImage, setModalImage] = useState<string | null>(null);
-  const featuredProject = projects.find((project) => project.featured);
-  const standardProjects = projects.filter((project) => !project.featured);
+  return (
+    <section className="mb-16">
+      <h2 className="text-3xl font-bold mb-8">Featured Projects</h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {projects.map((project) => (
+          <ProjectSnapshotCard key={project.id} project={project} />
+        ))}
+      </div>
+    </section>
+  );
+}
 
-  const closeModal = () => setModalImage(null);
+export function ProjectDetailPage() {
+  const { id } = useParams<{ id: string }>();
+  const [modalImage, setModalImage] = useState<string | null>(null);
+  const project = projects.find((item) => item.id === id);
+
+  if (!project) {
+    return <Navigate to="/" replace />;
+  }
 
   return (
     <section className="mb-16">
+      <div className="mb-6">
+        <Link
+          to="/"
+          className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition-colors hover:bg-slate-50"
+        >
+          Back to Executive Overview
+        </Link>
+      </div>
+
+      <div className="mb-6 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">
+          Architectural Deep-Dive
+        </p>
+        <h1 className="mt-3 text-3xl font-bold text-slate-900">{project.title}</h1>
+        <p className="mt-3 max-w-4xl text-lg leading-8 text-slate-700">
+          {project.summary}
+        </p>
+      </div>
+
+      <ProjectCard project={project} featured onImageClick={setModalImage} />
+
+      {modalImage && <ProjectModal modalImage={modalImage} closeModal={() => setModalImage(null)} />}
+    </section>
+  );
+}
+
+export function AboutPage() {
+  return (
+    <section className="mb-16">
+      <div className="mb-6 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+        <h1 className="text-3xl font-bold text-slate-900">About</h1>
+        <p className="mt-3 max-w-4xl text-lg leading-8 text-slate-700">
+          Senior software engineer focused on scalable backend platforms, cloud-native
+          systems, AI-ready architecture, and business-critical reliability.
+        </p>
+      </div>
+
       <ContentSection
         title="Analytical Judgment & Systemic Troubleshooting"
         items={analyticalJudgmentItems}
       />
-
-      <ContentSection
-        title="Technical DNA"
-        items={technicalDnaItems}
-      />
-
-      <h2 className="text-3xl font-bold mb-8">Featured Projects</h2>
-
-      {featuredProject && (
-        <div className="mb-6">
-          <ProjectCard project={featuredProject} featured onImageClick={setModalImage} />
-        </div>
-      )}
-
-      {standardProjects.length > 0 && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {standardProjects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              onImageClick={setModalImage}
-            />
-          ))}
-        </div>
-      )}
-
-      <ContentSection
-        title="Leadership & Business Impact"
-        items={leadershipItems}
-      />
-
-      <ContentSection
-        title="Education & Research"
-        items={educationItems}
-      />
-
-      {modalImage && <ProjectModal modalImage={modalImage} closeModal={closeModal} />}
+      <ContentSection title="Technical DNA" items={technicalDnaItems} />
+      <ContentSection title="Leadership & Business Impact" items={leadershipItems} />
+      <ContentSection title="Education & Research" items={educationItems} />
     </section>
   );
 }
@@ -211,6 +230,55 @@ interface ProjectProps {
   featured?: boolean;
   onImageClick: (image: string) => void;
 }
+
+const snapshotButtonClasses =
+  'inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500';
+
+const ProjectSnapshotCard = ({ project }: { project: Project }) => {
+  const [modalImage, setModalImage] = useState<string | null>(null);
+
+  return (
+    <>
+      <div className={cardContainerClasses}>
+        <div className="p-6">
+          <div className="relative mb-4">
+            <h3 className="min-h-14 flex items-center justify-center px-10 text-center text-xl font-semibold leading-snug text-slate-900">
+              {project.title}
+            </h3>
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${externalLinkClasses} absolute right-0 top-1/2 -translate-y-1/2`}
+              aria-label={`Open live demo for ${project.title}`}
+            >
+              <ExternalLink size={28} />
+            </a>
+          </div>
+
+          <ProjectTechnologies technologies={project.technologies} />
+
+          <ProjectImage
+            images={project.images}
+            title={project.title}
+            onImageClick={setModalImage}
+          />
+
+          <p className="mb-4 text-base leading-7 text-slate-700">
+            {project.summary}
+          </p>
+
+          <div className="mt-5 flex justify-center">
+            <Link to={`/projects/${project.id}`} className={snapshotButtonClasses}>
+              View Architectural Deep-Dive
+            </Link>
+          </div>
+        </div>
+      </div>
+      {modalImage && <ProjectModal modalImage={modalImage} closeModal={() => setModalImage(null)} />}
+    </>
+  );
+};
 
 const ProjectCard = ({ project, featured = false, onImageClick }: ProjectProps) => {
   return (
@@ -255,3 +323,4 @@ const ProjectCard = ({ project, featured = false, onImageClick }: ProjectProps) 
     </div>
   );
 };
+

@@ -1,5 +1,6 @@
+import { Route, Routes } from 'react-router-dom';
 import { Hero } from './components/Hero/Hero';
-import { Projects } from './components/Projects/ProjectCard';
+import { AboutPage, ProjectDetailPage, Projects } from './components/Projects/ProjectCard';
 
 function App() {
   return (
@@ -12,7 +13,11 @@ function App() {
       {/* Main content */}
       <div className="w-full lg:pl-4 xl:pl-6">
         <main className="container mx-auto px-4 py-6 sm:px-6 lg:py-8 max-w-5xl">
-          <Projects />
+          <Routes>
+            <Route path="/" element={<Projects />} />
+            <Route path="/projects/:id" element={<ProjectDetailPage />} />
+            <Route path="/about" element={<AboutPage />} />
+          </Routes>
         </main>
       </div>
     </div>

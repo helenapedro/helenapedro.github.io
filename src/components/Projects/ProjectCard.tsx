@@ -1,5 +1,13 @@
 import { useState, type ReactNode } from 'react';
-import { ExternalLink } from 'lucide-react';
+import {
+  BadgeCheck,
+  BarChart3,
+  BrainCircuit,
+  Briefcase,
+  ExternalLink,
+  GraduationCap,
+  type LucideIcon,
+} from 'lucide-react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { projects, type Project } from './Projects';
 import { ProjectModal } from './ProjectModal';
@@ -13,6 +21,8 @@ const cardContainerClasses =
 
 const externalLinkClasses =
   'text-sky-600 hover:text-sky-700 transition-transform hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded';
+
+const CREDLY_URL = 'https://www.credly.com/users/helena-pedro';
 
 interface SectionItem {
   title: ReactNode;
@@ -75,8 +85,8 @@ const technicalDnaItems: SectionItem[] = [
     content: (
       <>
         Expert in SQL (IBM Db2, MySQL) and NoSQL (MongoDB, Redis); proficient in
-        high-growth platforms like <strong>Azure Databricks</strong> and{' '}
-        <strong>Google BigQuery</strong>.
+        high-growth platforms like <strong>Amazon EMR</strong> and{' '}
+        <strong>Redshift</strong>.
       </>
     ),
   },
@@ -179,48 +189,169 @@ export function ProjectDetailPage() {
 export function AboutPage() {
   return (
     <section className="mb-16">
-      <div className="mb-6 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-        <h1 className="text-3xl font-bold text-slate-900">About</h1>
-        <p className="mt-3 max-w-4xl text-lg leading-8 text-slate-700">
-          Senior software engineer focused on scalable backend platforms, cloud-native
-          systems, AI-ready architecture, and business-critical reliability.
-        </p>
+      <div className="relative mb-8 overflow-hidden rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm sm:p-10">
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-r from-sky-100 via-cyan-50 to-fuchsia-100 opacity-80" />
+        <div className="relative">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">
+            About
+          </p>
+          <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
+            Building resilient systems with sharp diagnosis, clean architecture, and measurable impact.
+          </h1>
+          <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-700">
+            Senior software engineer focused on scalable backend platforms, cloud-native
+            systems, AI-ready architecture, and business-critical reliability. My work
+            consistently sits at the intersection of technical depth, operational
+            rigor, and practical business outcomes.
+          </p>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <HighlightStat
+              value="107 ATMs"
+              label="critical intermittent failures traced and resolved at scale"
+            />
+            <HighlightStat
+              value="12x Faster"
+              label="financial availability calculations after pipeline redesign"
+            />
+            <HighlightStat
+              value="40+ hrs/wk"
+              label="manual reporting effort eliminated through platform automation"
+            />
+          </div>
+        </div>
       </div>
 
       <ContentSection
+        eyebrow="Problem Solving"
         title="Analytical Judgment & Systemic Troubleshooting"
         items={analyticalJudgmentItems}
+        icon={BrainCircuit}
+        accentClasses="from-sky-500/15 via-cyan-400/10 to-transparent"
       />
-      <ContentSection title="Technical DNA" items={technicalDnaItems} />
-      <ContentSection title="Leadership & Business Impact" items={leadershipItems} />
-      <ContentSection title="Education & Research" items={educationItems} />
+      <ContentSection
+        eyebrow="Core Stack"
+        title="Technical DNA"
+        items={technicalDnaItems}
+        icon={BarChart3}
+        accentClasses="from-violet-500/15 via-fuchsia-400/10 to-transparent"
+      />
+      <ContentSection
+        eyebrow="Execution"
+        title="Leadership & Business Impact"
+        items={leadershipItems}
+        icon={Briefcase}
+        accentClasses="from-emerald-500/15 via-teal-400/10 to-transparent"
+      />
+      <ContentSection
+        eyebrow="Foundation"
+        title="Education & Research"
+        items={educationItems}
+        icon={GraduationCap}
+        accentClasses="from-amber-400/15 via-orange-300/10 to-transparent"
+      />
+      <CredlySection />
     </section>
   );
 }
 
 interface ContentSectionProps {
+  eyebrow: string;
   title: string;
   items: SectionItem[];
+  icon: LucideIcon;
+  accentClasses: string;
 }
 
-const ContentSection = ({ title, items }: ContentSectionProps) => {
+const HighlightStat = ({ value, label }: { value: string; label: string }) => {
   return (
-    <div className="mb-8 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 className="text-3xl font-bold text-slate-900">{title}</h2>
-      <ul className="mt-5 space-y-3">
+    <div className="rounded-2xl border border-slate-200 bg-slate-50/90 px-5 py-4 shadow-sm">
+      <p className="text-2xl font-bold tracking-tight text-slate-950">{value}</p>
+      <p className="mt-2 text-sm leading-6 text-slate-600">{label}</p>
+    </div>
+  );
+};
+
+const CredlySection = () => {
+  return (
+    <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-slate-950 p-6 text-white shadow-sm sm:p-8">
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-r from-sky-500/20 via-cyan-400/10 to-fuchsia-500/20" />
+      <div className="relative">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-300">
+              Credentials
+            </p>
+            <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+              Digital Badges & Verified Learning
+            </h2>
+          </div>
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-sky-200 shadow-sm">
+            <BadgeCheck className="h-5 w-5" />
+          </div>
+        </div>
+
+        <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300">
+          Verified certifications and technical learning available on Credly.
+        </p>
+
+        <div className="mt-8">
+          <a
+            href={CREDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-sky-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-sky-300"
+          >
+            View Credly Badges
+            <ExternalLink className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ContentSection = ({
+  eyebrow,
+  title,
+  items,
+  icon: Icon,
+  accentClasses,
+}: ContentSectionProps) => {
+  return (
+    <div className="relative mb-8 overflow-hidden rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <div className={`absolute inset-x-0 top-0 h-24 bg-gradient-to-r ${accentClasses}`} />
+      <div className="relative">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
+              {eyebrow}
+            </p>
+            <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+              {title}
+            </h2>
+          </div>
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white/90 text-slate-700 shadow-sm">
+            <Icon className="h-5 w-5" />
+          </div>
+        </div>
+
+        <ul className={`mt-6 grid gap-4 ${items.length > 1 ? 'sm:grid-cols-2' : ''}`}>
         {items.map((item, index) => (
           <li
             key={`${title}-${index}`}
-            className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-700 shadow-sm"
+            className="rounded-2xl border border-slate-200 bg-[linear-gradient(180deg,rgba(248,250,252,0.95),rgba(255,255,255,1))] px-5 py-5 text-slate-700 shadow-sm transition-transform duration-300 hover:-translate-y-0.5"
           >
-            <span className="text-base font-semibold leading-7 text-slate-900">
+            <span className="block text-lg font-semibold leading-7 text-slate-950">
               {item.title}
             </span>
-            {': '}
-            <span className="text-base leading-7">{item.content}</span>
+            <span className="mt-3 block text-base leading-7 text-slate-700">
+              {item.content}
+            </span>
           </li>
         ))}
-      </ul>
+        </ul>
+      </div>
     </div>
   );
 };

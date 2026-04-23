@@ -1,4 +1,5 @@
-import { Clock3, Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { Clock3, FileText, Linkedin, Mail, MapPin } from 'lucide-react';
+import { SiGithub } from 'react-icons/si';
 import { Link, useLocation } from 'react-router-dom';
 import { ProfileImage } from './ProfileImage';
 import { StatusBadge } from './StatusBadge';
@@ -6,6 +7,7 @@ import { StatusBadge } from './StatusBadge';
 const CONTACT_EMAIL = 'mailto:mbeuapedro@gmail.com';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/helena-software-engineer';
 const GITHUB_URL = 'https://github.com/helenapedro';
+const RESUME_URL = 'https://hmpedropublicfiles.s3.us-east-2.amazonaws.com/Resume-Pedro-HelenaMbeua.pdf';
 const ADDRESS = "Bellevue, WA";
 const TIME_ZONE = 'Pacific Time (PST)';
 
@@ -27,7 +29,7 @@ const quickActions = [
   {
     label: 'GitHub',
     href: GITHUB_URL,
-    icon: Github,
+    icon: SiGithub,
     className:
       'border border-white/15 bg-white/8 text-white hover:border-white/25 hover:bg-white/14',
   },
@@ -56,14 +58,16 @@ export function Hero() {
             <h1 className="mt-2 text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 sm:text-5xl lg:text-4xl xl:text-5xl">
               Helena Pedro
             </h1>
-            {/* <p className="mt-3 text-lg leading-8 text-gray-100 sm:text-xl lg:text-lg xl:text-xl">
-              I build reliable backend systems and scalable applications with a focus on
-              resilience, observability, and business impact.
-            </p> */}
           </div>
           <div className="mt-5 flex w-full max-w-sm flex-col gap-2.5 text-sm">
             <StatusBadge Icon={MapPin} text={`${ADDRESS}`} />
             <StatusBadge Icon={Clock3} text={TIME_ZONE} />
+            <StatusBadge
+              Icon={FileText}
+              text="Resume"
+              href={RESUME_URL}
+              target="_blank"
+            />
           </div>
           <div className="mt-5 w-full max-w-sm rounded-full border border-white/12 bg-white/6 p-1">
             <div className="flex gap-1">

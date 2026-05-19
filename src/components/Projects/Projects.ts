@@ -1,3 +1,5 @@
+import { resumeFeedbackImages } from "./resumeFeedbackImages.generated";
+
 const BASE_URL = "https://mbeuaportfolio-media.s3.us-east-2.amazonaws.com";
 const GITHUB_LINK = "https://github.com/helenapedro";
 
@@ -9,6 +11,8 @@ export type DescriptionBlock =
 export interface Project {
   id: string;
   title: string;
+  subtitle?: string;
+  highlight?: string;
   summary: string;
   technologies: string[];
   url: string;
@@ -24,6 +28,9 @@ export const projects: Project[] = [
     id: "resume-feedback-platform",
     featured: true,
     title: "Resume Feedback Platform",
+    subtitle: "AI Resume Review with Version Tracking",
+    highlight:
+      "Featured in the Handshake AI Showcase through the OpenAI Developers x Handshake Codex Creator Challenge",
     summary:
       "Enterprise-grade Spring Boot platform that automates resume reviews through a decoupled asynchronous pipeline designed for consistency, responsiveness, and system reliability.",
     technologies: [
@@ -38,9 +45,7 @@ export const projects: Project[] = [
       "Analytical Judgment",
     ],
     url: "https://feedback.hmpedro.com/",
-    images: [
-      `https://resume-feedback-platform.s3.us-east-1.amazonaws.com/archtectureanddataflow.png`,
-    ],
+    images: resumeFeedbackImages,
     descriptionBlocks: [
       {
         type: "list",

@@ -137,18 +137,27 @@ const educationItems: SectionItem[] = [
 ];
 
 export function Projects() {
+  const featuredProject = projects.find((project) => project.featured) ?? projects[0];
+  const remainingProjects = projects.filter((project) => project.id !== featuredProject.id);
+
   return (
     <section className="mb-16">
       <h2 className="text-3xl font-bold mb-8">Featured Projects</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {projects.map((project) => (
-          <ProjectSnapshotCard key={project.id} project={project} />
-        ))}
+      <div className="space-y-8">
+        <ProjectSnapshotCard project={featuredProject} featured />
+
+        <div>
+          <h3 className="mb-4 text-xl font-bold text-slate-900">More Projects</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {remainingProjects.map((project) => (
+              <ProjectSnapshotCard key={project.id} project={project} />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
 }
-
 export function ProjectDetailPage() {
   const { id } = useParams<{ id: string }>();
   const [modalImage, setModalImage] = useState<string | null>(null);
@@ -174,6 +183,12 @@ export function ProjectDetailPage() {
           Architectural Deep-Dive
         </p>
         <h1 className="mt-3 text-3xl font-bold text-slate-900">{project.title}</h1>
+        {project.subtitle && (
+          <p className="mt-2 text-xl font-semibold leading-7 text-sky-700">
+            {project.subtitle}
+          </p>
+        )}
+        <ProjectHighlight highlight={project.highlight} />
         <p className="mt-3 max-w-4xl text-lg leading-8 text-slate-700">
           {project.summary}
         </p>
@@ -368,7 +383,30 @@ const snapshotButtonClasses =
 const websiteButtonClasses =
   'inline-flex items-center justify-center rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500';
 
-const ProjectSnapshotCard = ({ project }: { project: Project }) => {
+const ProjectHighlight = ({ highlight, centered = false }: { highlight?: string; centered?: boolean }) => {
+  if (!highlight) {
+    return null;
+  }
+
+  return (
+    <p
+      className={`mt-3 flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-sm font-semibold leading-5 text-emerald-800 ${
+        centered ? 'mx-auto' : ''
+      }`}
+    >
+      <BadgeCheck className="h-4 w-4 shrink-0" />
+      <span>{highlight}</span>
+    </p>
+  );
+};
+
+const ProjectSnapshotCard = ({
+  project,
+  featured = false,
+}: {
+  project: Project;
+  featured?: boolean;
+}) => {
   const [modalImage, setModalImage] = useState<string | null>(null);
 
   return (
@@ -376,9 +414,23 @@ const ProjectSnapshotCard = ({ project }: { project: Project }) => {
       <div className={cardContainerClasses}>
         <div className="p-6">
           <div className="relative mb-4">
-            <h3 className="min-h-14 flex items-center justify-center px-10 text-center text-xl font-semibold leading-snug text-slate-900">
+            <h3
+              className={`min-h-14 flex items-center justify-center px-10 text-center font-semibold leading-snug text-slate-900 ${
+                featured ? 'text-2xl sm:text-3xl' : 'text-xl'
+              }`}
+            >
               {project.title}
             </h3>
+            {project.subtitle && (
+              <p
+                className={`mt-1 px-10 text-center font-semibold text-sky-700 ${
+                  featured ? 'text-base leading-7' : 'text-sm leading-6'
+                }`}
+              >
+                {project.subtitle}
+              </p>
+            )}
+            <ProjectHighlight highlight={project.highlight} centered />
             <a
               href={project.url}
               target="_blank"
@@ -395,6 +447,7 @@ const ProjectSnapshotCard = ({ project }: { project: Project }) => {
           <ProjectImage
             images={project.images}
             title={project.title}
+            featured={featured}
             onImageClick={setModalImage}
           />
 
@@ -426,20 +479,28 @@ const ProjectCard = ({ project, featured = false, onImageClick }: ProjectProps) 
   return (
     <div className={cardContainerClasses}>
       <div className="p-6">
-        <div className="relative mb-4">
-          <h3 className="min-h-14 flex items-center justify-center px-10 text-center text-xl font-semibold leading-snug text-slate-900">
-            {project.title}
-          </h3>
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${externalLinkClasses} absolute right-0 top-1/2 -translate-y-1/2`}
-            aria-label={`Open live demo for ${project.title}`}
-          >
-            <ExternalLink size={28} />
-          </a>
-        </div>
+        {!featured && (
+          <div className="relative mb-4">
+            <h3 className="min-h-14 flex items-center justify-center px-10 text-center text-xl font-semibold leading-snug text-slate-900">
+              {project.title}
+            </h3>
+            {project.subtitle && (
+              <p className="mt-1 px-10 text-center text-sm font-semibold leading-6 text-sky-700">
+                {project.subtitle}
+              </p>
+            )}
+            <ProjectHighlight highlight={project.highlight} centered />
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${externalLinkClasses} absolute right-0 top-1/2 -translate-y-1/2`}
+              aria-label={`Open live demo for ${project.title}`}
+            >
+              <ExternalLink size={28} />
+            </a>
+          </div>
+        )}
 
         <ProjectTechnologies technologies={project.technologies} featured={featured} />
 

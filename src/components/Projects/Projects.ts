@@ -51,6 +51,7 @@ export const projects: Project[] = [
       "Apache Kafka",
       "Gemini API",
       "AWS S3",
+      "AWS Amplify",
       "Docker",
     ],
     url: "https://feedback.hmpedro.com/",
@@ -68,8 +69,7 @@ export const projects: Project[] = [
       },
       {
         type: "paragraph",
-        text:
-          "Most AI resume tools treat every upload as a one-time review. This platform is designed around continuous improvement: each resume version has its own feedback, progress can be compared against previous versions, and users can see whether they fixed old issues or introduced new ones.",
+        text: "Most AI resume tools treat every upload as a one-time review. This platform is designed around continuous improvement: each resume version has its own feedback, progress can be compared against previous versions, and users can see whether they fixed old issues or introduced new ones.",
       },
       {
         type: "heading",
@@ -138,8 +138,7 @@ export const projects: Project[] = [
       },
       {
         type: "paragraph",
-        text:
-          "The final system supports a real resume improvement workflow: users can upload versions without waiting for AI processing, feedback is traceable to the exact document version, later versions can be compared against previous feedback, and provider failures do not break the core upload flow.",
+        text: "The final system supports a real resume improvement workflow: users can upload versions without waiting for AI processing, feedback is traceable to the exact document version, later versions can be compared against previous feedback, and provider failures do not break the core upload flow.",
       },
     ],
     backendUrl: `${GITHUB_LINK}/resume-feedback-platform.git`,

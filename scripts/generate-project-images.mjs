@@ -17,6 +17,13 @@ const images = readdirSync(imageRoot, { withFileTypes: true })
   .map((entry) => entry.name)
   .filter((name) => imageExtensions.has(name.slice(name.lastIndexOf(".")).toLowerCase()))
   .sort((first, second) => {
+    const firstIsMain = /^main\./i.test(first);
+    const secondIsMain = /^main\./i.test(second);
+
+    if (firstIsMain !== secondIsMain) {
+      return firstIsMain ? -1 : 1;
+    }
+
     const firstIsArchitecture = /architecture/i.test(first);
     const secondIsArchitecture = /architecture/i.test(second);
 

@@ -32,30 +32,101 @@ export const projects: Project[] = [
     subtitle: "AI Resume Review with Version Tracking",
     highlight:
       "Featured in the Handshake AI Showcase through the OpenAI Developers x Handshake Codex Creator Challenge",
-    highlightUrl: "https://app.joinhandshake.com/ai-showcase?project_id=3056375",
+    highlightUrl:
+      "https://app.joinhandshake.com/ai-showcase?project_id=3056375",
     summary:
-      "Enterprise-grade Spring Boot platform that automates resume reviews through a decoupled asynchronous pipeline designed for consistency, responsiveness, and system reliability.",
+      "Resume Feedback Platform helps job seekers improve their resumes with AI-generated feedback, version-to-version progress tracking, and shareable review links.",
     technologies: [
-      "Java",
+      "React/TypeScript",
       "Spring Boot",
-      "Apache Kafka",
-      "AWS S3",
-      "System Design",
-      "AI-Native Architecture",
       "MySQL",
       "MongoDB",
-      "Analytical Judgment",
+      "Apache Kafka",
+      "Gemini API",
+      "AWS S3",
+      "Docker",
     ],
     url: "https://feedback.hmpedro.com/",
     images: resumeFeedbackImages,
     descriptionBlocks: [
       {
+        type: "heading",
+        text: "Problem",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Most AI resume tools treat every upload as a one-time review. This platform is designed around continuous improvement: each resume version has its own feedback, progress can be compared against previous versions, and users can see whether they fixed old issues or introduced new ones.",
+      },
+      {
+        type: "heading",
+        text: "Frontend workflow",
+      },
+      {
         type: "list",
         items: [
-          "Architected a multi-module monorepo with Spring Boot and Apache Kafka to separate concerns and scale workers independently.",
-          "Chose an asynchronous Kafka-based pipeline over synchronous REST orchestration to decouple user-facing latency from slower AI processing and support version-aware AI memory for auditability.",
-          "Implemented dual persistence with MySQL for core state and MongoDB for feedback documents, while managing environment-specific risks such as Kafka SSL configuration and post-commit event publishing.",
+          "Built a Vite React and TypeScript SPA that separates route-level screens, feature orchestration hooks, server state, domain services, and local UI state.",
+          "Used a non-blocking upload flow: after a resume version is created, the user is taken to the resume detail screen while AI processing continues in the background.",
+          "Implemented React Query polling against the latest AI job endpoint, with a timeout and retry path so users are not stuck in an indefinite loading state.",
         ],
+      },
+      {
+        type: "heading",
+        text: "Backend architecture",
+      },
+      {
+        type: "list",
+        items: [
+          "Organized the backend into resume-api for REST workflows, resume-worker for AI processing, and common for shared contracts and document models.",
+          "Kept uploads fast by creating an AI job with PENDING status instead of calling the LLM synchronously during the request.",
+          "Designed the worker to load resume versions, extract text, call a LLM, store feedback, update job state, and generate progress analysis when a previous version exists.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Version tracking and persistence",
+      },
+      {
+        type: "list",
+        items: [
+          "Modeled each resume as a collection of resume versions, with a unique version number per resume so every AI artifact has a stable version anchor.",
+          "Used MySQL for transactional state such as users, resumes, versions, comments, share links, AI jobs, and references to generated feedback.",
+          "Used MongoDB for flexible AI payloads including summaries, strengths, improvements, progress scores, unchanged issues, and newly introduced issues.",
+          "Stored resume files in AWS S3 bucket, keeping file storage separate from transactional metadata and AI-generated analysis.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "AI job lifecycle and reliability",
+      },
+      {
+        type: "list",
+        items: [
+          "Tracked AI feedback jobs through explicit PENDING, PROCESSING, DONE, and FAILED states so the UI and operators can reason about delayed or failed processing.",
+          "Added idempotency around job creation using the resume version ID, preventing duplicate feedback jobs during retries or repeated client requests.",
+          "Implemented event-driven backend pipelines using Kafka for asynchronous AI processing and job queuing, with Redis-based caching/rate limiting.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Key tradeoffs",
+      },
+      {
+        type: "list",
+        items: [
+          "Avoided synchronous LLM calls to keep upload latency independent from provider response time, document length, parsing failures, and retry behavior.",
+          "Chose MySQL plus MongoDB instead of storing all AI output relationally, giving the system strong ownership and version constraints while keeping AI schemas flexible.",
+          "Used HTTP polling instead of WebSockets for job status because it simplified infrastructure and was sufficient for short AI processing windows.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Result",
+      },
+      {
+        type: "paragraph",
+        text:
+          "The final system supports a real resume improvement workflow: users can upload versions without waiting for AI processing, feedback is traceable to the exact document version, later versions can be compared against previous feedback, and provider failures do not break the core upload flow.",
       },
     ],
     backendUrl: `${GITHUB_LINK}/resume-feedback-platform.git`,

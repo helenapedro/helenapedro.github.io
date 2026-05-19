@@ -13,6 +13,7 @@ export interface Project {
   title: string;
   subtitle?: string;
   highlight?: string;
+  highlightUrl?: string;
   summary: string;
   technologies: string[];
   url: string;
@@ -31,6 +32,7 @@ export const projects: Project[] = [
     subtitle: "AI Resume Review with Version Tracking",
     highlight:
       "Featured in the Handshake AI Showcase through the OpenAI Developers x Handshake Codex Creator Challenge",
+    highlightUrl: "https://app.joinhandshake.com/ai-showcase?project_id=3056375",
     summary:
       "Enterprise-grade Spring Boot platform that automates resume reviews through a decoupled asynchronous pipeline designed for consistency, responsiveness, and system reliability.",
     technologies: [

@@ -188,7 +188,7 @@ export function ProjectDetailPage() {
             {project.subtitle}
           </p>
         )}
-        <ProjectHighlight highlight={project.highlight} />
+        <ProjectHighlight highlight={project.highlight} highlightUrl={project.highlightUrl} />
         <p className="mt-3 max-w-4xl text-lg leading-8 text-slate-700">
           {project.summary}
         </p>
@@ -383,19 +383,46 @@ const snapshotButtonClasses =
 const websiteButtonClasses =
   'inline-flex items-center justify-center rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500';
 
-const ProjectHighlight = ({ highlight, centered = false }: { highlight?: string; centered?: boolean }) => {
+const ProjectHighlight = ({
+  highlight,
+  highlightUrl,
+  centered = false,
+}: {
+  highlight?: string;
+  highlightUrl?: string;
+  centered?: boolean;
+}) => {
   if (!highlight) {
     return null;
   }
 
-  return (
-    <p
-      className={`mt-3 flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-sm font-semibold leading-5 text-emerald-800 ${
-        centered ? 'mx-auto' : ''
-      }`}
-    >
+  const classes = `mt-3 flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-sm font-semibold leading-5 text-emerald-800 transition-colors hover:border-emerald-300 hover:bg-emerald-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+    centered ? 'mx-auto' : ''
+  }`;
+  const content = (
+    <>
       <BadgeCheck className="h-4 w-4 shrink-0" />
       <span>{highlight}</span>
+    </>
+  );
+
+  if (highlightUrl) {
+    return (
+      <a
+        href={highlightUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={classes}
+        aria-label={`Open featured showcase for ${highlight}`}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <p className={classes}>
+      {content}
     </p>
   );
 };
@@ -430,7 +457,11 @@ const ProjectSnapshotCard = ({
                 {project.subtitle}
               </p>
             )}
-            <ProjectHighlight highlight={project.highlight} centered />
+            <ProjectHighlight
+              highlight={project.highlight}
+              highlightUrl={project.highlightUrl}
+              centered
+            />
             <a
               href={project.url}
               target="_blank"
@@ -489,7 +520,11 @@ const ProjectCard = ({ project, featured = false, onImageClick }: ProjectProps) 
                 {project.subtitle}
               </p>
             )}
-            <ProjectHighlight highlight={project.highlight} centered />
+            <ProjectHighlight
+              highlight={project.highlight}
+              highlightUrl={project.highlightUrl}
+              centered
+            />
             <a
               href={project.url}
               target="_blank"

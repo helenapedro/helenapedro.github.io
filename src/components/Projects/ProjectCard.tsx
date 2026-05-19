@@ -507,6 +507,8 @@ const ProjectSnapshotCard = ({
 };
 
 const ProjectCard = ({ project, featured = false, onImageClick }: ProjectProps) => {
+  const images = featured && project.detailImages ? project.detailImages : project.images;
+
   return (
     <div className={cardContainerClasses}>
       <div className="p-6">
@@ -540,7 +542,7 @@ const ProjectCard = ({ project, featured = false, onImageClick }: ProjectProps) 
         <ProjectTechnologies technologies={project.technologies} featured={featured} />
 
         <ProjectImage
-          images={project.images}
+          images={images}
           title={project.title}
           featured={featured}
           onImageClick={onImageClick}

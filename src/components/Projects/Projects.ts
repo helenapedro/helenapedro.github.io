@@ -2,6 +2,12 @@ import { resumeFeedbackImages } from "./resumeFeedbackImages.generated";
 
 const BASE_URL = "https://mbeuaportfolio-media.s3.us-east-2.amazonaws.com";
 const GITHUB_LINK = "https://github.com/helenapedro";
+const RESUME_FEEDBACK_MAIN_IMAGE =
+  "/project-images/resume-feedback-platform/main.png";
+const RESUME_FEEDBACK_HANDSHAKE_IMAGE =
+  "/project-images/resume-feedback-platform/handshake_featured.png";
+const RESUME_FEEDBACK_ARCHITECTURE_IMAGE =
+  "/project-images/resume-feedback-platform/RFP_Architecture_Diagram.jpg";
 
 export type DescriptionBlock =
   | { type: "paragraph"; text: string }
@@ -18,6 +24,7 @@ export interface Project {
   technologies: string[];
   url: string;
   images: string[];
+  detailImages?: string[];
   descriptionBlocks: DescriptionBlock[];
   featured?: boolean;
   frontendUrl?: string;
@@ -35,7 +42,7 @@ export const projects: Project[] = [
     highlightUrl:
       "https://app.joinhandshake.com/ai-showcase?project_id=3056375",
     summary:
-      "Resume Feedback Platform helps job seekers improve their resumes with AI-generated feedback, version-to-version progress tracking, and shareable review links.",
+      "AI-powered resume feedback platform with version tracking, asynchronous feedback generation, progress analysis across resume iterations, and shareable review workflows.",
     technologies: [
       "React/TypeScript",
       "Spring Boot",
@@ -47,7 +54,13 @@ export const projects: Project[] = [
       "Docker",
     ],
     url: "https://feedback.hmpedro.com/",
-    images: resumeFeedbackImages,
+    images: [
+      RESUME_FEEDBACK_MAIN_IMAGE,
+      RESUME_FEEDBACK_HANDSHAKE_IMAGE,
+    ].filter((image) => resumeFeedbackImages.includes(image)),
+    detailImages: [RESUME_FEEDBACK_ARCHITECTURE_IMAGE].filter((image) =>
+      resumeFeedbackImages.includes(image),
+    ),
     descriptionBlocks: [
       {
         type: "heading",

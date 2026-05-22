@@ -200,7 +200,7 @@ export const projects: Project[] = [
   },
   {
     id: "predictive-analytics-platform",
-    title: "Data Reliability & Predictive Analytics Platform",
+    title: "Applied ML Launch Analytics Platform ",
     summary:
       "End-to-end Python data pipeline and interactive dashboard that predicts mission success and booster reusability using validated machine learning models.",
     url: "https://predictive-analytics-for-rocket-launches.hmpedro.com/",

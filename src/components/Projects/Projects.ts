@@ -44,20 +44,21 @@ export const projects: Project[] = [
     summary:
       "AI-powered resume feedback platform with version tracking, asynchronous feedback generation, progress analysis across resume iterations, and shareable review workflows.",
     technologies: [
-      "React/TypeScript",
+      "React",
+      "TypeScript",
       "Spring Boot",
       "MySQL",
       "MongoDB",
       "Apache Kafka",
-      "Gemini API",
+      "LLM API",
       "AWS S3",
       "AWS Amplify",
       "Docker",
     ],
     url: "https://feedback.hmpedro.com/",
     images: [
-      RESUME_FEEDBACK_MAIN_IMAGE,
       RESUME_FEEDBACK_HANDSHAKE_IMAGE,
+      RESUME_FEEDBACK_MAIN_IMAGE,
     ].filter((image) => resumeFeedbackImages.includes(image)),
     detailImages: [RESUME_FEEDBACK_ARCHITECTURE_IMAGE].filter((image) =>
       resumeFeedbackImages.includes(image),

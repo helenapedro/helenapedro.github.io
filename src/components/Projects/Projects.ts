@@ -142,13 +142,13 @@ export const projects: Project[] = [
         text: "The final system supports a real resume improvement workflow: users can upload versions without waiting for AI processing, feedback is traceable to the exact document version, later versions can be compared against previous feedback, and provider failures do not break the core upload flow.",
       },
     ],
-    backendUrl: `${GITHUB_LINK}/resume-feedback-platform.git`,
   },
   {
     id: "engineering-portfolio",
-    title: "Engineering Portfolio",
+    title: "Engineering Project Showcase",
+    subtitle: "Scalable React-Firestore Architecture",
     summary:
-      "High-performance React single-page application built to showcase technical credibility through scalable frontend architecture and optimized content delivery.",
+      "More than a digital resume, this technical case study proves that a high-end engineering portfolio can be as well-architected as a major professional application.",
     technologies: [
       "React 18",
       "TypeScript",
@@ -162,12 +162,64 @@ export const projects: Project[] = [
     images: [`${BASE_URL}/thisisengineering.jpg`],
     descriptionBlocks: [
       {
+        type: "paragraph",
+        text: "By moving beyond a simple website and building a scalable React-Firestore architecture, the platform demonstrates technical credibility through performance, smart design, and production-minded engineering decisions.",
+      },
+      {
+        type: "heading",
+        text: "Speed and Cost Efficiency",
+      },
+      {
         type: "list",
         items: [
-          "Architected the frontend around fast page loads using a multi-tier caching strategy with in-memory caching, localStorage fallback, and TTL-based expiration to reduce redundant Firestore reads.",
-          "Implemented server-side querying and cursor-based pagination in Firestore to avoid loading entire collections into the browser as project data grows.",
-          "Leveraged AWS S3 and CloudFront for global asset delivery and built reusable hooks for data fetching and state management to keep the codebase maintainable.",
+          "The why: Standard websites often fetch the same database records every time a visitor clicks through the interface, which makes the experience slower for users and more expensive to operate.",
+          "The build: A multi-tier caching system stores portfolio data in browser memory and localStorage with one-hour TTL expiration, reducing repeated Firestore reads during active sessions.",
+          "The impact: Once a project is loaded, it feels instant on later views during that session, cutting redundant database traffic while making the application faster and cheaper to run.",
         ],
+      },
+      {
+        type: "heading",
+        text: "Built to Grow",
+      },
+      {
+        type: "list",
+        items: [
+          "The why: As a career grows, the portfolio grows with it. Loading every large engineering project at once would eventually create lag, especially on mobile devices.",
+          "The build: Server-side Firestore querying and cursor-based pagination request only the project records the visitor is currently viewing.",
+          "The impact: The platform remains responsive whether it showcases 10 projects or 1,000, demonstrating an architecture designed for future scale instead of a fixed-size static gallery.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Global and Field-Ready",
+      },
+      {
+        type: "list",
+        items: [
+          "The why: Civil engineering work often happens in remote areas with unreliable connectivity, including field environments such as Cabinda or Soyo, while serving both Portuguese-speaking local audiences and international partners.",
+          "The build: The app was built as a Progressive Web App with multilingual support for English and Portuguese.",
+          "The impact: Offline access lets an engineer continue viewing portfolio material without a stable signal, while language support helps international recruiters and Angolan clients navigate the experience professionally in their preferred language.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Heavy-Duty Media Handling",
+      },
+      {
+        type: "list",
+        items: [
+          "The why: Engineering portfolios rely on high-resolution images, interview clips, and complex project visuals that are too heavy to treat like ordinary page data.",
+          "The build: AWS S3 and CloudFront deliver large assets separately from the Firestore-backed project data.",
+          "The impact: Separating the data layer from media delivery keeps galleries, 4K video clips, and model imagery from slowing down the rest of the application experience.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "The Bottom Line",
+      },
+      {
+        type: "paragraph",
+        text: "By choosing this architecture, the developer did not just list technical skills; they demonstrated them. The result is a portfolio that feels like a professional enterprise tool, capable of handling real-world infrastructure data while remaining fast, accessible, and global.",
       },
     ],
     backendUrl: `${GITHUB_LINK}/zepedro-engineering-portfolio.git`,

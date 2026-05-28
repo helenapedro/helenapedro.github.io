@@ -7,6 +7,7 @@ import {
   ExternalLink,
   GraduationCap,
   type LucideIcon,
+  Newspaper,
 } from 'lucide-react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { projects, type Project } from './Projects';
@@ -23,6 +24,9 @@ const externalLinkClasses =
   'text-sky-600 hover:text-sky-700 transition-transform hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded';
 
 const CREDLY_URL = 'https://www.credly.com/users/helena-pedro';
+const ANGORUSSIA_FEATURE_URL =
+  'https://angorussia.com/engenheira-angolana-cria-plataforma-com-ia-para-melhorar-curriculos-e-ganha-destaque-internacional/';
+const ANGORUSSIA_TAG_IMAGE = '/project-images/features/angorussia_tag.png';
 
 interface SectionItem {
   title: ReactNode;
@@ -258,6 +262,7 @@ export function AboutPage() {
         icon={Briefcase}
         accentClasses="from-emerald-500/15 via-teal-400/10 to-transparent"
       />
+      <PressSection />
       <ContentSection
         eyebrow="Foundation"
         title="Education & Research"
@@ -320,6 +325,66 @@ const CredlySection = () => {
             View Credly Badges
             <ExternalLink className="h-4 w-4" />
           </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const PressSection = () => {
+  return (
+    <div className="relative mb-8 overflow-hidden rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-r from-rose-500/15 via-orange-300/10 to-transparent" />
+      <div className="relative">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
+              Recognition
+            </p>
+            <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+              Press & Media Coverage
+            </h2>
+          </div>
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white/90 text-slate-700 shadow-sm">
+            <Newspaper className="h-5 w-5" />
+          </div>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-slate-200 bg-[linear-gradient(180deg,rgba(255,247,237,0.55),rgba(255,255,255,1))] p-5 shadow-sm">
+          <img
+            src={ANGORUSSIA_TAG_IMAGE}
+            alt="AngoRussia feature preview"
+            className="mb-5 h-auto w-full rounded-2xl border border-slate-200 object-cover shadow-sm"
+          />
+          <div className="flex flex-wrap items-center gap-2 text-sm font-medium text-slate-600">
+            <span className="rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white">
+              AngoRussia
+            </span>
+            <span>May 25, 2026</span>
+            <span aria-hidden="true">•</span>
+            <span>Technology</span>
+          </div>
+
+          <h3 className="mt-4 text-xl font-semibold leading-snug text-slate-950">
+            Angolan software engineer builds AI resume platform and earns international recognition
+          </h3>
+          <p className="mt-3 max-w-3xl text-base leading-7 text-slate-700">
+            AngoRussia featured the Resume Feedback Platform, highlighting its AI-based
+            version tracking workflow and its visibility in the OpenAI Developers x
+            Handshake Codex Creator Challenge.
+          </p>
+
+          <div className="mt-5">
+            <a
+              href={ANGORUSSIA_FEATURE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-50"
+            >
+              Read the Article
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -24,9 +24,47 @@ const externalLinkClasses =
   'text-sky-600 hover:text-sky-700 transition-transform hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded';
 
 const CREDLY_URL = 'https://www.credly.com/users/helena-pedro';
+const REVISTA_CARREIRA_FEATURE_URL =
+  'https://revistacarreira.ao/2026/05/28/aplicacao-de-ia-elimina-problema-das-varias-versoes-do-mesmo-cv-solucao-que-acompanha-a-evolucao-do-percurso-profissional-ja-funcional-e-com-validacao-da-openai-e-de-uma-engenheira-angolana/';
 const ANGORUSSIA_FEATURE_URL =
   'https://angorussia.com/engenheira-angolana-cria-plataforma-com-ia-para-melhorar-curriculos-e-ganha-destaque-internacional/';
+const ONGOMA_FEATURE_URL =
+  'https://ongoma.info/artigo/openai-reconhece-estudante-angolana-nos-estados-unidos-por-criar-plataforma-de-ia-que-ajuda-profissionais-a-melhorar-curriculos';
+const REVISTA_CARREIRA_FEATURE_IMAGE =
+  '/project-images/features/revista-carreira-feature.jpg';
 const ANGORUSSIA_TAG_IMAGE = '/project-images/features/angorussia_tag.png';
+const ONGOMA_FEATURE_IMAGE = '/project-images/features/ongoma-news-feature.png';
+
+const pressItems = [
+  {
+    outlet: 'Revista Carreira',
+    title: 'AI application eliminates the problem of multiple versions of the same CV',
+    description:
+      'Coverage of the Resume Feedback Platform as a working AI product that tracks professional progress and carries OpenAI validation.',
+    href: REVISTA_CARREIRA_FEATURE_URL,
+    image: REVISTA_CARREIRA_FEATURE_IMAGE,
+    imagePosition: 'center 30%',
+  },
+  {
+    outlet: 'AngoRussia',
+    title:
+      'Angolan engineer creates AI platform to improve resumes and gains international recognition',
+    description:
+      'Feature story highlighting the platform, its version-aware review workflow, and its recognition through the OpenAI Developers x Handshake challenge.',
+    href: ANGORUSSIA_FEATURE_URL,
+    image: ANGORUSSIA_TAG_IMAGE,
+  },
+  {
+    outlet: 'ONgoma News',
+    title:
+      'OpenAI recognizes Angolan student in the United States for AI resume platform',
+    description:
+      'Press coverage focused on the international recognition behind the AI platform and its value for professionals improving their resumes.',
+    href: ONGOMA_FEATURE_URL,
+    image: ONGOMA_FEATURE_IMAGE,
+    imagePosition: 'center 35%',
+  },
+];
 
 interface SectionItem {
   title: ReactNode;
@@ -146,6 +184,7 @@ export function Projects() {
 
   return (
     <section className="mb-16">
+      <PressSection />
       <h2 className="text-3xl font-bold mb-8">Featured Projects</h2>
       <div className="space-y-8">
         <ProjectSnapshotCard project={featuredProject} featured />
@@ -333,58 +372,61 @@ const CredlySection = () => {
 
 const PressSection = () => {
   return (
-    <div className="relative mb-8 overflow-hidden rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-r from-rose-500/15 via-orange-300/10 to-transparent" />
+    <div className="relative mb-10 overflow-hidden rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-r from-rose-500/15 via-orange-300/10 to-sky-400/10" />
       <div className="relative">
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
-              Recognition
+              In the Press
             </p>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
-              Press & Media Coverage
+            <h2 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+              Media recognition for the Resume Feedback Platform
             </h2>
+            <p className="mt-4 max-w-3xl text-base leading-7 text-slate-700">
+              Independent coverage from Angolan media outlets validates both the
+              product story and the international recognition behind the platform.
+            </p>
           </div>
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white/90 text-slate-700 shadow-sm">
             <Newspaper className="h-5 w-5" />
           </div>
         </div>
 
-        <div className="mt-6 rounded-2xl border border-slate-200 bg-[linear-gradient(180deg,rgba(255,247,237,0.55),rgba(255,255,255,1))] p-5 shadow-sm">
-          <img
-            src={ANGORUSSIA_TAG_IMAGE}
-            alt="AngoRussia feature preview"
-            className="mb-5 h-auto w-full rounded-2xl border border-slate-200 object-cover shadow-sm"
-          />
-          <div className="flex flex-wrap items-center gap-2 text-sm font-medium text-slate-600">
-            <span className="rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white">
-              AngoRussia
-            </span>
-            <span>May 25, 2026</span>
-            <span aria-hidden="true">•</span>
-            <span>Technology</span>
-          </div>
-
-          <h3 className="mt-4 text-xl font-semibold leading-snug text-slate-950">
-            Angolan software engineer builds AI resume platform and earns international recognition
-          </h3>
-          <p className="mt-3 max-w-3xl text-base leading-7 text-slate-700">
-            AngoRussia featured the Resume Feedback Platform, highlighting its AI-based
-            version tracking workflow and its visibility in the OpenAI Developers x
-            Handshake Codex Creator Challenge.
-          </p>
-
-          <div className="mt-5">
+        <div className="mt-7 grid gap-4 lg:grid-cols-3">
+          {pressItems.map((item) => (
             <a
-              href={ANGORUSSIA_FEATURE_URL}
+              key={item.outlet}
+              href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-50"
+              className="group flex min-h-[260px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(180deg,rgba(248,250,252,0.95),rgba(255,255,255,1))] text-left shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
             >
-              Read the Article
-              <ExternalLink className="h-4 w-4" />
+              <img
+                src={item.image}
+                alt={`${item.outlet} feature preview`}
+                className="h-32 w-full border-b border-slate-200 object-cover"
+                style={{ objectPosition: item.imagePosition ?? 'center' }}
+              />
+              <span className="flex flex-1 flex-col p-5">
+                <span className="flex items-center justify-between gap-3">
+                  <span className="rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white">
+                    {item.outlet}
+                  </span>
+                  <ExternalLink className="h-4 w-4 shrink-0 text-slate-400 transition-colors group-hover:text-sky-600" />
+                </span>
+                <span className="mt-4 block text-lg font-semibold leading-7 text-slate-950">
+                  {item.title}
+                </span>
+                <span className="mt-3 block text-sm leading-6 text-slate-600">
+                  {item.description}
+                </span>
+                <span className="mt-auto pt-5 text-sm font-semibold text-sky-700">
+                  Read article
+                </span>
+              </span>
             </a>
-          </div>
+          ))}
         </div>
       </div>
     </div>

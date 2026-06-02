@@ -31,7 +31,7 @@ const ANGORUSSIA_FEATURE_URL =
 const ONGOMA_FEATURE_URL =
   'https://ongoma.info/artigo/openai-reconhece-estudante-angolana-nos-estados-unidos-por-criar-plataforma-de-ia-que-ajuda-profissionais-a-melhorar-curriculos';
 const REVISTA_CARREIRA_FEATURE_IMAGE =
-  '/project-images/features/revista-carreira-feature.jpg';
+  '/project-images/features/revista-carreira-feature.jfif';
 const ANGORUSSIA_TAG_IMAGE = '/project-images/features/angorussia_tag.png';
 const ONGOMA_FEATURE_IMAGE = '/project-images/features/ongoma-news-feature.png';
 

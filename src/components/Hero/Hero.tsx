@@ -1,4 +1,4 @@
-import { Clock3, FileText, Linkedin, Mail, MapPin } from 'lucide-react';
+import { Clock3, Linkedin, Mail, MapPin } from 'lucide-react';
 import { SiGithub } from 'react-icons/si';
 import { Link, useLocation } from 'react-router-dom';
 import { ProfileImage } from './ProfileImage';
@@ -7,7 +7,6 @@ import { StatusBadge } from './StatusBadge';
 const CONTACT_EMAIL = 'mailto:mbeuapedro@gmail.com';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/helena-software-engineer';
 const GITHUB_URL = 'https://github.com/helenapedro';
-const RESUME_URL = 'https://hmpedropublicfiles.s3.us-east-2.amazonaws.com/Resume-Pedro-HelenaMbeua.pdf';
 const ADDRESS = "Bellevue, WA";
 const TIME_ZONE = 'Pacific Time (PST)';
 
@@ -46,36 +45,38 @@ export function Hero() {
     }`;
 
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-gray-800 text-white h-full">
+    <div className="relative h-full overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 text-white">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyek0zNiAzMHYySDI0di0yaDF6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-10"></div>
-      <div className="relative px-5 py-8 sm:px-6 sm:py-10 lg:px-6 lg:py-8 xl:px-7">
+      <div className="relative px-5 py-6 sm:px-6 sm:py-8 lg:px-6 lg:py-8 xl:px-7">
         <div className="mx-auto flex max-w-md flex-col items-center text-center">
           <ProfileImage />
           <div className="mt-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300 sm:text-sm">
-              Software Engineer | Expert in Scalable AI-Ready Systems & Cloud Architecture
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-sky-300 sm:text-sm sm:tracking-[0.18em]">
+              Award-Winning Software Engineer & AI Innovator | M.S. in Computer Science @ MIU
             </p>
             <h1 className="mt-2 text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 sm:text-5xl lg:text-4xl xl:text-5xl">
               Helena Pedro
             </h1>
+            <p className="mt-3 text-sm leading-6 text-slate-300">
+              Building scalable, AI-driven systems that make talent visible.
+              Specialist in backend architecture, Java, Spring Boot, Kafka, and
+              generative AI workflows.
+            </p>
           </div>
           <div className="mt-5 flex w-full max-w-sm flex-col gap-2.5 text-sm">
             <StatusBadge Icon={MapPin} text={`${ADDRESS}`} />
             <StatusBadge Icon={Clock3} text={TIME_ZONE} />
-            <StatusBadge
-              Icon={FileText}
-              text="Resume"
-              href={RESUME_URL}
-              target="_blank"
-            />
           </div>
           <div className="mt-5 w-full max-w-sm rounded-full border border-white/12 bg-white/6 p-1">
             <div className="flex gap-1">
               <Link to="/" className={navLinkClasses('/')}>
-                Overview
+                Projects
               </Link>
               <Link to="/about" className={navLinkClasses('/about')}>
                 About
+              </Link>
+              <Link to="/press" className={navLinkClasses('/press')}>
+                Press
               </Link>
             </div>
           </div>

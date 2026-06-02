@@ -35,13 +35,13 @@ export const ProjectImage = ({ images, title, featured = false, onImageClick }: 
   const currentImage = images[currentImageIndex];
 
   return (
-    <div className="relative overflow-hidden mb-4">
+    <div className="relative mb-3 overflow-hidden sm:mb-4">
       <div className="relative">
         <img
           src={currentImage}
           alt={`${title} screenshot ${currentImageIndex + 1}`}
           className={`w-full object-cover transition-transform duration-700 cursor-pointer group-hover:scale-105 ${
-            featured ? 'h-80' : 'h-60'
+            featured ? 'h-56 sm:h-64 lg:h-72' : 'h-48 sm:h-56'
           }`}
           onClick={() => onImageClick(currentImage)}
         />

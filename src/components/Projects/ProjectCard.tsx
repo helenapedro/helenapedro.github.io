@@ -43,7 +43,8 @@ const pressItems = [
       'Coverage of the Resume Feedback Platform as a working AI product that tracks professional progress and carries OpenAI validation.',
     href: REVISTA_CARREIRA_FEATURE_URL,
     image: REVISTA_CARREIRA_FEATURE_IMAGE,
-    imagePosition: 'center 30%',
+    imageClassName: 'object-contain bg-slate-100',
+    imagePosition: 'center',
   },
   {
     outlet: 'AngoRussia',
@@ -405,7 +406,7 @@ const PressSection = () => {
               <img
                 src={item.image}
                 alt={`${item.outlet} feature preview`}
-                className="h-32 w-full border-b border-slate-200 object-cover"
+                className={`h-32 w-full border-b border-slate-200 ${item.imageClassName ?? 'object-cover'}`}
                 style={{ objectPosition: item.imagePosition ?? 'center' }}
               />
               <span className="flex flex-1 flex-col p-5">

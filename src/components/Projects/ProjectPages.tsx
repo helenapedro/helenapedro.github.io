@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { projects, type Project } from '../../data/projects';
+import { buttonStyles, classNames } from '../../lib/buttonStyles';
 import { ExternalIconLink } from './ExternalIconLink';
 import { ProjectCard } from './ProjectCard';
 import { ProjectHighlight } from './ProjectHighlight';
@@ -198,7 +199,7 @@ const professionalStatusItems: SectionItem[] = [
           href="https://www.linkedin.com/in/helena-software-engineer"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-semibold text-sky-700 hover:text-sky-800"
+          className={buttonStyles.textLink}
         >
           LinkedIn
         </a>
@@ -207,14 +208,14 @@ const professionalStatusItems: SectionItem[] = [
           href="https://github.com/helenapedro"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-semibold text-sky-700 hover:text-sky-800"
+          className={buttonStyles.textLink}
         >
           GitHub
         </a>
         , or{' '}
         <a
           href="mailto:mbeuapedro@gmail.com"
-          className="font-semibold text-sky-700 hover:text-sky-800"
+          className={buttonStyles.textLink}
         >
           email
         </a>
@@ -268,7 +269,7 @@ export function PressPage() {
                   href={HELENA_EXPLORA_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-sky-700 hover:text-sky-800"
+                  className={buttonStyles.textLink}
                 >
                   View the platform
                 </a>
@@ -297,7 +298,7 @@ export function ProjectDetailPage() {
       <div className="mb-6">
         <Link
           to="/"
-          className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition-colors hover:bg-slate-50"
+          className={buttonStyles.backLink}
         >
           Back to Executive Overview
         </Link>
@@ -423,160 +424,211 @@ const HighlightStat = ({ value, label }: { value: string; label: string }) => {
   );
 };
 
-const CredlySection = () => {
+interface SectionCardProps {
+  eyebrow: string;
+  title: string;
+  icon: LucideIcon;
+  accentClasses: string;
+  children: ReactNode;
+  description?: ReactNode;
+  className?: string;
+  dark?: boolean;
+  titleAs?: 'h1' | 'h2';
+  titleClassName?: string;
+}
+
+const SectionCard = ({
+  eyebrow,
+  title,
+  icon: Icon,
+  accentClasses,
+  children,
+  description,
+  className,
+  dark = false,
+  titleAs = 'h2',
+  titleClassName,
+}: SectionCardProps) => {
+  const TitleTag = titleAs;
+
   return (
-    <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-slate-950 p-5 text-white shadow-sm sm:p-6">
-      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-r from-sky-500/20 via-cyan-400/10 to-fuchsia-500/20" />
+    <div
+      className={classNames(
+        'relative overflow-hidden rounded-[28px] border p-5 shadow-sm sm:p-6',
+        dark
+          ? 'border-slate-200 bg-slate-950 text-white'
+          : 'border-slate-200 bg-white',
+        className,
+      )}
+    >
+      <div className={`absolute inset-x-0 top-0 h-24 bg-gradient-to-r ${accentClasses}`} />
       <div className="relative">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-300">
-              Credentials
+            <p
+              className={classNames(
+                'text-xs font-semibold uppercase tracking-[0.24em]',
+                dark ? 'text-sky-300' : 'text-sky-700',
+              )}
+            >
+              {eyebrow}
             </p>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
-              Digital Badges & Verified Learning
-            </h2>
+            <TitleTag
+              className={classNames(
+                'mt-3 font-bold tracking-tight',
+                dark ? 'text-white' : 'text-slate-950',
+                titleClassName ?? 'text-2xl sm:text-3xl',
+              )}
+            >
+              {title}
+            </TitleTag>
+            {description && (
+              <div
+                className={classNames(
+                  'mt-4 max-w-3xl text-base leading-7',
+                  dark ? 'text-slate-300' : 'text-slate-700',
+                )}
+              >
+                {description}
+              </div>
+            )}
           </div>
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-sky-200 shadow-sm">
-            <BadgeCheck className="h-5 w-5" />
-          </div>
-        </div>
-
-        <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">
-          Verified certifications and technical learning available on Credly.
-        </p>
-
-        <div className="mt-6">
-          <a
-            href={CREDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-sky-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-sky-300"
+          <div
+            className={classNames(
+              'flex h-12 w-12 items-center justify-center rounded-2xl border shadow-sm',
+              dark
+                ? 'border-white/15 bg-white/10 text-sky-200'
+                : 'border-slate-200 bg-white/90 text-slate-700',
+            )}
           >
-            View Credly Badges
-            <ExternalLink className="h-4 w-4" />
-          </a>
+            <Icon className="h-5 w-5" />
+          </div>
         </div>
+
+        {children}
       </div>
     </div>
+  );
+};
+
+const CredlySection = () => {
+  return (
+    <SectionCard
+      eyebrow="Credentials"
+      title="Digital Badges & Verified Learning"
+      icon={BadgeCheck}
+      accentClasses="from-sky-500/20 via-cyan-400/10 to-fuchsia-500/20"
+      description="Verified certifications and technical learning available on Credly."
+      dark
+    >
+      <div className="mt-6">
+        <a
+          href={CREDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={buttonStyles.darkExternal}
+        >
+          View Credly Badges
+          <ExternalLink className="h-4 w-4" />
+        </a>
+      </div>
+    </SectionCard>
   );
 };
 
 const InternationalShowcaseSection = () => {
   return (
-    <div className="relative mb-6 overflow-hidden rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm sm:mb-7 sm:p-6">
-      <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-r from-sky-500/15 via-cyan-300/10 to-violet-400/10" />
-      <div className="relative">
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
-              International Showcase
-            </p>
-            <h1 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-              OpenAI &amp; Handshake Recognition
-            </h1>
-          </div>
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white/90 text-slate-700 shadow-sm">
-            <Sparkles className="h-5 w-5" />
-          </div>
-        </div>
+    <SectionCard
+      eyebrow="International Showcase"
+      title="OpenAI & Handshake Recognition"
+      icon={Sparkles}
+      accentClasses="from-sky-500/15 via-cyan-300/10 to-violet-400/10"
+      className="mb-6 sm:mb-7"
+      titleAs="h1"
+      titleClassName="max-w-3xl text-3xl sm:text-4xl"
+    >
+      <div className="mt-5 rounded-2xl border border-slate-200 bg-[linear-gradient(180deg,rgba(248,250,252,0.95),rgba(255,255,255,1))] p-4 shadow-sm sm:p-5">
+        <h2 className="text-xl font-semibold leading-7 text-slate-950">
+          OpenAI Developers x Handshake: AI Innovator Spotlight
+        </h2>
+        <p className="mt-3 max-w-3xl text-base leading-7 text-slate-700">
+          Recognition through the Codex Creator Challenge for building an AI
+          product with practical career-development impact and a backend
+          workflow around resume version tracking.
+        </p>
 
-        <div className="mt-5 rounded-2xl border border-slate-200 bg-[linear-gradient(180deg,rgba(248,250,252,0.95),rgba(255,255,255,1))] p-4 shadow-sm sm:p-5">
-          <h2 className="text-xl font-semibold leading-7 text-slate-950">
-            OpenAI Developers x Handshake: AI Innovator Spotlight
-          </h2>
-          <p className="mt-3 max-w-3xl text-base leading-7 text-slate-700">
-            Recognition through the Codex Creator Challenge for building an AI
-            product with practical career-development impact and a backend
-            workflow around resume version tracking.
-          </p>
+        <a
+          href={HANDSHAKE_SHOWCASE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group mt-4 block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+        >
+          <img
+            src={HANDSHAKE_FEATURE_IMAGE}
+            alt="Handshake AI Showcase feature for the Resume Feedback Platform"
+            className="h-auto w-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
+          />
+        </a>
 
-          <a
-            href={HANDSHAKE_SHOWCASE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mt-4 block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
-          >
-            <img
-              src={HANDSHAKE_FEATURE_IMAGE}
-              alt="Handshake AI Showcase feature for the Resume Feedback Platform"
-              className="h-auto w-full object-cover transition-transform duration-300 group-hover:scale-[1.01]"
-            />
-          </a>
-
-          <h3 className="mt-4 text-lg font-semibold leading-7 text-slate-950">
-            Handshake AI Showcase
-          </h3>
-          <p className="mt-2 max-w-3xl text-base leading-7 text-slate-700">
-            Featured among global innovators for the Resume Feedback Platform
-            and its version-aware AI review architecture.
-          </p>
-        </div>
+        <h3 className="mt-4 text-lg font-semibold leading-7 text-slate-950">
+          Handshake AI Showcase
+        </h3>
+        <p className="mt-2 max-w-3xl text-base leading-7 text-slate-700">
+          Featured among global innovators for the Resume Feedback Platform
+          and its version-aware AI review architecture.
+        </p>
       </div>
-    </div>
+    </SectionCard>
   );
 };
 
 const PressSection = () => {
   return (
-    <div className="relative mb-7 overflow-hidden rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm sm:mb-8 sm:p-6">
-      <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-r from-rose-500/15 via-orange-300/10 to-sky-400/10" />
-      <div className="relative">
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
-              In the Press
-            </p>
-            <h2 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-              Media recognition for the Resume Feedback Platform
-            </h2>
-            <p className="mt-4 max-w-3xl text-base leading-7 text-slate-700">
-              Independent coverage from Angolan media outlets validates both the
-              product story and the international recognition behind the platform.
-            </p>
-          </div>
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white/90 text-slate-700 shadow-sm">
-            <Newspaper className="h-5 w-5" />
-          </div>
-        </div>
-
-        <div className="mt-5 grid gap-4 sm:mt-6 lg:grid-cols-3">
-          {pressItems.map((item) => (
-            <a
-              key={item.outlet}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex min-h-[240px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(180deg,rgba(248,250,252,0.95),rgba(255,255,255,1))] text-left shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
-            >
-              <img
-                src={item.image}
-                alt={`${item.outlet} feature preview`}
-                className={`h-32 w-full border-b border-slate-200 ${item.imageClassName ?? 'object-cover'}`}
-                style={{ objectPosition: item.imagePosition ?? 'center' }}
-              />
-              <span className="flex flex-1 flex-col p-4 sm:p-5">
-                <span className="flex items-center justify-between gap-3">
-                  <span className="rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white">
-                    {item.outlet}
-                  </span>
-                  <ExternalLink className="h-4 w-4 shrink-0 text-slate-400 transition-colors group-hover:text-sky-600" />
+    <SectionCard
+      eyebrow="In the Press"
+      title="Media recognition for the Resume Feedback Platform"
+      icon={Newspaper}
+      accentClasses="from-rose-500/15 via-orange-300/10 to-sky-400/10"
+      className="mb-7 sm:mb-8"
+      titleClassName="max-w-3xl text-3xl sm:text-4xl"
+      description="Independent coverage from Angolan media outlets validates both the product story and the international recognition behind the platform."
+    >
+      <div className="mt-5 grid gap-4 sm:mt-6 lg:grid-cols-3">
+        {pressItems.map((item) => (
+          <a
+            key={item.outlet}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex min-h-[240px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(180deg,rgba(248,250,252,0.95),rgba(255,255,255,1))] text-left shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+          >
+            <img
+              src={item.image}
+              alt={`${item.outlet} feature preview`}
+              className={`h-32 w-full border-b border-slate-200 ${item.imageClassName ?? 'object-cover'}`}
+              style={{ objectPosition: item.imagePosition ?? 'center' }}
+            />
+            <span className="flex flex-1 flex-col p-4 sm:p-5">
+              <span className="flex items-center justify-between gap-3">
+                <span className="rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white">
+                  {item.outlet}
                 </span>
-                <span className="mt-4 block text-lg font-semibold leading-7 text-slate-950">
-                  {item.title}
-                </span>
-                <span className="mt-3 block text-sm leading-6 text-slate-600">
-                  {item.description}
-                </span>
-                <span className="mt-auto pt-5 text-sm font-semibold text-sky-700">
-                  Read article
-                </span>
+                <ExternalLink className="h-4 w-4 shrink-0 text-slate-400 transition-colors group-hover:text-sky-600" />
               </span>
-            </a>
-          ))}
-        </div>
+              <span className="mt-4 block text-lg font-semibold leading-7 text-slate-950">
+                {item.title}
+              </span>
+              <span className="mt-3 block text-sm leading-6 text-slate-600">
+                {item.description}
+              </span>
+              <span className="mt-auto pt-5 text-sm font-semibold text-sky-700">
+                Read article
+              </span>
+            </span>
+          </a>
+        ))}
       </div>
-    </div>
+    </SectionCard>
   );
 };
 
@@ -588,24 +640,14 @@ const ContentSection = ({
   accentClasses,
 }: ContentSectionProps) => {
   return (
-    <div className="relative mb-6 overflow-hidden rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm sm:mb-7 sm:p-6">
-      <div className={`absolute inset-x-0 top-0 h-24 bg-gradient-to-r ${accentClasses}`} />
-      <div className="relative">
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
-              {eyebrow}
-            </p>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
-              {title}
-            </h2>
-          </div>
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white/90 text-slate-700 shadow-sm">
-            <Icon className="h-5 w-5" />
-          </div>
-        </div>
-
-        <ul className={`mt-5 grid gap-4 ${items.length > 1 ? 'sm:grid-cols-2' : ''}`}>
+    <SectionCard
+      eyebrow={eyebrow}
+      title={title}
+      icon={Icon}
+      accentClasses={accentClasses}
+      className="mb-6 sm:mb-7"
+    >
+      <ul className={`mt-5 grid gap-4 ${items.length > 1 ? 'sm:grid-cols-2' : ''}`}>
         {items.map((item, index) => (
           <li
             key={`${title}-${index}`}
@@ -619,17 +661,10 @@ const ContentSection = ({
             </span>
           </li>
         ))}
-        </ul>
-      </div>
-    </div>
+      </ul>
+    </SectionCard>
   );
 };
-
-const snapshotButtonClasses =
-  'inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500';
-
-const websiteButtonClasses =
-  'inline-flex items-center justify-center rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500';
 
 const ProjectSnapshotCard = ({
   project,
@@ -691,11 +726,11 @@ const ProjectSnapshotCard = ({
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={websiteButtonClasses}
+              className={buttonStyles.website}
             >
               View Website
             </a>
-            <Link to={`/projects/${project.id}`} className={snapshotButtonClasses}>
+            <Link to={`/projects/${project.id}`} className={buttonStyles.snapshot}>
               View Architectural Deep-Dive
             </Link>
           </div>

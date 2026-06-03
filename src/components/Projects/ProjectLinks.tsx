@@ -1,13 +1,11 @@
 import { Code2, Eye, Github } from 'lucide-react';
+import { buttonStyles, classNames, projectLinkIconVariants } from '../../lib/buttonStyles';
 
 interface ProjectLinksProps {
   url?: string;
   frontendUrl?: string;
   backendUrl?: string;
 }
-
-const linkButtonClasses =
-  'mb-3 p-3 text-white rounded-full transition-colors text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500';
 
 export const ProjectLinks = ({ url, frontendUrl, backendUrl }: ProjectLinksProps) => {
   return (
@@ -17,7 +15,7 @@ export const ProjectLinks = ({ url, frontendUrl, backendUrl }: ProjectLinksProps
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${linkButtonClasses} bg-emerald-600 hover:bg-emerald-700`}
+          className={classNames(buttonStyles.iconBase, projectLinkIconVariants.live)}
           aria-label="Open live project"
         >
           <Eye size={18} />
@@ -28,7 +26,7 @@ export const ProjectLinks = ({ url, frontendUrl, backendUrl }: ProjectLinksProps
           href={frontendUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${linkButtonClasses} bg-sky-600 hover:bg-sky-700`}
+          className={classNames(buttonStyles.iconBase, projectLinkIconVariants.frontend)}
           aria-label="Open frontend source code"
         >
           <Code2 size={18} />
@@ -39,7 +37,7 @@ export const ProjectLinks = ({ url, frontendUrl, backendUrl }: ProjectLinksProps
           href={backendUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${linkButtonClasses} bg-slate-700 hover:bg-slate-800`}
+          className={classNames(buttonStyles.iconBase, projectLinkIconVariants.backend)}
           aria-label="Open backend source code"
         >
           <Github size={18} />

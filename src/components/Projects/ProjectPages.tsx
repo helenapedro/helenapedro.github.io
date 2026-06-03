@@ -16,9 +16,9 @@ import { buttonStyles, classNames } from '../../lib/buttonStyles';
 import { ExternalIconLink } from './ExternalIconLink';
 import { ProjectCard } from './ProjectCard';
 import { ProjectHighlight } from './ProjectHighlight';
+import { ProjectImage } from './ProjectImage';
 import { ProjectModal } from './ProjectModal';
 import { ProjectTechnologies } from './ProjectTechnologies';
-import { ProjectImage } from './ProjectImage';
 
 const cardContainerClasses =
   'group bg-white border border-slate-200 rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl';
@@ -155,7 +155,7 @@ const recognitionImpactItems: SectionItem[] = [
       <>
         Helena Explora extends the same mission into responsible AI and community
         leadership for international students. Its guiding message is translated as:
-        <strong> “Dreaming is the first visa. The rest is courage.”</strong>
+        <strong> "Dreaming is the first visa. The rest is courage."</strong>
       </>
     ),
   },
@@ -165,7 +165,11 @@ const recognitionImpactItems: SectionItem[] = [
       <>
         Revista Carreira, ONgoma News, and AngoRussia covered the platform and the
         broader story of an Angolan engineer building AI products with international
-        recognition.
+        recognition.{' '}
+        <Link to="/press" className={buttonStyles.textLink}>
+          View press coverage
+        </Link>
+        .
       </>
     ),
   },
@@ -213,10 +217,7 @@ const professionalStatusItems: SectionItem[] = [
           GitHub
         </a>
         , or{' '}
-        <a
-          href="mailto:mbeuapedro@gmail.com"
-          className={buttonStyles.textLink}
-        >
+        <a href="mailto:mbeuapedro@gmail.com" className={buttonStyles.textLink}>
           email
         </a>
         .
@@ -284,6 +285,7 @@ export function PressPage() {
     </section>
   );
 }
+
 export function ProjectDetailPage() {
   const { id } = useParams<{ id: string }>();
   const [modalImage, setModalImage] = useState<string | null>(null);
@@ -296,10 +298,7 @@ export function ProjectDetailPage() {
   return (
     <section className="mb-10 sm:mb-12">
       <div className="mb-6">
-        <Link
-          to="/"
-          className={buttonStyles.backLink}
-        >
+        <Link to="/" className={buttonStyles.backLink}>
           Back to Executive Overview
         </Link>
       </div>
@@ -394,7 +393,6 @@ export function AboutPage() {
         icon={Briefcase}
         accentClasses="from-emerald-500/15 via-teal-400/10 to-transparent"
       />
-      <PressSection />
       <ContentSection
         eyebrow="Professional Status"
         title="Available for U.S. backend, cloud, and AI engineering roles"
@@ -455,9 +453,7 @@ const SectionCard = ({
     <div
       className={classNames(
         'relative overflow-hidden rounded-[28px] border p-5 shadow-sm sm:p-6',
-        dark
-          ? 'border-slate-200 bg-slate-950 text-white'
-          : 'border-slate-200 bg-white',
+        dark ? 'border-slate-200 bg-slate-950 text-white' : 'border-slate-200 bg-white',
         className,
       )}
     >
@@ -574,8 +570,8 @@ const InternationalShowcaseSection = () => {
           Handshake AI Showcase
         </h3>
         <p className="mt-2 max-w-3xl text-base leading-7 text-slate-700">
-          Featured among global innovators for the Resume Feedback Platform
-          and its version-aware AI review architecture.
+          Featured among global innovators for the Resume Feedback Platform and its
+          version-aware AI review architecture.
         </p>
       </div>
     </SectionCard>

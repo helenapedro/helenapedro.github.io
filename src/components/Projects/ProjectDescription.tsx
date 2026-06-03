@@ -1,4 +1,4 @@
-import type { DescriptionBlock } from './Projects';
+import type { DescriptionBlock } from '../../data/projects';
 
 interface ProjectDescriptionProps {
   projectId: string;

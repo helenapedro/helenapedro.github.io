@@ -1,27 +1,9 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { projects } from '../Projects/Projects';
+import { getRouteMetadata } from '../../data/seo';
 
 const SITE_URL = 'https://helenapedro.github.io';
 const DEFAULT_IMAGE = `${SITE_URL}/project-images/features/ongoma-news-feature.png`;
-
-const routeMeta = {
-  home: {
-    title: 'Helena Pedro | Software Engineer & AI Innovator | M.S. in Computer Science',
-    description:
-      'Award-winning Software Engineer specialized in scalable backend systems and AI. Creator of the Resume Feedback Platform featured by OpenAI Developers x Handshake.',
-  },
-  about: {
-    title: 'About Helena Pedro | Backend, Cloud & AI Software Engineer',
-    description:
-      'Helena Pedro is a software engineer focused on backend architecture, cloud systems, generative AI workflows, and business-critical reliability.',
-  },
-  press: {
-    title: 'Press & Recognition | Helena Pedro | AI Innovator',
-    description:
-      'Press coverage and international recognition for Helena Pedro, creator of the Resume Feedback Platform featured by OpenAI Developers x Handshake and Angolan media.',
-  },
-};
 
 const setMeta = (name: string, content: string, attribute: 'name' | 'property' = 'name') => {
   let tag = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${name}"]`);
@@ -51,23 +33,7 @@ export function SeoManager() {
   const location = useLocation();
 
   useEffect(() => {
-    const projectMatch = location.pathname.match(/^\/projects\/([^/]+)$/);
-    const project = projectMatch
-      ? projects.find((item) => item.id === projectMatch[1])
-      : undefined;
-
-    const meta =
-      project
-        ? {
-            title: `${project.title} | Technical Projects | Helena Pedro`,
-            description: `${project.summary} Technical deep-dive by Helena Pedro covering architecture, backend design, and engineering tradeoffs.`,
-          }
-        : location.pathname === '/about'
-          ? routeMeta.about
-          : location.pathname === '/press'
-            ? routeMeta.press
-            : routeMeta.home;
-
+    const meta = getRouteMetadata(location.pathname);
     const canonical = `${SITE_URL}${location.pathname === '/' ? '/' : location.pathname}`;
 
     document.title = meta.title;
@@ -75,7 +41,7 @@ export function SeoManager() {
     setMeta('robots', 'index,follow');
     setMeta('og:title', meta.title, 'property');
     setMeta('og:description', meta.description, 'property');
-    setMeta('og:type', project ? 'article' : 'profile', 'property');
+    setMeta('og:type', meta.type, 'property');
     setMeta('og:url', canonical, 'property');
     setMeta('og:image', DEFAULT_IMAGE, 'property');
     setMeta('twitter:card', 'summary_large_image');

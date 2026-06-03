@@ -1,4 +1,4 @@
-import { resumeFeedbackImages } from "./resumeFeedbackImages.generated";
+import { resumeFeedbackImages } from "../components/Projects/resumeFeedbackImages.generated";
 
 const BASE_URL = "https://mbeuaportfolio-media.s3.us-east-2.amazonaws.com";
 const GITHUB_LINK = "https://github.com/helenapedro";

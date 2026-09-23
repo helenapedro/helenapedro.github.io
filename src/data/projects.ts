@@ -312,73 +312,72 @@ export const projects: Project[] = [
     id: "fuel-station-explorer",
     title: "Angola Fuel Stations Explorer",
     summary:
-      "Python data platform that turns fragmented Angolan fuel station data into a resilient, searchable map dashboard with API fallbacks, ETL support, and MySQL-ready ingestion.",
+      "Production data platform serving 279 validated fuel stations across Angola through a FastAPI REST API and an interactive map dashboard — built on a deterministic data-quality pipeline with multi-source ingestion.",
     url: "https://gaspump.hmpedro.com/",
     images: [`${BASE_URL}/gaspump.jpeg`],
     descriptionBlocks: [
       {
         type: "paragraph",
-        text: "This project treats fuel station discovery as a data reliability problem, not just a map UI. It combines a timeout-bound public API client, cached station datasets, normalization helpers, interactive geospatial filtering, and supporting ETL scripts for converting scraped operator data into structured MySQL records.",
+        text: "This project treats fuel-station discovery as a data reliability problem, not just a map UI. A Python ingestion pipeline fuses OpenStreetMap, operator websites, and a bundled legacy snapshot into one validated dataset of 279 stations, refreshed weekly by GitHub Actions. The dataset is served two ways from a single Heroku dyno: a versioned FastAPI REST API and a Dash + Plotly map dashboard.",
       },
       {
         type: "heading",
-        text: "Backend data ingestion",
+        text: "REST API layer",
       },
       {
         type: "list",
         items: [
-          "Built a Python fetch layer that consumes the public station API with a strict 5-second timeout, validates JSON parsing, converts responses into Pandas DataFrames, and returns safe empty results when no upstream data is available.",
-          "Added a 5-minute in-memory cache that returns copies of cached DataFrames so downstream filtering cannot mutate shared cache state.",
-          "When the upstream API fails after a successful fetch, the app continues serving the last cached dataset while surfacing the error to the UI instead of failing silently.",
+          "Built a versioned FastAPI API — GET /api/v1/stations with pagination and operator/province/municipality filters, /health, and OpenAPI docs — serving the validated snapshot as JSON.",
+          "Mounted the ASGI API inside the existing Dash/WSGI process through a prefix router, so one Heroku dyno serves both the API and the dashboard with no extra infrastructure.",
+          "Shared a single normalization module between the API and the dashboard so both surfaces always agree on cleaning rules, stable IDs, and Angola bounding-box validation.",
         ],
       },
       {
         type: "heading",
-        text: "ETL and MySQL preparation",
+        text: "Deterministic data-quality pipeline",
       },
       {
         type: "list",
         items: [
-          "Developed a scraper for Pumangol station data that extracts a JavaScript stores object, sanitizes trailing commas and quote formats, parses coordinates, and writes normalized station records to JSON.",
-          "Built a MySQL loader that reads scraped JSON, parses municipality/province values from location strings, creates missing municipalities, and upserts gas station records by station name, address, and operator.",
-          "Wrapped database writes in an explicit transaction with commit/rollback behavior so partial imports do not leave the station dataset in an inconsistent state.",
+          "Canonicalized operators against a verified brand registry (Sonangol, Pumangol, TotalEnergies, Sonangalp, Etu Energias) with explicit aliases and no fuzzy guessing — unmatched records stay honestly labeled Unknown instead of being dropped or invented.",
+          "Merged near-duplicate stations within 150 m using haversine distance, except when two verified brands genuinely sit across the street; merged records keep multi-source provenance.",
+          "Rejected OSM element IDs used as station names, null-island coordinates, and encoding artifacts — every rejection is stored with its reason in a separate audit file.",
+          "Backfilled missing provinces from an explicit municipality-to-province table (204 down to 144 empty), flagging inferred values for auditability.",
         ],
       },
       {
         type: "heading",
-        text: "Data normalization and filtering",
+        text: "Resilient ingestion",
       },
       {
         type: "list",
         items: [
-          "Centralized station cleanup by enforcing expected columns, trimming searchable text fields, building a lowercase search blob, and dropping invalid zero-coordinate records before map rendering.",
-          "Implemented composable filters for free-text search, operator, province, municipality, and station selection, allowing the dashboard to narrow data without repeated backend round trips.",
-          "Generated dependent dropdown options from the filtered dataset so province, municipality, and station choices stay consistent with the current search context.",
+          "Fused four sources with a priority order: operator websites, OpenStreetMap via Overpass, and a bundled legacy snapshot.",
+          "When a network source fails, the pipeline reuses that source's previous clean and rejected records (marked stale), so a flaky upstream never shrinks the dataset or destroys rejection history.",
+          "Weekly GitHub Actions refresh regenerates and commits the validated snapshots; the deploy serves them immediately, with revert-as-rollback.",
         ],
       },
       {
         type: "heading",
-        text: "Operational dashboard",
+        text: "Testing and CI",
       },
       {
         type: "list",
         items: [
-          "Built a Dash and Plotly map-first interface with OpenStreetMap tiles, clickable station markers, selected-station highlighting, and a detail panel for brand, address, municipality, province, country, and coordinates.",
-          "Added summary counters for stations, brands, and municipalities in the active result set, making the dashboard useful for logistics scanning as well as individual station lookup.",
-          "Used a timed Dash interval to refresh data every three minutes while preserving a responsive UI through cached API results.",
+          "67 automated tests, including offline dataset contract tests that guard the committed snapshot itself: operators within the registry, zero OSM-ID names served, Unknown share under 20%, coordinates inside Angola.",
+          "CI runs the full suite plus an offline pipeline check on every pull request; the push tooling self-verifies the shipped file list.",
         ],
       },
       {
         type: "heading",
-        text: "Technical Complexity",
+        text: "Technical complexity",
       },
       {
         type: "list",
         items: [
-          "The system handles unreliable public data sources by combining timeout control, JSON validation, cache reuse, visible error propagation, empty-map fallbacks, and mutation-safe DataFrame copies.",
-          "The ETL path converts semi-structured website JavaScript into structured station records, then maps those records into relational MySQL tables while avoiding duplicate station inserts.",
-          "The app separates concerns across fetch, normalization, filtering, presentation, layout, scraping, and database loading modules so the dashboard can evolve without coupling UI callbacks to raw ingestion logic.",
-          "Geospatial correctness is treated as a data-quality constraint: stations without usable coordinates are filtered before rendering, preventing misleading map markers and invalid center calculations.",
+          "The hardest problems were data-semantic, not algorithmic: OSM's brand tag (the marketed flag) vs operator tag (the franchisee) required a precedence rule discovered from a real misclassified record; colloquial variants and a Bantu false friend — bare 'etu' means 'us/ours' — shaped the alias table.",
+          "Entity resolution is fully deterministic and reproducible: the same inputs always produce the same 279 stations, which is what makes the contract tests meaningful.",
+          "Serving FastAPI and Dash from one dyno required bridging ASGI and WSGI without changing either app's code.",
         ],
       },
       {
@@ -388,9 +387,9 @@ export const projects: Project[] = [
       {
         type: "list",
         items: [
-          "Used an in-process cache instead of Redis because the deployment target is a lightweight Dash service and the main resilience need is short-term protection from repeated upstream API calls.",
-          "Kept Pandas in the serving path because the dataset is small enough for fast in-memory filtering while still benefiting from reliable tabular normalization and aggregation.",
-          "Maintained MySQL ingestion as a supporting pipeline so scraped operator data can be migrated into a relational source of truth when the public API is incomplete or unavailable.",
+          "Chose a committed snapshot over live upstream queries: the dataset changes weekly, so serving a validated file is faster, deterministic, and immune to upstream outages at request time.",
+          "Kept Pandas in the serving path because 279 records filter in microseconds in memory — no database needed for this read pattern.",
+          "Used explicit allowlists instead of fuzzy matching for brand resolution: precision over recall, with Unknown as the honest fallback.",
         ],
       },
       {
@@ -399,19 +398,21 @@ export const projects: Project[] = [
       },
       {
         type: "paragraph",
-        text: "The final system demonstrates backend-oriented data engineering: resilient upstream integration, cache-aware serving, structured normalization, transaction-safe MySQL loading, and geospatial data quality controls. Users get a fast map dashboard, while the implementation shows how to turn fragile public station data into an operational interface.",
+        text: "The result is a production data platform: a documented REST API and a map dashboard people use to find real fuel stations across Angola, backed by a pipeline that turns fragmented, mislabeled public data into a validated dataset with full provenance. It demonstrates backend engineering judgment — API design, data quality, resilient ingestion, and testing — on a system serving real users.",
       },
     ],
     technologies: [
       "Python",
+      "FastAPI",
+      "REST API",
       "Dash",
       "Plotly",
       "Pandas",
-      "Requests",
-      "MySQL",
+      "Data Quality",
       "ETL",
-      "Data Resilience",
       "Geospatial Data",
+      "GitHub Actions",
+      "Heroku",
       "Gunicorn",
     ],
     backendUrl: `${GITHUB_LINK}/Angola-Fuel-Station-Explorer`,

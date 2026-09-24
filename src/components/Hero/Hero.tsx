@@ -8,7 +8,7 @@ const LINKEDIN_URL = 'https://www.linkedin.com/in/helena-software-engineer';
 const GITHUB_URL = 'https://github.com/helenapedro';
 const PERSONAL_SITE_URL = 'https://hmpedro.com';
 const ADDRESS = "Bellevue, WA";
-const TIME_ZONE = 'Pacific Time (PST)';
+const TIME_ZONE = 'Pacific Time (PT)';
 
 const quickActions = [
   {
@@ -48,6 +48,10 @@ export function Hero() {
       <div className="relative px-5 py-6 sm:px-6 sm:py-8 lg:px-6 lg:py-8 xl:px-7">
         <div className="mx-auto flex max-w-md flex-col items-center text-center">
           <ProfileImage />
+          <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-green-400/30 bg-green-500/15 px-3 py-1 text-xs font-semibold text-green-300">
+            <span className="h-2 w-2 rounded-full bg-green-400" />
+            Open to Work
+          </div>
           <div className="mt-4">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-sky-300 sm:text-sm sm:tracking-[0.18em]">
               Award-Winning Software Engineer & AI Innovator | M.S. in Computer Science @ MIU

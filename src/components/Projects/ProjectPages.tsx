@@ -5,6 +5,7 @@ import {
   BrainCircuit,
   Briefcase,
   ExternalLink,
+  Github,
   GraduationCap,
   type LucideIcon,
   Newspaper,
@@ -732,7 +733,7 @@ const ProjectSnapshotCard = ({
             {project.summary}
           </p>
 
-          <div className="mt-4 flex flex-col items-center gap-3">
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
             <a
               href={project.url}
               target="_blank"
@@ -741,6 +742,17 @@ const ProjectSnapshotCard = ({
             >
               View Website
             </a>
+            {project.backendUrl && (
+              <a
+                href={project.backendUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={buttonStyles.snapshot}
+              >
+                <Github size={16} className="mr-2" />
+                GitHub
+              </a>
+            )}
           </div>
         </div>
       </div>

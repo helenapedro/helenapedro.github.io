@@ -40,6 +40,13 @@ export const ProjectCard = ({
               highlightUrl={project.highlightUrl}
               centered
             />
+            {project.secondaryHighlight && (
+              <ProjectHighlight
+                highlight={project.secondaryHighlight}
+                highlightUrl={project.secondaryHighlightUrl}
+                centered
+              />
+            )}
             <ExternalIconLink
               href={project.url}
               label={`Open live demo for ${project.title}`}

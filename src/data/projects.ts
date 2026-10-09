@@ -20,6 +20,8 @@ export interface Project {
   subtitle?: string;
   highlight?: string;
   highlightUrl?: string;
+  secondaryHighlight?: string;
+  secondaryHighlightUrl?: string;
   summary: string;
   technologies: string[];
   url: string;
@@ -41,6 +43,10 @@ export const projects: Project[] = [
       "Featured in the Handshake AI Showcase through the OpenAI Developers x Handshake Codex Creator Challenge",
     highlightUrl:
       "https://app.joinhandshake.com/ai-showcase?project_id=3056375",
+    secondaryHighlight:
+      "Agents League — Creative Apps verified credential (Global AI Community)",
+    secondaryHighlightUrl:
+      "https://globalai.community/badges/75506432-d664-42e0-9081-daa623536951",
     summary:
       "Version-aware resume review platform backed by a Spring Boot API, asynchronous AI worker pipeline, polyglot persistence, and controlled sharing workflows.",
     technologies: [
@@ -172,6 +178,69 @@ export const projects: Project[] = [
         text: "The final product demonstrates backend engineering beyond CRUD: event-driven processing, versioned domain modeling, controlled public access, job-state reliability, polyglot persistence, and AI output lifecycle management. Users can upload resume versions without waiting for AI processing, reviewers can comment through scoped share links, and every AI result remains traceable to the exact document version that produced it.",
       },
     ],
+  },
+  {
+    id: "marketmind",
+    title: "MarketMind",
+    subtitle: "Multi-Agent System for S&P 500 Trend Prediction",
+    summary:
+      "Multi-agent AI system that analyzes a stock from four angles (technical indicators, LLM-scored news sentiment, SEC filing fundamentals, and risk) and blends them into a BUY/HOLD/SELL recommendation with a confidence score and cited reasoning. Course project for CS529 AI Engineering at MIU; demo only, not financial advice.",
+    technologies: [
+      "Python",
+      "OpenAI Agents SDK",
+      "Multi-Agent Systems",
+      "LLM Orchestration",
+      "yfinance",
+      "OpenAI Vector Store",
+      "Gradio",
+      "Heroku",
+      "Guardrails",
+    ],
+    url: "https://marketmind-1626769ce010.herokuapp.com/",
+    images: [
+      "https://raw.githubusercontent.com/nandar-zaw/MarketMind/main/docs/images/architecture.png",
+    ],
+    descriptionBlocks: [
+      {
+        type: "paragraph",
+        text: "MarketMind looks at a stock from a few different angles and argues its way to a single recommendation: BUY, HOLD, or SELL, with a confidence score and the reasoning shown. You pick a ticker and a horizon of 5 or 10 trading days, four agents vote, and a Coordinator blends the votes. It was built as a course project for CS529 AI Engineering at Maharishi International University. It is a demo, not financial advice.",
+      },
+      {
+        type: "heading",
+        text: "The agents",
+      },
+      {
+        type: "list",
+        items: [
+          "Technical Agent reads the price history and scores plain indicators (RSI, MACD, SMA20 vs SMA50, volume, 5-day trend). No LLM is involved.",
+          "Sentiment Agent has an LLM score recent headlines and cite each headline it uses.",
+          "Fundamental Agent has an LLM score excerpts from the company's SEC filings, again with citations. When the excerpts do not say something, the agent writes \"not disclosed in retrieved filings\" instead of guessing.",
+          "Risk Manager measures volatility, max drawdown, and how jumpy the last sessions were.",
+          "The Coordinator blends the votes (Technical 35%, Sentiment 20%, Fundamental 20%), applies the risk reading on top (high risk caps the confidence and turns a BUY into a HOLD), and runs guardrails on the input, the tool calls, and the final output, with every check written to an audit log visible in the UI.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "My contributions",
+      },
+      {
+        type: "list",
+        items: [
+          "Built the Fundamental Analysis Agent: retrieves SEC filing excerpts from an OpenAI vector store (10-K and 10-Q for AAPL, MSFT, NVDA, TSLA, AMZN), scores them with an LLM, and cites the excerpts behind its buy/hold/sell vote.",
+          "Built the Sentiment Analysis Agent: consumes headlines supplied by the Data Agent through the NewsDataService (specialist agents never fetch data themselves), scores them with an LLM, and cites every headline it uses.",
+          "Added news-fetch resilience after Ticker.news kept returning empty: yfinance Search first, ticker-feed fallback, and empty results are not cached.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Architecture rule",
+      },
+      {
+        type: "paragraph",
+        text: "The rule that shapes the codebase: specialist agents never fetch data themselves. One Data Agent talks to the outside world and hands every specialist the same DataAgentResult (prices, company info, headlines, filing excerpts), which keeps the agents easy to test with fixed inputs and means a data problem shows up in exactly one place. If a data source is down or a key is missing, the affected agent reports unavailable with the reason, and the Coordinator reweights what is left instead of failing the whole run.",
+      },
+    ],
+    backendUrl: "https://github.com/nandar-zaw/MarketMind",
   },
   {
     id: "engineering-portfolio",

@@ -330,6 +330,12 @@ export function ProjectDetailPage() {
           </p>
         )}
         <ProjectHighlight highlight={project.highlight} highlightUrl={project.highlightUrl} />
+        {project.secondaryHighlight && (
+          <ProjectHighlight
+            highlight={project.secondaryHighlight}
+            highlightUrl={project.secondaryHighlightUrl}
+          />
+        )}
         <p className="mt-3 max-w-4xl text-lg leading-8 text-slate-700">
           {project.summary}
         </p>
@@ -713,6 +719,13 @@ const ProjectSnapshotCard = ({
               highlightUrl={project.highlightUrl}
               centered
             />
+            {project.secondaryHighlight && (
+              <ProjectHighlight
+                highlight={project.secondaryHighlight}
+                highlightUrl={project.secondaryHighlightUrl}
+                centered
+              />
+            )}
             <ExternalIconLink
               href={project.url}
               label={`Open live demo for ${project.title}`}

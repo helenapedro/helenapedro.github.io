@@ -246,6 +246,10 @@ export const projects: Project[] = [
     id: "engineering-portfolio",
     title: "Engineering Project Showcase",
     subtitle: "Cloud Data Platform for Infrastructure Project Content",
+    highlight:
+      "Technical article on Medium: Boost Website Performance with AWS CloudFront CDN",
+    highlightUrl:
+      "https://medium.com/@helenapedroofficial/-82db448690db",
     summary:
       "Infrastructure project showcase built as a scalable React-Firestore content platform with server-side query strategy, TTL caching, protected admin workflows, offline delivery, and secure S3 media ingestion.",
     technologies: [

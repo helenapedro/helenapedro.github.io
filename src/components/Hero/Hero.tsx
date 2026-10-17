@@ -60,8 +60,8 @@ export function Hero() {
               Helena Pedro
             </h1>
             <p className="mt-3 text-sm leading-6 text-slate-300">
-              Building scalable, AI-driven and agentic systems that make talent
-              visible. Specialist in Full-Stack Development, Backend Architecture,
+              Building scalable, AI-driven and agentic systems. Specialist in Full-Stack Development, 
+              AI Engineering, Backend Architecture,
               Node.js, Express, Java, Spring Boot, Python, Kafka, TypeScript,
               React, JavaScript, SQL, NoSQL and multi-agent AI workflows.
             </p>

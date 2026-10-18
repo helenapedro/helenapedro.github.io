@@ -6,6 +6,10 @@ const RESUME_FEEDBACK_MAIN_IMAGE =
   "/project-images/resume-feedback-platform/main.png";
 const RESUME_FEEDBACK_HANDSHAKE_IMAGE =
   "/project-images/resume-feedback-platform/handshake_featured.png";
+const RESUME_FEEDBACK_LANDING_IMAGE =
+  "/project-images/resume-feedback-platform/rfp-landing.png";
+const RESUME_FEEDBACK_CREDENTIAL_IMAGE =
+  "/project-images/resume-feedback-platform/agents-league-credential.png";
 const RESUME_FEEDBACK_ARCHITECTURE_IMAGE =
   "/project-images/resume-feedback-platform/RFP_Architecture_Diagram.jpg";
 
@@ -68,8 +72,10 @@ export const projects: Project[] = [
     ],
     url: "https://feedback.hmpedro.com/",
     images: [
+      RESUME_FEEDBACK_LANDING_IMAGE,
       RESUME_FEEDBACK_HANDSHAKE_IMAGE,
       RESUME_FEEDBACK_MAIN_IMAGE,
+      RESUME_FEEDBACK_CREDENTIAL_IMAGE,
     ].filter((image) => resumeFeedbackImages.includes(image)),
     detailImages: [RESUME_FEEDBACK_ARCHITECTURE_IMAGE].filter((image) =>
       resumeFeedbackImages.includes(image),

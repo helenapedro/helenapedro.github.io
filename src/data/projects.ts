@@ -198,6 +198,7 @@ export const projects: Project[] = [
     ],
     url: "https://marketmind-1626769ce010.herokuapp.com/",
     images: [
+      "/project-images/marketmind/marketmind-workflow.png",
       "https://raw.githubusercontent.com/nandar-zaw/MarketMind/main/docs/images/architecture.png",
     ],
     descriptionBlocks: [

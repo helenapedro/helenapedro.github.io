@@ -186,6 +186,49 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "careercrew",
+    title: "CareerCrew",
+    subtitle: "CrewAI Multi-Agent Resume Coach",
+    summary:
+      "CrewAI multi-agent resume coach with MCP tools and human-in-the-loop review: agents prepare and practice with candidates, while the candidate always applies. Final course project for CS529 AI Engineering at MIU.",
+    technologies: [
+      "Python",
+      "CrewAI",
+      "MCP",
+      "Multi-Agent Systems",
+      "LLM Orchestration",
+      "SQLite",
+    ],
+    url: "https://github.com/helenapedro/careercrew",
+    images: [],
+    descriptionBlocks: [
+      {
+        type: "paragraph",
+        text: "CareerCrew is a multi-agent resume coach that prepares candidates for interviews: Prep and Post-interview coaches guide preparation and review, a mock interviewer practices with the candidate, and a human-in-the-loop review step keeps a person in control of what goes out. The system prepares and practices; the candidate always applies.",
+      },
+      {
+        type: "heading",
+        text: "My contributions",
+      },
+      {
+        type: "list",
+        items: [
+          "Owned the chatbot-scope decision, PII redaction, and documentation.",
+          "Merged the dev branch into main (116 tests green) and tested the full mock-interview flow end to end, including its evaluation and scoring.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Design decision",
+      },
+      {
+        type: "paragraph",
+        text: "The decision that shapes the product: the coach never applies on the candidate's behalf. Agents prepare, practice, and review, but the application itself stays human. That boundary is what makes the system trustworthy enough to use with a real job search.",
+      },
+    ],
+    backendUrl: "https://github.com/helenapedro/careercrew",
+  },
+  {
     id: "marketmind",
     title: "MarketMind",
     subtitle: "Multi-Agent System for S&P 500 Trend Prediction",

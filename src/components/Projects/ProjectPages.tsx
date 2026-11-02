@@ -726,11 +726,13 @@ const ProjectSnapshotCard = ({
                 centered
               />
             )}
-            <ExternalIconLink
-              href={project.url}
-              label={`Open live demo for ${project.title}`}
-              className="absolute right-0 top-1/2 -translate-y-1/2"
-            />
+            {project.url && (
+              <ExternalIconLink
+                href={project.url}
+                label={`Open live demo for ${project.title}`}
+                className="absolute right-0 top-1/2 -translate-y-1/2"
+              />
+            )}
           </div>
 
           <ProjectTechnologies technologies={project.technologies} />
@@ -747,14 +749,16 @@ const ProjectSnapshotCard = ({
           </p>
 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={buttonStyles.website}
-            >
-              View Website
-            </a>
+            {project.url && (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={buttonStyles.website}
+              >
+                View Website
+              </a>
+            )}
             {project.backendUrl && (
               <a
                 href={project.backendUrl}

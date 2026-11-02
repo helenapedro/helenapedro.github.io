@@ -436,7 +436,7 @@ export const projects: Project[] = [
     summary:
       "Production data platform serving 279 validated fuel stations across Angola through a FastAPI REST API and an interactive map dashboard — built on a deterministic data-quality pipeline with multi-source ingestion.",
     url: "https://gaspump.hmpedro.com/",
-    images: [`${BASE_URL}/gaspump.jpeg`],
+    images: ["/project-images/fuel-station-explorer/fuel-station-pin.jpg"],
     descriptionBlocks: [
       {
         type: "paragraph",
@@ -545,7 +545,7 @@ export const projects: Project[] = [
     summary:
       "Python analytics platform that combines SpaceX API ingestion, web scraping, SQL-backed exploration, geospatial analysis, and supervised ML model comparison for launch-success prediction.",
     url: "https://predictive-analytics-for-rocket-launches.hmpedro.com/",
-    images: [`${BASE_URL}/rocket_launch_img.jpg`],
+    images: ["/project-images/predictive-analytics-platform/falcon9-launch.webp"],
     descriptionBlocks: [
       {
         type: "paragraph",

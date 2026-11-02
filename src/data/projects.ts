@@ -200,7 +200,7 @@ export const projects: Project[] = [
       "SQLite",
     ],
     url: "https://github.com/helenapedro/careercrew",
-    images: [],
+    images: ["/project-images/careercrew/careercrew-architecture.png"],
     descriptionBlocks: [
       {
         type: "paragraph",

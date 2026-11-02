@@ -10,7 +10,7 @@ Live site: https://helenapedro.github.io/
 - [CareerCrew](https://github.com/helenapedro/careercrew): CrewAI multi-agent resume coach.
 - [MarketMind](https://marketmind-1626769ce010.herokuapp.com/): Multi-agent system for S&P 500 trend prediction.
 - [Engineering Project Showcase](https://zepedro-portfolio.hmpedro.com/): Cloud data platform for infrastructure project content.
-- [Angola Fuel Stations Explorer](https://gaspump.hmpedro.com/): Production data platform for validated fuel stations across Angola.
+- [FuelMap Angola](https://fuelmap.hmpedro.com/): Production data platform for validated fuel stations across Angola.
 - [Applied ML Launch Analytics Platform](https://predictive-analytics-for-rocket-launches.hmpedro.com/): Analytics platform combining API ingestion, web scraping, SQL exploration, geospatial analysis, and model comparison.
 
 Project data, including summaries, technologies, links, and images, lives in `src/data/projects.ts`.

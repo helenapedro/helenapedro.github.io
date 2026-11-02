@@ -435,7 +435,7 @@ export const projects: Project[] = [
     summary:
       "Production data platform serving 279 validated fuel stations across Angola through a FastAPI REST API and an interactive map dashboard — built on a deterministic data-quality pipeline with multi-source ingestion.",
     url: "https://fuelmap.hmpedro.com/",
-    images: ["/project-images/fuel-station-explorer/fuel-station-pin.jpg"],
+    images: ["/project-images/fuel-station-explorer/fuelmap-angola-logo.png"],
     descriptionBlocks: [
       {
         type: "paragraph",

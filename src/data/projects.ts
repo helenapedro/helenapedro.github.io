@@ -28,7 +28,7 @@ export interface Project {
   secondaryHighlightUrl?: string;
   summary: string;
   technologies: string[];
-  url: string;
+  url?: string;
   images: string[];
   detailImages?: string[];
   descriptionBlocks: DescriptionBlock[];
@@ -199,7 +199,6 @@ export const projects: Project[] = [
       "LLM Orchestration",
       "SQLite",
     ],
-    url: "https://github.com/helenapedro/careercrew",
     images: ["/project-images/careercrew/careercrew-architecture.png"],
     descriptionBlocks: [
       {

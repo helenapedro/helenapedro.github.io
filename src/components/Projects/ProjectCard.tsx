@@ -47,11 +47,13 @@ export const ProjectCard = ({
                 centered
               />
             )}
-            <ExternalIconLink
-              href={project.url}
-              label={`Open live demo for ${project.title}`}
-              className="absolute right-0 top-1/2 -translate-y-1/2"
-            />
+            {project.url && (
+              <ExternalIconLink
+                href={project.url}
+                label={`Open live demo for ${project.title}`}
+                className="absolute right-0 top-1/2 -translate-y-1/2"
+              />
+            )}
           </div>
         )}
 
